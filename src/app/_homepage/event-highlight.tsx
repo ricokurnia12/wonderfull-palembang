@@ -3,13 +3,14 @@
 import Image from "next/image";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Swiper, SwiperSlide } from 'swiper/react';
+// import SwiperCore, { Autoplay } from "swiper";
+
+import { Autoplay, Navigation, EffectCoverflow } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay'
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -18,31 +19,61 @@ const events = [
     { id: 1, image: "/images/eventsample.jpg", alt: "Wonder Cafe Promotion" },
     { id: 2, image: "/images/eventsample2.jpg", alt: "Chiangmai Fashion Week Summer 2025" },
     { id: 3, image: "/images/eventsample3.jpg", alt: "World Wai Kru Muay Thai Ceremony" },
+
 ];
 
 export default function EventsHighlight() {
-    const [index, setIndex] = useState(0);
 
-
-
-    // Create a function to handle automatic or manual sliding
-    const nextEvent = () => {
-        setIndex((prev) => (prev + 1) % events.length);
-    };
-
-    const prevEvent = () => {
-        setIndex((prev) => (prev - 1 + events.length) % events.length);
-    };
     return (
         <div className="relative bg-yellow-500 py-12 px-4 md:px-8 lg:px-12">
             <div className="max-w-7xl mx-auto grid grid-cols-5">
                 {/* Bagian Kiri (Teks) */}
-                <div className="col-span-3 py-16">
+                <div className="col-span-5 lg:col-span-3 py-16">
                     <div className="max-w-2xl">
                         <p className="text-sm font-medium tracking-widest uppercase mb-4">SPOTLIGHT</p>
                         <h1 className="text-5xl sm:text-6xl md:text-7xl font-serif font-medium leading-tight mb-6">
                             Discover Palembang&apos;s Events
                         </h1>
+                        <div className="lg:hidden">                        <Swiper
+                            // autoHeight={true}
+                            effect="coverflow"
+                            spaceBetween={0}
+                            loop={true}
+                            slidesPerView={1.5}
+
+                            autoplay={{
+                                delay: 3000,
+                                disableOnInteraction: false,
+                            }}
+                            // navigation={{
+                            //     prevEl: "#prevBtn",
+                            //     nextEl: "#nextBtn",
+                            // }}
+
+                            coverflowEffect={{
+                                rotate: 5, // Tidak ada rotasi
+                                stretch: 20, // Tidak ada pergeseran horizontal
+                                depth: 100, // Jarak antar slide untuk efek 3D
+                                modifier: 3, // Intensitas efek coverflow
+                                slideShadows: false, // Bayangan opsional
+                            }}
+                            modules={[EffectCoverflow, Navigation, Autoplay]}
+                            className="mySwiper w-full justify-center rounded-lg lg:hidden"
+                        >
+                            {events.map((ev, idx) => (
+                                <SwiperSlide key={idx} className="rounded-lg">
+                                    <Image
+                                        alt="Event Image"
+                                        height={700}
+                                        width={500}
+                                        className="rounded-lg shadow-lg"
+                                        src={ev.image}
+                                    />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                        </div>
+
                         <p className="text-lg opacity-90 mb-8 max-w-xl">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum impedit dolores repellat
                             voluptatem, illum laborum odio cum. Debitis, voluptatibus magnam!
@@ -58,46 +89,72 @@ export default function EventsHighlight() {
                 </div>
 
                 {/* Infinite Loop Carousel */}
-                <div className="col-span-2 relative flex justify-center items-center">
-                    <div className="relative w-full max-w-sm mx-auto">
-                        <AnimatePresence initial={false}>
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: 100 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -100 }}
-                                transition={{ duration: 0.5 }}
-                                className="absolute inset-0 flex justify-center"
-                            >
+                <div className=" hidden lg:col-span-2 relative lg:block lg-flex justify-center items-center">
+                    {/* <button className="absolute top-1/2 -left-8 z-10 text-white bg-black p-2 rounded-full" id="prevBtn">‹</button>
+                    <button className="absolute top-1/2 -right-8 z-10 text-white bg-black p-2 rounded-full" id="nextBtn">›</button> */}
+
+                    <Swiper
+                        // autoHeight={true}
+                        effect="coverflow"
+                        spaceBetween={0}
+                        loop={true}
+                        slidesPerView={1.5}
+
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: true,
+                        }}
+                        // navigation={{
+                        //     prevEl: "#prevBtn",
+                        //     nextEl: "#nextBtn",
+                        // }}
+
+                        coverflowEffect={{
+                            rotate: 5, // Tidak ada rotasi
+                            stretch: 20, // Tidak ada pergeseran horizontal
+                            depth: 150, // Jarak antar slide untuk efek 3D
+                            modifier: 3, // Intensitas efek coverflow
+                            slideShadows: false, // Bayangan opsional
+                        }}
+                        modules={[EffectCoverflow, Navigation, Autoplay]}
+                        className="mySwiper w-full justify-center rounded-lg"
+                    >
+                        {events.map((ev, idx) => (
+                            <SwiperSlide key={idx} className="rounded-lg">
                                 <Image
-                                    width={300}
-                                    height={600}
-                                    src={events[index].image}
-                                    alt={`Event ${events[index].id}`}
-                                    className="object-cover rounded-xl"
+                                    alt="Event Image"
+                                    height={700}
+                                    width={500}
+                                    className="rounded-lg shadow-lg"
+                                    src={ev.image}
                                 />
-                            </motion.div>
-                        </AnimatePresence>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    {/* <Swiper
+                        effect={'cards'}
 
-                        <div className="absolute -bottom-12 left-0 right-0 flex justify-center space-x-2">
-                            {events.map((_, i) => (
-                                <button
-                                    key={i}
-                                    onClick={() => setIndex(i)}
-                                    className={`w-3 h-3 rounded-full ${i === index ? 'bg-white' : 'bg-white/50'}`}
-                                />
-                            ))}
-                        </div>
-                    </div>
+                        autoplay={{
+                            delay: 200,
+                            disableOnInteraction: false,
+                        }}
+                        navigation={true}
+                        grabCursor={true}
+                        autoHeight={true}
+                        loop={true}
 
-                    <Button onClick={prevEvent} className="absolute left-0 z-20">
-                        <ChevronLeft />
-                    </Button>
-                    <Button onClick={nextEvent} className="absolute right-0 z-20">
-                        <ChevronRight />
-                    </Button>
+                        modules={[EffectCards, Navigation, Autoplay]}
+                        className="mySwiper relative  w-80 "
+                    >
+                        {events.map((ev, idx) => {
+                            return (
+                                <SwiperSlide className="w-full h-full rounded-lg" key={idx}><Image alt="i" height={500} width={500} className="rounded-lg" src={ev.image} /></SwiperSlide>
+                            )
+                        })}
+
+                    </Swiper> */}
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

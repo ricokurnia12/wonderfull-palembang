@@ -8,7 +8,7 @@ export default function ExploreBy() {
       {/* Header with navigation would go here */}
 
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Explore pale by Categories</h1>
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Explore Destination by Categories</h1>
 
         <Tabs defaultValue="culture" className="w-full max-w-6xl mx-auto">
           <TabsList className="grid grid-cols-4 rounded-full bg-accent p-1 w-full max-w-3xl mx-auto">
@@ -27,7 +27,7 @@ export default function ExploreBy() {
             {/* <TabsTrigger value="northeast" className="rounded-full">
               North East
             </TabsTrigger> */}
-        
+
           </TabsList>
 
           <TabsContent value="culture" className="mt-12">
@@ -38,7 +38,7 @@ export default function ExploreBy() {
                   alt="Thailand map with West region highlighted"
                   width={500}
                   height={800}
-                //   fill
+                  //   fill
                   className="mx-auto w-full rounded-2xl shadow-2xl "
                 />
               </div>
@@ -46,7 +46,7 @@ export default function ExploreBy() {
               <div className="space-y-6 col-span-2">
                 <h2 className="text-5xl font-bold text-[#9B1B30]">The culture of Ponorogo</h2>
                 <p className="text-gray-700">
-                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus rem cum error soluta et tenetur velit! A doloremque mollitia maiores.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus rem cum error soluta et tenetur velit! A doloremque mollitia maiores.
                 </p>
               </div>
             </div>
