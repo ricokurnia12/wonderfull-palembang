@@ -141,8 +141,8 @@ export default function VideoHero() {
     }, [currentLocation]); // Jalankan efek ini saat currentLocation berubah
 
     return (
-        <div className="relative min-h-[200vh]" ref={containerRef}>
-            <Navbar />
+        <div className="relative" ref={containerRef}>
+
             <div className="relative h-screen w-full overflow-hidden">
                 {/* Video Background */}
                 <motion.div className="absolute inset-0 z-0 flex flex-col items-center justify-center text-center text-white">
@@ -280,9 +280,7 @@ export default function VideoHero() {
 
                 </motion.div>
             </div>
-            <div className="relative z-10">
-                <ExploreBy />
-            </div>
+
         </div >
 
     );

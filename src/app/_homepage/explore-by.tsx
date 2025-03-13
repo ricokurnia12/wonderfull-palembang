@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 export default function ExploreBy() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen relative z-10 bg-white">
       {/* Header with navigation would go here */}
 
       <div className="container mx-auto px-4 py-12">
