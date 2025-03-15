@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import SwiperCore, { Autoplay } from "swiper";
@@ -11,9 +11,9 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay'
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+// import { useEffect, useState } from "react";
+// import { AnimatePresence, motion } from "framer-motion";
+// import { Button } from "@/components/ui/button";
 
 const events = [
     { id: 1, image: "/images/eventsample.jpg", alt: "Wonder Cafe Promotion" },
