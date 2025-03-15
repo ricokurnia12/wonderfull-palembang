@@ -1,11 +1,10 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Building2, ChevronLeft, ChevronRight, History, MapPin, Utensils } from "lucide-react";
+// import { cn } from "@/lib/utils";
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
-import ExploreBy from "./explore-by";
-import Navbar from "../Navbar";
 
 type Location = {
     id: number;
@@ -19,14 +18,33 @@ type Location = {
     direction?: string
 };
 
+const keyFacts = [
+    {
+        icon: "Building2",
+        title: "Founded",
+        description: "683 AD (Srivijaya Kingdom)",
+    },
+    {
+        icon: "MapPin",
+        title: "Population",
+        description: "~1.8 million (metropolitan area)",
+    },
+    {
+        icon: "History",
+        title: "Historical Significance",
+        description: "Former capital of Srivijaya Empire",
+    },
+    {
+        icon: "Utensils",
+        title: "Famous Cuisine",
+        description: "Pempek, Model, Tekwan, Mie Celor",
+    },
+];
+
+
+
 export default function VideoHero() {
     const [currentLocation, setCurrentLocation] = useState(0);
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
     const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -45,49 +63,52 @@ export default function VideoHero() {
     const rawTranslateY = useTransform(y, [-100, 100], ["-4%", "4%"]);
     const translateX = useSpring(rawTranslateX, { stiffness: 50, damping: 15 });
     const translateY = useSpring(rawTranslateY, { stiffness: 50, damping: 15 });
-
+    const icons: any = {
+        Building2,
+        MapPin,
+        History,
+        Utensils,
+    };
     const locations: Location[] = [
         {
             id: 0,
             name: "Jembatan Ampera",
-            description: "The description of Jembatan Ampera",
+            description: "The description of Jembatan Ampera lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam at sit ad omnis velit a repellat nisi sint corrupti odio?",
             position: { x: "20%", y: "20%" },
             src: "/video/palepale.mp4",
             direction: 'left'
         },
         {
             id: 1,
-            name: "Romantic Pink Beach",
+            name: "Benteng kuto besak",
             description: "Of the Komodo Islands lorem1ieroie orneoj oepjtpoetpgjkegt ewtwetwege egewgegrgr rgegwgwg",
-            position: { x: "20%", y: "30%" },
-            src: "/video/tesvideo.mp4",
+            position: { x: "80%", y: "20%" },
+            src: "/video/bkb.mp4",
             direction: 'left'
         },
-        {
-            id: 2,
-            name: "Kanawa Island",
-            description: "Pristine waters and coral reefs",
-            position: { x: "70%", y: "40%" },
-            src: "/video/palepale.mp4",
-        },
-        {
-            id: 3,
-            name: "Bali",
-            description: "Island of the Gods",
-            position: { x: "center", y: "center" },
-            src: "/video/tesvideo.mp4",
-        },
-        {
-            id: 4,
-            name: "Jakarta",
-            description: "Indonesia's vibrant capital",
-            position: { x: "30%", y: "60%" },
-            src: "/video/palepale.mp4",
-            direction: 'left'
-        },
+        // {
+        //     id: 2,
+        //     name: "Kanawa Island",
+        //     description: "Pristine waters and coral reefs",
+        //     position: { x: "70%", y: "40%" },
+        //     src: "/video/palepale.mp4",
+        // },
+        // {
+        //     id: 3,
+        //     name: "Bali",
+        //     description: "Island of the Gods",
+        //     position: { x: "center", y: "center" },
+        //     src: "/video/tesvideo.mp4",
+        // },
+        // {
+        //     id: 4,
+        //     name: "Jakarta",
+        //     description: "Indonesia's vibrant capital",
+        //     position: { x: "30%", y: "60%" },
+        //     src: "/video/palepale.mp4",
+        //     direction: 'left'
+        // },
     ];
-
-    const destinations = ["Jakarta", "Bali", "Bintan Batam", "Labuan Bajo", "Borobudur", "Likupang", "Lake Toba"];
 
     const handlePrev = () => {
         zoomIn()
@@ -99,9 +120,7 @@ export default function VideoHero() {
         setCurrentLocation((prev) => (prev === locations.length - 1 ? 0 : prev + 1));
     };
 
-    const handleDotClick = (index: number) => {
-        setCurrentLocation(index);
-    };
+
 
     const zoomIn = () => {
         scale.set(1.5); // Zoom in secara halus
@@ -141,7 +160,7 @@ export default function VideoHero() {
     }, [currentLocation]); // Jalankan efek ini saat currentLocation berubah
 
     return (
-        <div className="relative" ref={containerRef}>
+        <section className="relative" ref={containerRef}>
 
             <div className="relative h-screen w-full overflow-hidden">
                 {/* Video Background */}
@@ -255,19 +274,26 @@ export default function VideoHero() {
                         <ChevronLeft className="h-6 w-6" />
                     </button>
 
-                    <div className="flex space-x-4 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full">
-                        {destinations.map((destination, index) => (
-                            <button
-                                key={index}
-                                onClick={() => handleDotClick(index % locations.length)}
-                                className={cn(
-                                    "text-white hover:text-white/80 transition-colors text-sm md:text-base whitespace-nowrap",
-                                    index % locations.length === currentLocation ? "font-bold" : "font-normal opacity-80",
-                                )}
-                            >
-                                {destination}
-                            </button>
-                        ))}
+                    <div className="flex space-x-4 px-6 py-3 ">
+                        {keyFacts.map((fact, index) => {
+
+                            const IconComponent = icons[fact.icon];
+                            return (
+
+                                <div key={index} className="group">
+                                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:bg-white/20 hover:shadow-xl hover:shadow-red-900/20 h-full">
+                                        <div className="flex flex-col items-center text-center text-white">
+                                            <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                                                <IconComponent className="h-6 w-6" />
+                                            </div>
+                                            <h3 className="text-lg font-medium mb-2">{fact.title}</h3>
+                                            <p className="foreground">{fact.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            )
+                        })}
                     </div>
 
                     <button
@@ -281,7 +307,7 @@ export default function VideoHero() {
                 </motion.div>
             </div>
 
-        </div >
+        </section >
 
     );
 }
