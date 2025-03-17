@@ -37,7 +37,7 @@ const keyFacts = [
     {
         icon: "Utensils",
         title: "Famous Cuisine",
-        description: "Pempek, Model, Tekwan, Mie Celor",
+        description: "Pempek, Model, Tekwan",
     },
 ];
 
@@ -73,15 +73,15 @@ export default function VideoHero() {
         {
             id: 0,
             name: "Jembatan Ampera",
-            description: "The description of Jembatan Ampera lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam at sit ad omnis velit a repellat nisi sint corrupti odio?",
+            description: "A Timeless Iconic Bridge",
             position: { x: "20%", y: "20%" },
             src: "/video/palepale.mp4",
             direction: 'left'
         },
         {
             id: 1,
-            name: "Benteng kuto besak",
-            description: "Of the Komodo Islands lorem1ieroie orneoj oepjtpoetpgjkegt ewtwetwege egewgegrgr rgegwgwg",
+            name: "Benteng Kuto Besak",
+            description: "An Architectural Masterpiece",
             position: { x: "80%", y: "20%" },
             src: "/video/bkb.mp4",
             direction: 'left'
@@ -173,7 +173,7 @@ export default function VideoHero() {
                             transition={{ duration: 1, ease: "easeOut" }}
                             className="text-4xl md:text-6xl font-bold"
                         >
-                            Welcome to Beautiful Ponorogo
+                        Unravel the Wonders of Palembang
                         </motion.h1>
 
                         <motion.span
@@ -182,7 +182,7 @@ export default function VideoHero() {
                             transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
                             className="text-lg md:text-2xl mt-2 block"
                         >
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae?
+                            A city where history, culture, and modern life blend harmoniously along the Musi River.
                         </motion.span>
                     </motion.div>
 

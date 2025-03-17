@@ -31,7 +31,7 @@ const Footer = () => {
                             <h3 className="text-xl font-bold">Palembang City</h3>
                         </div>
                         <p className="text-zinc-400 text-sm mb-6">
-                            The official website of Palembang City, South Sumatra, Indonesia. Discover the rich history, vibrant
+                            The website of Palembang City, South Sumatra, Indonesia. Discover the rich history, vibrant
                             culture, and modern attractions of one of Indonesia oldest cities.
                         </p>
                         <div className="flex gap-4">
@@ -76,12 +76,7 @@ const Footer = () => {
                                     <span>About Palembang</span>
                                 </Link>
                             </li>
-                            <li>
-                                <Link href="#" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
-                                    <ChevronRight className="h-4 w-4 text-red-500" />
-                                    <span>Tourist Attractions</span>
-                                </Link>
-                            </li>
+                    
                             <li>
                                 <Link href="#" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                                     <ChevronRight className="h-4 w-4 text-red-500" />
@@ -100,12 +95,7 @@ const Footer = () => {
                                     <span>Transportation</span>
                                 </Link>
                             </li>
-                            <li>
-                                <Link href="#" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
-                                    <ChevronRight className="h-4 w-4 text-red-500" />
-                                    <span>Accommodation</span>
-                                </Link>
-                            </li>
+                        
                         </ul>
                     </div>
 
@@ -116,39 +106,17 @@ const Footer = () => {
                             <li>
                                 <Link href="#" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                                     <ChevronRight className="h-4 w-4 text-red-500" />
-                                    <span>City Hall</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
-                                    <ChevronRight className="h-4 w-4 text-red-500" />
                                     <span>Public Services</span>
                                 </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
-                                    <ChevronRight className="h-4 w-4 text-red-500" />
-                                    <span>E-Government</span>
-                                </Link>
-                            </li>
+                            </li>                          
                             <li>
                                 <Link href="#" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                                     <ChevronRight className="h-4 w-4 text-red-500" />
                                     <span>Public Safety</span>
                                 </Link>
                             </li>
-                            <li>
-                                <Link href="#" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
-                                    <ChevronRight className="h-4 w-4 text-red-500" />
-                                    <span>City Regulations</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
-                                    <ChevronRight className="h-4 w-4 text-red-500" />
-                                    <span>Investment Opportunities</span>
-                                </Link>
-                            </li>
+                            
+        
                         </ul>
                     </div>
 
@@ -184,7 +152,7 @@ const Footer = () => {
             <div className="border-t border-zinc-800">
                 <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-zinc-500 text-sm mb-4 md:mb-0">
-                        © {new Date().getFullYear()} Palembang City Government. All rights reserved.
+                        © {new Date().getFullYear()} Palembang City. All rights reserved.
                     </p>
                     <div className="flex gap-6">
                         <Link href="#" className="text-zinc-500 hover:text-white text-sm">

@@ -18,10 +18,10 @@ export default function ExploreBy() {
             Nature
           </TabsTrigger>
           <TabsTrigger value="cullinar" className="rounded-full data-[state=active]:bg-yellow-500 data-[state=active]:text-white">
-            Cullinar
+            Culinary
           </TabsTrigger>
           <TabsTrigger value="religi" className="rounded-full data-[state=active]:bg-yellow-500 data-[state=active]:text-white">
-            Religi
+            Religion
           </TabsTrigger>
           {/* <TabsTrigger value="northeast" className="rounded-full">
               North East
@@ -33,8 +33,8 @@ export default function ExploreBy() {
           <div className="grid md:grid-cols-6 gap-8 items-start">
             <div className="relative col-span-4">
               <Image
-                src="/images/culturehero.jpg"
-                alt="Thailand map with West region highlighted"
+                src="https://palpos.bacakoran.co/upload/1afd9c0833626042ce6d6906f18f06c5.jpg"
+                alt="Secret of Sriwijaya"
                 width={500}
                 height={800}
                 //   fill
@@ -43,15 +43,35 @@ export default function ExploreBy() {
             </div>
 
             <div className="space-y-6 col-span-2">
-              <h2 className="text-5xl font-bold text-[#9B1B30]">The culture of Ponorogo</h2>
+              <h2 className="text-5xl font-bold text-[#9B1B30]">Discovering Palembang</h2>
               <p className="text-gray-700">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus rem cum error soluta et tenetur velit! A doloremque mollitia maiores.
+                An old city with traces of Sriwijaya&apos;s glory. From grand palaces to historic museums, discover the stories of the past that still live on today!
               </p>
             </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-12">
 
+
+            <Card className="overflow-hidden p-0 pb-4 ">
+              <div className="relative h-52">
+                <Image
+                  src="/images/amperabridge.jpg"
+                  alt="Ampera Bridge"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <CardContent className="px-4">
+                <h3 className="text-xl font-medium mb-2">Ampera Bridge</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  In the heart of Palembang, the majestic Ampera Bridge stretches, a timeless icon, uniting Seberang Ulu and Seberang Ilir which are separated by the Musi River which divides the city.
+                </p>
+                <Link href="#" className="text-primary flex items-center text-sm">
+                  Learn more <ChevronRight className="h-4 w-4 ml-1" />
+                </Link>
+              </CardContent>
+            </Card>
 
             <Card className="overflow-hidden p-0 pb-4 ">
               <div className="relative h-52">
@@ -63,29 +83,9 @@ export default function ExploreBy() {
                 />
               </div>
               <CardContent className="px-4">
-                <h3 className="text-xl font-medium mb-2">Ampera Bridge</h3>
+                <h3 className="text-xl font-medium mb-2">Museum SMB II</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  The iconic vertical-lift bridge spanning the Musi River, connecting Seberang Ulu and Seberang Ilir.
-                </p>
-                <Link href="#" className="text-primary flex items-center text-sm">
-                  Learn more <ChevronRight className="h-4 w-4 ml-1" />
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden p-0 pb-4 ">
-              <div className="relative h-52">
-                <Image
-                  src="/images/puntikayu.jpg"
-                  alt="Ampera Bridge"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardContent className="px-4">
-                <h3 className="text-xl font-medium mb-2">Punti kayu</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  The iconic vertical-lift bridge spanning the Musi River, connecting Seberang Ulu and Seberang Ilir.
+                  Sultan Mahmud Badaruddin II Museum, a building that contains traces of the long civilization of the city of Pempek. Previously, this place was part of the Palace of the Palembang Darussalam Sultanate, where the sultans ruled and regulated city life.
                 </p>
                 <Link href="#" className="text-primary flex items-center text-sm">
                   Learn more <ChevronRight className="h-4 w-4 ml-1" />
@@ -95,16 +95,16 @@ export default function ExploreBy() {
             <Card className="overflow-hidden p-0 pb-4 ">
               <div className="relative h-52">
                 <Image
-                  src="/images/tamanpurba.jpeg"
+                  src="/images/monpera.jpeg"
                   alt="Ampera Bridge"
                   fill
                   className="object-cover"
                 />
               </div>
               <CardContent className="px-4">
-                <h3 className="text-xl font-medium mb-2">Taman purba</h3>
+                <h3 className="text-xl font-medium mb-2">MONPERA</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  The iconic vertical-lift bridge spanning the Musi River, connecting Seberang Ulu and Seberang Ilir.
+                  The People&apos;s Struggle Monument (Monpera) stands firmly in the center of Palembang, precisely on Jalan Merdeka, opposite the Great Mosque.
                 </p>
                 <Link href="#" className="text-primary flex items-center text-sm">
                   Learn more <ChevronRight className="h-4 w-4 ml-1" />
