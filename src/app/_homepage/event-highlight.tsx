@@ -32,7 +32,7 @@ export default function EventsHighlight() {
                     <div className="max-w-2xl">
                         <p className="text-sm font-medium tracking-widest uppercase mb-4">SPOTLIGHT</p>
                         <h1 className="text-5xl sm:text-6xl md:text-7xl font-serif font-medium leading-tight mb-6">
-                            Discover Palembang&apos;s Events
+                        Experience Palembang Like Never Before!
                         </h1>
                         <div className="lg:hidden">                        <Swiper
                             // autoHeight={true}
@@ -75,8 +75,7 @@ export default function EventsHighlight() {
                         </div>
 
                         <p className="text-lg opacity-90 mb-8 max-w-xl">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum impedit dolores repellat
-                            voluptatem, illum laborum odio cum. Debitis, voluptatibus magnam!
+                        Discover vibrant festivals, cultural celebrations, and exciting events happening around the city.
                         </p>
                         <Link
                             href="/explore"
