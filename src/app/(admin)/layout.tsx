@@ -1,9 +1,12 @@
-import { AppSidebar } from "@/components/app-sidebar";
+"use client";
+import { AppSidebar } from "./admin/_components/sidebar/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
-import '../globals.css'
-import { SiteHeader } from "./admin/_components/sidebar/site-header";
+import "../globals.css";
+import "../prosemirror.css";
+// import { SiteHeader } from "./admin/_components/sidebar/site-header";
+import { Toaster } from "@/components/ui/sonner";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -11,11 +14,6 @@ const lora = Lora({
   style: ["normal", "italic"],
   display: "swap",
 });
-
-export const metadata: Metadata = {
-  title: "Admin - Wonder Palembang",
-  description: "Admin panel",
-};
 
 export default function AdminLayout({
   children,
@@ -29,10 +27,15 @@ export default function AdminLayout({
         {/* Buktikan ini dipakai */}
         <SidebarProvider>
           <AppSidebar />
-          <SidebarInset />
-          <SiteHeader />
-          {children}
+          <SidebarInset>
+            {/* <SiteHeader /> */}
+            <div className="w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
+              {" "}
+              {children}
+            </div>
+          </SidebarInset>
         </SidebarProvider>
+        <Toaster />
       </body>
       {/* </DashboardLayout> */}
     </html>

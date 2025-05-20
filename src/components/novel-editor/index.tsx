@@ -57,6 +57,7 @@ type TEditorProps = {
   className?: string;
   title?: string;
   contentname?: string;
+  onChange?: (html: string) => void; // <- Tambahkan ini
   initialValue?: string | JSONContent | null;
 };
 
@@ -64,6 +65,7 @@ export default function Editor({
   className,
   title = "Novel Editor",
   contentname = "novel",
+  onChange, // Tambah ini
 }: TEditorProps) {
   const [initialContent] = useState<JSONContent>(defaultEditorContent);
   const [saveStatus, setSaveStatus] = useState<TStatus>("Saved");
@@ -78,6 +80,7 @@ export default function Editor({
   const debouncedUpdates = useDebouncedCallback(
     async (editor: EditorInstance) => {
       const json = editor.getJSON();
+      const html = editor.getHTML(); // HTML output
       setCharsCount(editor.storage.characterCount.words());
       // setContent(contentname, editor.getHTML());
       // Store JSON with unique key based on contentname
@@ -86,6 +89,9 @@ export default function Editor({
         JSON.stringify(json)
       );
       setSaveStatus("Saved");
+      if (onChange) {
+        onChange(html); // Kirim HTML ke parent
+      }
     },
     500
   );
