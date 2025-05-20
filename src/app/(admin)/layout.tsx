@@ -1,6 +1,7 @@
+import { DashboardLayout } from "@/components/dashboard-layout";
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
-
+import '../globals.css'
 const lora = Lora({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -20,11 +21,13 @@ export default function AdminLayout({
 }>) {
   return (
     <html lang="en">
+      {/* <DashboardLayout> */}
       <body className={`${lora.className} antialiased`}>
         {/* Buktikan ini dipakai */}
 
         {children}
       </body>
+      {/* </DashboardLayout> */}
     </html>
   );
 }
