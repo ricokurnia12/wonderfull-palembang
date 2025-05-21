@@ -1,6 +1,9 @@
 
 import Link from "next/link"
 import Image from 'next/image'
+import LangTogle from "@/components/lang-togle"
+
+  
 export default function Navbar() {
     return (
         <header className="fixed top-0 z-50 w-full  text-white  dark:bg-gray-950/90">
@@ -39,6 +42,8 @@ export default function Navbar() {
                     </Link>
                 </nav>
                 {/* <Button>Get Started</Button> */}
+
+<LangTogle/>
             </div>
         </header>
     )

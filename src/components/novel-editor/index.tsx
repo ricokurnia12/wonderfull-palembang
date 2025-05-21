@@ -63,7 +63,7 @@ type TEditorProps = {
 
 export default function Editor({
   className,
-  title = "Novel Editor",
+  title = "Content Editor",
   contentname = "novel",
   onChange, // Tambah ini
 }: TEditorProps) {

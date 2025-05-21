@@ -42,6 +42,9 @@ const formSchema = z.object({
   content: z
     .string()
     .min(20, { message: "Content must be at least 20 characters" }),
+  englishcontent: z
+    .string()
+    .min(20, { message: "Content must be at least 20 characters" }),
   date: z.date({ required_error: "Event date is required" }),
   location: z.string().min(3, { message: "Location is required" }),
   province: z.string().min(2, { message: "Province is required" }),
@@ -64,6 +67,7 @@ export default function EventForm() {
       title: "",
       description: "",
       content: "",
+      englishcontent:"",
       location: "",
       province: "",
       category: "music",
@@ -219,6 +223,27 @@ export default function EventForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Content</FormLabel>
+                    <FormControl>
+                      <Editor
+                        onChange={(html) => {
+                          field.onChange(html); // Simpan ke form
+                        }}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      Full details about the event, including schedule,
+                      performers, etc.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+                    <FormField
+                control={form.control}
+                name="englishcontent"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>English Content</FormLabel>
                     <FormControl>
                       <Editor
                         onChange={(html) => {
