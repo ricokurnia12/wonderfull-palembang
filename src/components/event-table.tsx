@@ -147,6 +147,24 @@ const data: Event[] = [
     category: "culture",
     featured: true,
   },
+  {
+    id: "9",
+    title: "Rock Concert",
+    date: "2025-07-01",
+    location: "Stadium",
+    province: "Texas",
+    category: "music",
+    featured: false,
+  },
+  {
+    id: "10",
+    title: "Film Festival",
+    date: "2025-07-05",
+    location: "Cinema Complex",
+    province: "California",
+    category: "culture",
+    featured: true,
+  },
 ];
 
 export const columns: ColumnDef<Event>[] = [
