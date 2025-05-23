@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import "../globals.css";
 import "../prosemirror.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // import { SiteHeader } from "./admin/_components/sidebar/site-header";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -20,11 +21,13 @@ export default function AdminLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const queryClient = new QueryClient();
   return (
     <html lang="en">
       {/* <DashboardLayout> */}
       <body className={`${lora.className} antialiased`}>
         {/* Buktikan ini dipakai */}
+        <QueryClientProvider client={queryClient}>
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>
@@ -36,6 +39,7 @@ export default function AdminLayout({
           </SidebarInset>
         </SidebarProvider>
         <Toaster />
+        </QueryClientProvider>
       </body>
       {/* </DashboardLayout> */}
     </html>

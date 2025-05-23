@@ -2,12 +2,12 @@ import { createImageUpload } from "novel";
 import { toast } from "sonner";
 
 const onUpload = (file: File) => {
-  const promise = fetch("http://localhost:8080/api/photos", {
+  const promise = fetch(`${process.env.NEXT_PUBLIC_API_URL}/photos`, {
     method: "POST",
     body: (() => {
       const form = new FormData();
       form.append("photo", file);
-      form.append("title", file.name); // opsional
+      form.append("title", file.name); 
       return form;
     })(),
   });
@@ -17,7 +17,7 @@ const onUpload = (file: File) => {
       promise.then(async (res) => {
         if (res.status === 200) {
           const { file_path } = await res.json();
-          const url = `http://localhost:8080/api/${file_path}`;
+          const url = `${process.env.NEXT_PUBLIC_API_URL}/${file_path}`;
 
           const image = new Image();
           image.src = url;

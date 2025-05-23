@@ -26,12 +26,16 @@ import { DatePickerWithRange } from "@/components/date-range-picker";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import type { DateRange } from "react-day-picker";
 import { format } from "date-fns";
-
+import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 // Event type definition
 type Event = {
   id: number;
   title: string;
+  english_title: string;
   description: string;
+  english_description: string;
+  slug: string;
   image: string;
   date: string;
   location: string;
@@ -76,7 +80,9 @@ export default function EventsList({
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-
+console.log({data});
+console.log({page});
+console.log({totalPages});
   // Filter state
   const [filters, setFilters] = useState<Filters>(
     initialFilters || {
@@ -266,7 +272,9 @@ export default function EventsList({
       {data && data.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {data.map((event) => (
-            <EventCard key={event.id} event={event} />
+            <Link  key={event.id} href={`/events/${event.slug}`}>
+            <EventCard event={event} />
+            </Link>
           ))}
         </div>
       ) : (
@@ -321,7 +329,10 @@ export default function EventsList({
 
 // Event Card Component
 function EventCard({ event }: { event: Event }) {
+  const { language } = useLanguage();
+ 
   return (
+  
     <div className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
       <div className="aspect-video relative">
         <img
@@ -337,9 +348,9 @@ function EventCard({ event }: { event: Event }) {
             {new Date(event.date).toLocaleDateString()}
           </div>
         </div>
-        <h3 className="font-bold text-lg mb-2 line-clamp-1">{event.title}</h3>
+        <h3 className="font-bold text-lg mb-2 line-clamp-1">{language === "id" ? event.title : event.english_title}</h3>
         <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
-          {event.description}
+          {language === "id" ? event.description : event.english_description}
         </p>
         <div className="flex items-center text-sm text-muted-foreground">
           <span className="line-clamp-1">
@@ -348,5 +359,6 @@ function EventCard({ event }: { event: Event }) {
         </div>
       </div>
     </div>
+   
   );
 }

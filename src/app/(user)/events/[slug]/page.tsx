@@ -32,7 +32,7 @@ interface EventPageProps {
 export default async function EventPage({ params }: EventPageProps) {
   const { slug } = params;
   try {
-    const res = await axios.get(`http://localhost:8080/api/events/${slug}`);
+    const res = await axios.get(`${process.env.PUBLIC_API_URL}/events/${slug}`);
     console.log(res);
 
     return (
@@ -41,6 +41,6 @@ export default async function EventPage({ params }: EventPageProps) {
       </div>
     );
   } catch (er) {
-    notFound();
+    console.log(er);
   }
 }

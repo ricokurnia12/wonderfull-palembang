@@ -12,12 +12,20 @@ import {
   ListOrdered,
   Text,
   TextQuote,
+  ImagesIcon,
   Twitter,
-  Youtube
+  Youtube,
+  Image
 } from 'lucide-react'
 import { createSuggestionItems } from 'novel'
 import { Command, renderItems } from 'novel'
 import { uploadFn } from './image-upload'
+
+declare global {
+  interface Window {
+    __editorInstance?: import("novel").EditorInstance;
+  }
+}
 
 export const suggestionItems = createSuggestionItems([
   {
@@ -152,6 +160,21 @@ export const suggestionItems = createSuggestionItems([
     command: ({ editor, range }) =>
       editor.chain().focus().deleteRange(range).toggleCodeBlock().run(),
   },
+  {
+    title: "Image URL",
+    description: "Insert image from URL.",
+    searchTerms: ["photo", "picture", "media", "img", "url", "link"],
+    icon: <Image size={18} />,
+    command: ({ editor, range }) => {
+      // Dispatch custom event to show image URL dialog
+      const event = new CustomEvent('showImageUrlDialog', {
+        detail: { editor, range }
+      });
+      window.dispatchEvent(event);
+    },
+  },
+
+
   {
     title: "Image",
     description: "Upload an image from your computer.",

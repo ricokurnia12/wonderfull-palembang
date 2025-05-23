@@ -34,6 +34,7 @@ import {
   Plus,
   Trash2,
   Upload,
+  Copy
 } from "lucide-react";
 import { SiteHeader } from "../_components/sidebar/site-header";
 
@@ -448,6 +449,7 @@ export function GalleryDashboard() {
               {photos.map((photo) => (
                 <Card key={photo.ID} className="overflow-hidden">
                   <div className="relative aspect-square">
+                    <Copy className="text-black top-2 z-50 right-0 w-12 h-12"/>
                     <Image
                       src={getImageUrl(photo.file_path)}
                       alt={photo.title}
@@ -474,6 +476,13 @@ export function GalleryDashboard() {
                       onClick={() => setSelectedPhoto(photo)}
                     >
                       View
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => navigator.clipboard.writeText(getImageUrl(photo.file_path))}
+                    >
+                      Copy Url <Copy className="h-4 w-4"/>
                     </Button>
                     <Button
                       variant="destructive"

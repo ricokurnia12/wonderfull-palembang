@@ -9,7 +9,7 @@ import {
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
-  getPaginationRowModel,
+
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
@@ -45,6 +45,9 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { useEvents } from "@/hooks/use-event";
+import Link from "next/link";
+
 
 type Event = {
   id: string;
@@ -56,116 +59,7 @@ type Event = {
   featured: boolean;
 };
 
-const data: Event[] = [
-  {
-    id: "1",
-    title: "Summer Music Festival",
-    date: "2025-05-25",
-    location: "Central Park",
-    province: "New York",
-    category: "music",
-    featured: true,
-  },
-  {
-    id: "2",
-    title: "Modern Art Exhibition",
-    date: "2025-05-28",
-    location: "City Gallery",
-    province: "California",
-    category: "art",
-    featured: false,
-  },
-  {
-    id: "3",
-    title: "Cultural Heritage Day",
-    date: "2025-06-02",
-    location: "National Museum",
-    province: "Washington",
-    category: "culture",
-    featured: true,
-  },
-  {
-    id: "4",
-    title: "Jazz Night",
-    date: "2025-06-05",
-    location: "Blue Note Club",
-    province: "Louisiana",
-    category: "music",
-    featured: false,
-  },
-  {
-    id: "5",
-    title: "Street Art Festival",
-    date: "2025-06-10",
-    location: "Downtown",
-    province: "Oregon",
-    category: "art",
-    featured: false,
-  },
-  {
-    id: "6",
-    title: "Classical Music Concert",
-    date: "2025-06-15",
-    location: "Symphony Hall",
-    province: "Massachusetts",
-    category: "music",
-    featured: true,
-  },
-  {
-    id: "7",
-    title: "Indigenous Culture Celebration",
-    date: "2025-06-20",
-    location: "Community Center",
-    province: "Arizona",
-    category: "culture",
-    featured: false,
-  },
-  {
-    id: "8",
-    title: "Photography Exhibition",
-    date: "2025-06-25",
-    location: "Art Institute",
-    province: "Illinois",
-    category: "art",
-    featured: true,
-  },
-  {
-    id: "9",
-    title: "Rock Concert",
-    date: "2025-07-01",
-    location: "Stadium",
-    province: "Texas",
-    category: "music",
-    featured: false,
-  },
-  {
-    id: "10",
-    title: "Film Festival",
-    date: "2025-07-05",
-    location: "Cinema Complex",
-    province: "California",
-    category: "culture",
-    featured: true,
-  },
-  {
-    id: "9",
-    title: "Rock Concert",
-    date: "2025-07-01",
-    location: "Stadium",
-    province: "Texas",
-    category: "music",
-    featured: false,
-  },
-  {
-    id: "10",
-    title: "Film Festival",
-    date: "2025-07-05",
-    location: "Cinema Complex",
-    province: "California",
-    category: "culture",
-    featured: true,
-  },
-];
+
 
 export const columns: ColumnDef<Event>[] = [
   {
@@ -278,7 +172,7 @@ export const columns: ColumnDef<Event>[] = [
     enableHiding: false,
     cell: ({ row }) => {
       const event = row.original;
-
+      console.log({event});
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -294,8 +188,10 @@ export const columns: ColumnDef<Event>[] = [
               View details
             </DropdownMenuItem>
             <DropdownMenuItem>
+              <Link href={`/admin/events/${event.ID}`}>
               <Edit className="mr-2 h-4 w-4" />
               Edit event
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="text-destructive focus:text-destructive">
@@ -310,29 +206,51 @@ export const columns: ColumnDef<Event>[] = [
 ];
 
 export function EventsTable() {
+  const limit = 10;
+  const [pageIndex, setPageIndex] = useState(0);
   const [sorting, setSorting] = useState<SortingState>([]);
+  const [search, setSearch] = useState("");
+
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
+  
+  // Use pageIndex + 1 for API call since API expects 1-based page numbers
+  const { data, loading, total } = useEvents({ page: pageIndex + 1, limit });
+
+  const totalPages = Math.ceil(total / limit);
 
   const table = useReactTable({
     data,
     columns,
     onSortingChange: setSorting,
+    // Remove onPaginationChange since we're handling pagination manually
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
+    // Remove getPaginationRowModel since we're doing server-side pagination
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
+    // Remove pagination state from table since we're handling it manually
     state: {
       sorting,
       columnFilters,
       columnVisibility,
       rowSelection,
     },
+    // Disable table's built-in pagination
+    manualPagination: true,
+    pageCount: totalPages,
   });
+
+  const handlePreviousPage = () => {
+    setPageIndex((prev) => Math.max(prev - 1, 0));
+  };
+
+  const handleNextPage = () => {
+    setPageIndex((prev) => Math.min(prev + 1, totalPages - 1));
+  };
 
   return (
     <Card>
@@ -375,6 +293,7 @@ export function EventsTable() {
             </DropdownMenu>
           </div>
         </div>
+        
         <div className="rounded-md border">
           <Table>
             <TableHeader>
@@ -418,35 +337,40 @@ export function EventsTable() {
                     colSpan={columns.length}
                     className="h-24 text-center"
                   >
-                    No results.
+                    {loading ? "Loading..." : "No results."}
                   </TableCell>
                 </TableRow>
               )}
             </TableBody>
           </Table>
         </div>
+        
         <div className="flex items-center justify-end space-x-2 py-4">
           <div className="flex-1 text-sm text-muted-foreground">
             {table.getFilteredSelectedRowModel().rows.length} of{" "}
             {table.getFilteredRowModel().rows.length} row(s) selected.
           </div>
-          <div className="space-x-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => table.previousPage()}
-              disabled={!table.getCanPreviousPage()}
-            >
-              Previous
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => table.nextPage()}
-              disabled={!table.getCanNextPage()}
-            >
-              Next
-            </Button>
+          
+          <div className="flex items-center justify-between space-x-4">
+            <div className="text-sm text-muted-foreground">
+              Page {pageIndex + 1} of {totalPages} — Total: {total} items
+            </div>
+            <div className="space-x-2">
+              <Button
+                onClick={handlePreviousPage}
+                disabled={pageIndex <= 0 || loading}
+                variant="outline"
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={handleNextPage}
+                disabled={pageIndex >= totalPages - 1 || loading}
+                variant="outline"
+              >
+                Next
+              </Button>
+            </div>
           </div>
         </div>
       </div>

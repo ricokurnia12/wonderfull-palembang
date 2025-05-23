@@ -19,7 +19,7 @@ const EventPageList = async ({ searchParams }: { searchParams: any }) => {
   const startDate = params.get("startDate");
   const endDate = params.get("endDate");
   const page = params.get("page");
-  let link = `http://localhost:8080/api/eventsclient?`;
+  let link = `${process.env.PUBLIC_API_URL}/eventsclient?`;
   const queryParams = [];
   if (title) {
     queryParams.push(`title=${encodeURIComponent(title)}`);
@@ -48,8 +48,8 @@ const EventPageList = async ({ searchParams }: { searchParams: any }) => {
       <div>
         <EventsList
           data={res.data.data}
-          page={res.data.page}
-          totalPages={res.data.pages}
+          page={res.data.data.page}
+          totalPages={res.data.data.totalPages}
         />
       </div>
     );
