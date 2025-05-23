@@ -48,8 +48,8 @@ const EventPageList = async ({ searchParams }: { searchParams: any }) => {
       <div>
         <EventsList
           data={res.data.data}
-          page={res.data.data.page}
-          totalPages={res.data.data.totalPages}
+          page={res.data.page}
+          totalPages={res.data.totalPages}
         />
       </div>
     );

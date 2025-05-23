@@ -28,7 +28,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Switch } from "@/components/ui/switch";
+// import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "../../_components/sidebar/site-header";
 import Editor from "@/components/novel-editor";
@@ -39,10 +39,12 @@ const formSchema = z.object({
   description: z
     .string()
     .min(10, { message: "Description must be at least 10 characters" }),
-    english_title: z.string().min(3, { message: "Title must be at least 3 characters" }),
-    english_description: z
-      .string()
-      .min(10, { message: "Description must be at least 10 characters" }),
+  english_title: z
+    .string()
+    .min(3, { message: "Title must be at least 3 characters" }),
+  english_description: z
+    .string()
+    .min(10, { message: "Description must be at least 10 characters" }),
   content: z
     .string()
     .min(20, { message: "Content must be at least 20 characters" }),
@@ -57,6 +59,13 @@ const formSchema = z.object({
     required_error: "Please select a category",
   }),
   image: z.string().optional(),
+  slug: z
+    .string()
+    .min(1, { message: "Slug is required" })
+    .regex(/^[a-z0-9-]+$/, {
+      message: "Slug must contain only lowercase letters, numbers, and dashes",
+    }),
+
   // featured: z.boolean().default(false),
 });
 
@@ -72,7 +81,7 @@ export default function EventForm() {
       title: "",
       description: "",
       content: "",
-      englishcontent:"",
+      englishcontent: "",
       location: "",
       province: "",
       category: "music",
@@ -132,24 +141,38 @@ export default function EventForm() {
                     </FormItem>
                   )}
                 />
-      <FormField
+                <FormField
                   control={form.control}
                   name="english_title"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>English Title</FormLabel>
                       <FormControl>
-                        <Input placeholder="Event title in English" {...field} />
+                        <Input
+                          placeholder="Event title in English"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-            
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <FormField
+                control={form.control}
+                name="slug"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Slug</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Event title in English" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <FormField
                   control={form.control}
                   name="date"
                   render={({ field }) => (
@@ -214,7 +237,7 @@ export default function EventForm() {
                     </FormItem>
                   )}
                 />
-                        <FormField
+                <FormField
                   control={form.control}
                   name="map_url"
                   render={({ field }) => (
@@ -250,7 +273,7 @@ export default function EventForm() {
                   </FormItem>
                 )}
               />
-   <FormField
+              <FormField
                 control={form.control}
                 name="english_description"
                 render={({ field }) => (
@@ -292,7 +315,7 @@ export default function EventForm() {
                   </FormItem>
                 )}
               />
-                    <FormField
+              <FormField
                 control={form.control}
                 name="englishcontent"
                 render={({ field }) => (
@@ -363,7 +386,6 @@ export default function EventForm() {
                           placeholder="Image URL for the event"
                           {...field}
                         />
-                  
                       </div>
                     </FormControl>
                     <FormDescription>

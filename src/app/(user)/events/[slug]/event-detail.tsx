@@ -192,12 +192,13 @@ export default function EventDetail({ event }: EventDetailProps) {
               <h2 className="text-2xl font-bold mb-6">Event Location</h2>
               <div className="bg-muted rounded-lg overflow-hidden mb-6">
                 <div className="h-[300px] relative">
-                  <Image
-                    src="/images/map-placeholder.jpg"
-                    alt="Event location map"
-                    fill
-                    className="object-cover"
-                  />
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.911300871285!2d107.61011198550429!3d-6.9068719658218996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e63801819181%3A0xccc6c2d9ac1aff49!2sGanesha%20Operation%20PW%2036B!5e0!3m2!1sid!2sid!4v1747984186701!5m2!1sid!2sid"
+                    // allowfullscreen=""
+                    loading="lazy"
+                    className="w-full h-full"
+                    // referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
               </div>
 
@@ -207,16 +208,13 @@ export default function EventDetail({ event }: EventDetailProps) {
                   <div>
                     <h3 className="font-semibold">Address</h3>
                     <p className="text-muted-foreground">
-                      {event.location} Cultural Center
-                      <br />
-                      Jl. Raya {event.location} No. 123
-                      <br />
+                      {event.location}
                       {event.province}, Indonesia
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
+                {/* <div className="flex items-start gap-3">
                   <Globe className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <h3 className="font-semibold">Getting There</h3>
@@ -226,7 +224,7 @@ export default function EventDetail({ event }: EventDetailProps) {
                       available on site for those coming by car.
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </TabsContent>
           </Tabs>
