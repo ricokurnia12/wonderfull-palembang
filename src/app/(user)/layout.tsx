@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
-import "./globals.css";
-import Footer from "./Footer";
+import "../globals.css";
+import Footer from "../Footer";
+import { LanguageProvider } from "@/context/LanguageContext";
+import Navbar from "../Navbar";
 
 const lora = Lora({
   subsets: ["latin"], // Supports Latin characters
@@ -22,10 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${lora.className} antialiased`}
-      >
-        {children}
+      <body className={`${lora.className} antialiased`}>
+        <LanguageProvider>
+          <Navbar />
+          {children}
+        </LanguageProvider>
         <Footer />
       </body>
     </html>

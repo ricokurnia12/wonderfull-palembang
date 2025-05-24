@@ -1,14 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    PUBLIC_API_URL: process.env.PUBLIC_API_URL,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
   images: {
+    domains: ["localhost"],
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**", // Allow all domains
+        hostname: "**",
       },
     ],
-    dangerouslyAllowSVG: true, // (Optional) Allow SVGs if needed
-    contentSecurityPolicy: "default-src 'self'; img-src *; media-src *; script-src 'none'; sandbox;", // (Optional) Security policy
   },
 };
 

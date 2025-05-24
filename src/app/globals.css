@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "@tailwindcss/typography";
 @custom-variant dark (&:is(.dark *));
 
 @plugin "tailwindcss-animate";
@@ -248,7 +248,7 @@
 
   50% {
     transform: translateY(-20px);
-    
+
     /* opacity: 1; */
   }
 }

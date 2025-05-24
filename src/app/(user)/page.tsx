@@ -1,11 +1,11 @@
 
-import VideoHero from "./_homepage/hero-video";
-import ExploreBy from "./_homepage/explore-by";
-import Navbar from "./Navbar";
-import EventsHighlightStacked from "./_homepage/event-highlight";
-import FoodGalery from "./_homepage/food-gallery";
-import Institution from "./_homepage/institution";
-import Cta from "./_homepage/cta-section";
+import VideoHero from "../_homepage/hero-video";
+import ExploreBy from "../_homepage/explore-by";
+import Navbar from "../Navbar";
+import EventsHighlightStacked from "../_homepage/event-highlight";
+import FoodGalery from "../_homepage/food-gallery";
+import Institution from "../_homepage/institution";
+import Cta from "../_homepage/cta-section";
 
 export default function Home() {
   return (
