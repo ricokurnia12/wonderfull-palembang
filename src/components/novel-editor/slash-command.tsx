@@ -12,14 +12,14 @@ import {
   ListOrdered,
   Text,
   TextQuote,
-  ImagesIcon,
+  // ImagesIcon,
   Twitter,
   Youtube,
-  Image
-} from 'lucide-react'
-import { createSuggestionItems } from 'novel'
-import { Command, renderItems } from 'novel'
-import { uploadFn } from './image-upload'
+  Image,
+} from "lucide-react";
+import { createSuggestionItems } from "novel";
+import { Command, renderItems } from "novel";
+import { uploadFn } from "./image-upload";
 
 declare global {
   interface Window {
@@ -167,13 +167,12 @@ export const suggestionItems = createSuggestionItems([
     icon: <Image size={18} />,
     command: ({ editor, range }) => {
       // Dispatch custom event to show image URL dialog
-      const event = new CustomEvent('showImageUrlDialog', {
-        detail: { editor, range }
+      const event = new CustomEvent("showImageUrlDialog", {
+        detail: { editor, range },
       });
       window.dispatchEvent(event);
     },
   },
-
 
   {
     title: "Image",
@@ -256,6 +255,6 @@ export const suggestionItems = createSuggestionItems([
 export const slashCommand = Command.configure({
   suggestion: {
     items: () => suggestionItems,
-    render: renderItems
-  }
-})
+    render: renderItems,
+  },
+});

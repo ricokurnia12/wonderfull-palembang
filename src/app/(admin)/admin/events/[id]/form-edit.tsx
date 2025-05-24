@@ -28,38 +28,40 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Switch } from "@/components/ui/switch";
+// import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "../../_components/sidebar/site-header";
 import Editor from "@/components/novel-editor";
 import axios from "axios";
 
 const formSchema = z.object({
-    title: z.string().min(3, { message: "Title must be at least 3 characters" }),
-    description: z
-      .string()
-      .min(10, { message: "Description must be at least 10 characters" }),
-      english_title: z.string().min(3, { message: "Title must be at least 3 characters" }),
-      english_description: z
-        .string()
-        .min(10, { message: "Description must be at least 10 characters" }),
-    content: z
-      .string()
-      .min(20, { message: "Content must be at least 20 characters" }),
-    englishcontent: z
-      .string()
-      .min(20, { message: "Content must be at least 20 characters" }),
-    date: z.date({ required_error: "Event date is required" }),
-    location: z.string().min(3, { message: "Location is required" }),
-    province: z.string().min(2, { message: "Province is required" }),
-    map_url: z.string().optional(),
-    category: z.enum(["music", "art", "culture"], {
-      required_error: "Please select a category",
-    }),
-    image: z.string().optional(),
-    slug: z.string().min(3, { message: "Slug is required" }),
-    // featured: z.boolean().default(false),
-  });
+  title: z.string().min(3, { message: "Title must be at least 3 characters" }),
+  description: z
+    .string()
+    .min(10, { message: "Description must be at least 10 characters" }),
+  english_title: z
+    .string()
+    .min(3, { message: "Title must be at least 3 characters" }),
+  english_description: z
+    .string()
+    .min(10, { message: "Description must be at least 10 characters" }),
+  content: z
+    .string()
+    .min(20, { message: "Content must be at least 20 characters" }),
+  englishcontent: z
+    .string()
+    .min(20, { message: "Content must be at least 20 characters" }),
+  date: z.date({ required_error: "Event date is required" }),
+  location: z.string().min(3, { message: "Location is required" }),
+  province: z.string().min(2, { message: "Province is required" }),
+  map_url: z.string().optional(),
+  category: z.enum(["music", "art", "culture"], {
+    required_error: "Please select a category",
+  }),
+  image: z.string().optional(),
+  slug: z.string().min(3, { message: "Slug is required" }),
+  // featured: z.boolean().default(false),
+});
 
 type FormValues = z.infer<typeof formSchema>;
 
@@ -100,14 +102,16 @@ export default function EditEventForm() {
   // Fetch event data from API
   const fetchEventData = async (id: string): Promise<EventData> => {
     try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/detail-to-edit/${id}`);
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/detail-to-edit/${id}`
+      );
       const eventData = response.data;
-      
+
       // Convert date string to Date object if needed
-      if (eventData.date && typeof eventData.date === 'string') {
+      if (eventData.date && typeof eventData.date === "string") {
         eventData.date = new Date(eventData.date);
       }
-      
+
       return eventData;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -116,7 +120,11 @@ export default function EditEventForm() {
         } else if (error.response?.status === 500) {
           throw new Error("Server error occurred");
         } else {
-          throw new Error(`Failed to fetch event: ${error.response?.data?.message || error.message}`);
+          throw new Error(
+            `Failed to fetch event: ${
+              error.response?.data?.message || error.message
+            }`
+          );
         }
       }
       throw new Error("Network error occurred");
@@ -156,10 +164,11 @@ export default function EditEventForm() {
 
           // featured: eventData.featured,
         });
-
       } catch (err) {
         console.error("Error fetching event data:", err);
-        setError(err instanceof Error ? err.message : "Failed to load event data");
+        setError(
+          err instanceof Error ? err.message : "Failed to load event data"
+        );
       } finally {
         setIsLoading(false);
       }
@@ -174,21 +183,23 @@ export default function EditEventForm() {
     console.log("Form submitted:", data);
     try {
       // Update event via API
-      const response = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/events/${eventId}`, {
-        ...data,
-        // Convert date to ISO string for API
-        date: data.date.toISOString(),
-      });
-      
+      const response = await axios.put(
+        `${process.env.NEXT_PUBLIC_API_URL}/events/${eventId}`,
+        {
+          ...data,
+          // Convert date to ISO string for API
+          date: data.date.toISOString(),
+        }
+      );
+
       console.log("Event updated successfully:", response.data);
       alert("Event updated successfully!");
 
       // Redirect back to events list or event detail page
       router.push("/events");
-
     } catch (error) {
       console.error("Error updating event:", error);
-      
+
       if (axios.isAxiosError(error)) {
         if (error.response?.status === 400) {
           alert("Invalid data provided. Please check your inputs.");
@@ -197,7 +208,11 @@ export default function EditEventForm() {
         } else if (error.response?.status === 500) {
           alert("Server error occurred. Please try again later.");
         } else {
-          alert(`Failed to update event: ${error.response?.data?.message || error.message}`);
+          alert(
+            `Failed to update event: ${
+              error.response?.data?.message || error.message
+            }`
+          );
         }
       } else {
         alert("Network error occurred. Please check your connection.");
@@ -236,7 +251,10 @@ export default function EditEventForm() {
             <div className="flex items-center justify-center h-64">
               <div className="text-center">
                 <p className="text-red-500 mb-4">Error: {error}</p>
-                <Button onClick={() => router.push("/events")} variant="outline">
+                <Button
+                  onClick={() => router.push("/events")}
+                  variant="outline"
+                >
                   Back to Events
                 </Button>
               </div>
@@ -254,7 +272,9 @@ export default function EditEventForm() {
         <CardContent className="p-6">
           <div className="mb-6">
             <h1 className="text-2xl font-bold">Edit Event</h1>
-            <p className="text-muted-foreground">Update the event details below.</p>
+            <p className="text-muted-foreground">
+              Update the event details below.
+            </p>
           </div>
 
           <Form {...form}>
@@ -273,36 +293,38 @@ export default function EditEventForm() {
                     </FormItem>
                   )}
                 />
-     <FormField
+                <FormField
                   control={form.control}
                   name="english_title"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>English Title</FormLabel>
                       <FormControl>
-                        <Input placeholder="Event title in English" {...field} />
+                        <Input
+                          placeholder="Event title in English"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-            
               </div>
               <FormField
-                  control={form.control}
-                  name="slug"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Slug</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Slug" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                control={form.control}
+                name="slug"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Slug</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Slug" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <FormField
+                <FormField
                   control={form.control}
                   name="date"
                   render={({ field }) => (
@@ -367,7 +389,7 @@ export default function EditEventForm() {
                     </FormItem>
                   )}
                 />
-              <FormField
+                <FormField
                   control={form.control}
                   name="map_url"
                   render={({ field }) => (
@@ -404,7 +426,7 @@ export default function EditEventForm() {
                 )}
               />
 
-<FormField
+              <FormField
                 control={form.control}
                 name="english_description"
                 render={({ field }) => (
@@ -560,4 +582,4 @@ export default function EditEventForm() {
       </Card>
     </div>
   );
-}``
+}

@@ -11,7 +11,9 @@ export function isValidUrl(url: string) {
   try {
     new URL(url);
     return true;
-  } catch (_e) {
+  } catch (e) {
+    console.log("error get", e);
+
     return false;
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
@@ -9,7 +10,6 @@ import {
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
-
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
@@ -48,7 +48,6 @@ import { Card } from "@/components/ui/card";
 import { useEvents } from "@/hooks/use-event";
 import Link from "next/link";
 
-
 type Event = {
   id: string;
   title: string;
@@ -58,8 +57,6 @@ type Event = {
   category: "music" | "art" | "culture";
   featured: boolean;
 };
-
-
 
 export const columns: ColumnDef<Event>[] = [
   {
@@ -171,8 +168,8 @@ export const columns: ColumnDef<Event>[] = [
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const event = row.original;
-      console.log({event});
+      const event: any = row.original;
+      console.log({ event });
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -189,8 +186,8 @@ export const columns: ColumnDef<Event>[] = [
             </DropdownMenuItem>
             <DropdownMenuItem>
               <Link href={`/admin/events/${event.ID}`}>
-              <Edit className="mr-2 h-4 w-4" />
-              Edit event
+                <Edit className="mr-2 h-4 w-4" />
+                Edit event
               </Link>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
@@ -209,12 +206,12 @@ export function EventsTable() {
   const limit = 10;
   const [pageIndex, setPageIndex] = useState(0);
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
 
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
-  
+
   // Use pageIndex + 1 for API call since API expects 1-based page numbers
   const { data, loading, total } = useEvents({ page: pageIndex + 1, limit });
 
@@ -293,7 +290,7 @@ export function EventsTable() {
             </DropdownMenu>
           </div>
         </div>
-        
+
         <div className="rounded-md border">
           <Table>
             <TableHeader>
@@ -344,13 +341,13 @@ export function EventsTable() {
             </TableBody>
           </Table>
         </div>
-        
+
         <div className="flex items-center justify-end space-x-2 py-4">
           <div className="flex-1 text-sm text-muted-foreground">
             {table.getFilteredSelectedRowModel().rows.length} of{" "}
             {table.getFilteredRowModel().rows.length} row(s) selected.
           </div>
-          
+
           <div className="flex items-center justify-between space-x-4">
             <div className="text-sm text-muted-foreground">
               Page {pageIndex + 1} of {totalPages} — Total: {total} items

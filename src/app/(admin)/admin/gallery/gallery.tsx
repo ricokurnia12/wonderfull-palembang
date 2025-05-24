@@ -1,7 +1,6 @@
 "use client";
 
 import type React from "react";
-
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +16,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Dialog,
@@ -34,9 +32,10 @@ import {
   Plus,
   Trash2,
   Upload,
-  Copy
+  Copy,
+  Eye,
+  ExternalLink,
 } from "lucide-react";
-import { SiteHeader } from "../_components/sidebar/site-header";
 
 // Define the API base URL
 const API_BASE_URL =
@@ -65,7 +64,7 @@ const mockPhotos: Photo[] = [
 // Create Axios instance with common configuration
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000, // 10 seconds timeout
+  timeout: 10000,
   headers: {
     "Content-Type": "application/json",
   },
@@ -79,7 +78,6 @@ interface Photo {
   DeletedAt: null | string;
   title: string;
   file_path: string;
-  //   description?: string; // Optional since it's not in the API response
 }
 
 interface PaginatedResponse {
@@ -112,61 +110,50 @@ export function GalleryDashboard() {
     : 1;
 
   // Fetch photos function
-  const fetchPhotos = useCallback(
-    async (pageNum: number) => {
-      try {
-        setLoading(true);
+  const LIMIT = 8;
 
-        // Check if API_BASE_URL is set
-        if (!API_BASE_URL) {
-          console.warn("API_BASE_URL is not set. Using mock data instead.");
-          // Use mock data when API is not available
-          setPhotos(mockPhotos);
-          setPaginationData({
-            limit: 8,
-            page: 1,
-            total: mockPhotos.length,
-            totalPages: 1,
-          });
-          return;
-        }
-
-        const response = await api.get<PaginatedResponse>(`/photos/paginated`, {
-          params: {
-            page: pageNum,
-            limit: paginationData.limit,
-          },
-        });
-
-        setPhotos(response.data.data);
-        setPaginationData({
-          limit: response.data.limit,
-          page: response.data.page,
-          total: response.data.total,
-          totalPages: response.data.totalPages,
-        });
-      } catch (error) {
-        console.error("Failed to fetch photos:", error);
-
-        // Use mock data as fallback when API request fails
-        console.warn("API request failed. Using mock data as fallback.");
+  const fetchPhotos = useCallback(async (pageNum: number) => {
+    setLoading(true);
+    try {
+      if (!API_BASE_URL || API_BASE_URL.includes("localhost")) {
+        // Use mock data for development
         setPhotos(mockPhotos);
         setPaginationData({
-          limit: 8,
+          limit: LIMIT,
           page: 1,
           total: mockPhotos.length,
           totalPages: 1,
         });
-
-        toast("error");
-      } finally {
-        setLoading(false);
+        return;
       }
-    },
-    [paginationData.limit]
-  );
 
-  // Load photos on initial render and when page changes
+      const response = await api.get<PaginatedResponse>(`/photos/paginated`, {
+        params: { page: pageNum, limit: LIMIT },
+      });
+
+      setPhotos(response.data.data);
+      setPaginationData({
+        limit: response.data.limit,
+        page: response.data.page,
+        total: response.data.total,
+        totalPages: response.data.totalPages,
+      });
+    } catch (error) {
+      console.error("Failed to fetch photos:", error);
+      // Fallback to mock data
+      setPhotos(mockPhotos);
+      setPaginationData({
+        limit: LIMIT,
+        page: 1,
+        total: mockPhotos.length,
+        totalPages: 1,
+      });
+      toast.error("Failed to load images. Using sample data.");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     fetchPhotos(page);
   }, [fetchPhotos, page]);
@@ -192,76 +179,60 @@ export function GalleryDashboard() {
         formData.append("photo", imageFile);
       }
 
-      // Check if API_BASE_URL is set
-      if (!API_BASE_URL) {
+      if (!API_BASE_URL || API_BASE_URL.includes("localhost")) {
         // Simulate success for development without API
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // Fake delay
+        await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        toast("ok");
-
-        // Add to mock photos array for development
-        const newMockPhoto = {
+        const newMockPhoto: Photo = {
           ID: Date.now(),
           CreatedAt: new Date().toISOString(),
           UpdatedAt: new Date().toISOString(),
           DeletedAt: null,
           title: formData.get("title") as string,
           file_path: "/placeholder.svg?height=500&width=500",
-          //   description:
-          //     (formData.get("description") as string) || "No description",
         };
 
-        // Update the photos state with the new mock photo
         setPhotos((prevPhotos) => [newMockPhoto, ...prevPhotos]);
-
-        // Reset form and state
         form.reset();
+        toast.success("Image uploaded successfully!");
 
         // Switch to gallery tab
         const galleryTab = document.querySelector(
-          '[data-state="inactive"][value="gallery"]'
+          '[value="gallery"]'
         ) as HTMLButtonElement;
         if (galleryTab) galleryTab.click();
-
         return;
       }
 
-      // Need to override default headers for multipart/form-data
       await api.post("/photos", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
 
-      toast("ok");
-
-      // Refresh the gallery after upload
+      toast.success("Image uploaded successfully!");
       fetchPhotos(1);
-
-      // Reset form and state
       form.reset();
 
       // Switch to gallery tab
       const galleryTab = document.querySelector(
-        '[data-state="inactive"][value="gallery"]'
+        '[value="gallery"]'
       ) as HTMLButtonElement;
       if (galleryTab) galleryTab.click();
     } catch (error) {
       console.error("Upload error:", error);
-
       let errorMessage = "Could not upload image. Please try again.";
+
       if (axios.isAxiosError(error)) {
-        if (error.response) {
-          // Extract more specific error message if available
-          errorMessage = error.response.data?.message || errorMessage;
+        if (error.response?.data?.message) {
+          errorMessage = error.response.data.message;
         } else if (error.request) {
-          // Network error occurred
           errorMessage =
             "Network error. Please check your connection and try again.";
         }
       }
 
-      toast("error");
+      toast.error(errorMessage);
     } finally {
       setUploading(false);
     }
@@ -272,45 +243,35 @@ export function GalleryDashboard() {
     if (!selectedPhoto) return;
 
     try {
-      // Check if API_BASE_URL is set
-      if (!API_BASE_URL) {
-        // Simulate success for development without API
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // Fake delay
-
-        // Remove from local state
+      if (!API_BASE_URL || API_BASE_URL.includes("localhost")) {
+        // Simulate success for development
+        await new Promise((resolve) => setTimeout(resolve, 500));
         setPhotos((prevPhotos) =>
           prevPhotos.filter((photo) => photo.ID !== selectedPhoto.ID)
         );
-
-        toast("ok");
-
+        toast.success("Image deleted successfully!");
         setDeleteDialogOpen(false);
         setSelectedPhoto(null);
         return;
       }
 
       await api.delete(`/photos/${selectedPhoto.ID}`);
-
-      toast("ok");
-
-      // Refresh photos after deletion
+      toast.success("Image deleted successfully!");
       fetchPhotos(page);
     } catch (error) {
       console.error("Delete error:", error);
-
       let errorMessage = "Could not delete image. Please try again.";
+
       if (axios.isAxiosError(error)) {
-        if (error.response) {
-          // Extract more specific error message if available
-          errorMessage = error.response.data?.message || errorMessage;
+        if (error.response?.data?.message) {
+          errorMessage = error.response.data.message;
         } else if (error.request) {
-          // Network error occurred
           errorMessage =
             "Network error. Please check your connection and try again.";
         }
       }
 
-      toast("error");
+      toast.error(errorMessage);
     } finally {
       setDeleteDialogOpen(false);
       setSelectedPhoto(null);
@@ -319,285 +280,288 @@ export function GalleryDashboard() {
 
   // Get image URL with base path
   const getImageUrl = (filePath: string) => {
-    console.log({ filePath });
-
-    // Check if file_path already includes the full URL
-    if (filePath.startsWith("http")) {
+    if (filePath.startsWith("http") || filePath.startsWith("/placeholder")) {
       return filePath;
     }
-
-    // Otherwise, append to API base URL
     return `${API_BASE_URL}/${encodeURI(filePath)}`;
   };
 
-  useEffect(() => {
-    // Log environment setup for debugging
-    if (process.env.NODE_ENV === "development") {
-      console.info(`API Base URL: ${API_BASE_URL || "(not configured)"}`);
-      if (!API_BASE_URL) {
-        console.info("Running in development mode with mock data");
-      }
+  // Copy URL to clipboard
+  const copyToClipboard = async (url: string) => {
+    try {
+      await navigator.clipboard.writeText(url);
+      toast.success("URL copied to clipboard!");
+    } catch (error) {
+      console.error("Failed to copy:", error);
+      toast.error("Failed to copy URL");
     }
-
-    // Add request interceptor for debugging in development
-    const requestInterceptor = api.interceptors.request.use(
-      (config) => {
-        if (process.env.NODE_ENV === "development") {
-          console.debug(
-            `API Request: ${config.method?.toUpperCase()} ${config.url}`,
-            config
-          );
-        }
-        return config;
-      },
-      (error) => {
-        console.error("Request error:", error);
-        return Promise.reject(error);
-      }
-    );
-
-    // Add a response interceptor
-    const responseInterceptor = api.interceptors.response.use(
-      (response) => {
-        if (process.env.NODE_ENV === "development") {
-          console.debug(
-            `API Response: ${
-              response.status
-            } ${response.config.method?.toUpperCase()} ${response.config.url}`
-          );
-        }
-        return response;
-      },
-      (error) => {
-        // Handle session expiration (401 Unauthorized)
-        if (axios.isAxiosError(error) && error.response?.status === 401) {
-          toast("error");
-          // Redirect to login page if needed
-          // router.push('/login');
-        }
-
-        // Handle server errors
-        if (axios.isAxiosError(error) && error.response?.status === 500) {
-          toast("error");
-        }
-
-        // Handle network errors
-        if (axios.isAxiosError(error) && !error.response) {
-          if (process.env.NODE_ENV === "development") {
-            console.warn(
-              "Network error in development mode - check API connection:",
-              error.message
-            );
-          }
-
-          // Don't show toast here as we'll handle fallbacks in each function
-        }
-
-        return Promise.reject(error);
-      }
-    );
-
-    // Clean up interceptors on component unmount
-    return () => {
-      api.interceptors.request.eject(requestInterceptor);
-      api.interceptors.response.eject(responseInterceptor);
-    };
-  }, []);
+  };
 
   return (
-    <Tabs defaultValue="gallery" className="space-y-6">
-      <SiteHeader />
-      <div className="flex justify-between items-center">
-        <TabsList>
-          <TabsTrigger value="gallery">Gallery</TabsTrigger>
-          <TabsTrigger value="upload">Upload</TabsTrigger>
-        </TabsList>
+    <div className="space-y-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h1 className="text-3xl font-bold">Gallery Dashboard</h1>
+          <p className="text-muted-foreground">Manage your photo gallery</p>
+        </div>
         <Link href="/">
-          <Button variant="outline">View Public Gallery</Button>
+          <Button variant="outline" className="gap-2">
+            <ExternalLink className="h-4 w-4" />
+            View Public Gallery
+          </Button>
         </Link>
       </div>
 
-      <TabsContent value="gallery" className="space-y-6">
-        {loading ? (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">Loading images...</p>
-          </div>
-        ) : photos.length === 0 ? (
-          <div className="text-center py-12">
-            <h3 className="text-lg font-medium">No images found</h3>
-            <p className="text-muted-foreground mt-2">
-              Upload some images to get started
-            </p>
-          </div>
-        ) : (
-          <>
-            {!API_BASE_URL && (
-              <div className="bg-yellow-50 border border-yellow-200 rounded-md p-4 mb-6 flex items-center">
-                <AlertTriangle className="h-5 w-5 text-yellow-500 mr-3" />
-                <div>
-                  <h4 className="font-medium text-yellow-800">
-                    Development Mode
-                  </h4>
-                  <p className="text-sm text-yellow-700">
-                    API URL not configured. Using mock data. Set
-                    NEXT_PUBLIC_API_URL in your .env file.
-                  </p>
-                </div>
-              </div>
-            )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {photos.map((photo) => (
-                <Card key={photo.ID} className="overflow-hidden">
-                  <div className="relative aspect-square">
-                    <Copy className="text-black top-2 z-50 right-0 w-12 h-12"/>
-                    <Image
-                      src={getImageUrl(photo.file_path)}
-                      alt={photo.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                      onClick={() => setSelectedPhoto(photo)}
-                    />
-                  </div>
-                  <CardHeader className="p-4 pb-0">
-                    <CardTitle className="text-base truncate">
-                      {photo.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-4 pt-2">
-                    <p className="text-sm text-muted-foreground line-clamp-2">
-                      {photo.description || "No description"}
+      <Tabs defaultValue="gallery" className="space-y-6">
+        <TabsList className="grid w-full grid-cols-2 max-w-md">
+          <TabsTrigger value="gallery">Gallery</TabsTrigger>
+          <TabsTrigger value="upload">Upload</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="gallery" className="space-y-6">
+          {loading ? (
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+              <p className="text-muted-foreground">Loading images...</p>
+            </div>
+          ) : photos.length === 0 ? (
+            <Card className="text-center py-12">
+              <CardContent className="pt-6">
+                <Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-medium">No images found</h3>
+                <p className="text-muted-foreground mt-2 mb-4">
+                  Upload some images to get started
+                </p>
+                <Button
+                  onClick={() => {
+                    const uploadTab = document.querySelector(
+                      '[value="upload"]'
+                    ) as HTMLButtonElement;
+                    if (uploadTab) uploadTab.click();
+                  }}
+                >
+                  <Plus className="mr-2 h-4 w-4" />
+                  Upload Image
+                </Button>
+              </CardContent>
+            </Card>
+          ) : (
+            <>
+              {API_BASE_URL.includes("localhost") && (
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-start gap-3">
+                  <AlertTriangle className="h-5 w-5 text-yellow-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-yellow-800">
+                      Development Mode
+                    </h4>
+                    <p className="text-sm text-yellow-700 mt-1">
+                      API URL not configured or using localhost. Using mock
+                      data. Set NEXT_PUBLIC_API_URL in your .env file.
                     </p>
-                  </CardContent>
-                  <CardFooter className="p-4 pt-0 flex justify-between">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setSelectedPhoto(photo)}
-                    >
-                      View
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => navigator.clipboard.writeText(getImageUrl(photo.file_path))}
-                    >
-                      Copy Url <Copy className="h-4 w-4"/>
-                    </Button>
-                    <Button
-                      variant="destructive"
-                      size="sm"
-                      onClick={() => {
-                        setSelectedPhoto(photo);
-                        setDeleteDialogOpen(true);
-                      }}
-                    >
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          </>
-        )}
-
-        {paginationData.totalPages > 1 && (
-          <div className="flex justify-center items-center gap-2 mt-8">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => handlePageChange(page - 1)}
-              disabled={page === 1 || loading}
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <div className="text-sm">
-              Page {page} of {paginationData.totalPages}
-            </div>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => handlePageChange(page + 1)}
-              disabled={page === paginationData.totalPages || loading}
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
-        )}
-      </TabsContent>
-
-      <TabsContent value="upload">
-        <Card>
-          <CardHeader>
-            <CardTitle>Upload New Image</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleUpload} className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="title">Title</Label>
-                <Input id="title" name="title" required />
-              </div>
-              {/* <div className="space-y-2">
-                <Label htmlFor="description">Description</Label>
-                <Textarea id="description" name="description" rows={3} />
-              </div> */}
-              <div className="space-y-2">
-                <Label htmlFor="image">Image</Label>
-                <div className="border rounded-md p-4 flex flex-col items-center justify-center gap-4">
-                  <Upload className="h-8 w-8 text-muted-foreground" />
-                  <Input
-                    id="image"
-                    name="image"
-                    type="file"
-                    accept="image/*"
-                    required
-                    className="max-w-sm"
-                  />
-                  <p className="text-sm text-muted-foreground">
-                    Upload a JPG, PNG, or GIF image (max 5MB)
-                  </p>
+                  </div>
                 </div>
-              </div>
-              <Button type="submit" className="w-full" disabled={uploading}>
-                {uploading ? "Uploading..." : "Upload Image"}
-                {!uploading && <Plus className="ml-2 h-4 w-4" />}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
-      </TabsContent>
+              )}
 
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {photos.map((photo: Photo) => (
+                  <Card
+                    key={photo.ID}
+                    className="overflow-hidden group hover:shadow-lg transition-shadow"
+                  >
+                    <div className="relative aspect-square bg-muted">
+                      <Image
+                        src={getImageUrl(photo.file_path) || "/placeholder.svg"}
+                        alt={photo.title}
+                        fill
+                        className="object-cover transition-transform group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                      />
+                      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          className="h-8 w-8 p-0"
+                          onClick={() =>
+                            copyToClipboard(getImageUrl(photo.file_path))
+                          }
+                        >
+                          <Copy className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+
+                    <CardHeader className="pb-2">
+                      <CardTitle
+                        className="text-base line-clamp-1"
+                        title={photo.title}
+                      >
+                        {photo.title}
+                      </CardTitle>
+                    </CardHeader>
+
+                    <CardContent className="pb-2">
+                      <p className="text-sm text-muted-foreground">
+                        Uploaded{" "}
+                        {new Date(photo.CreatedAt).toLocaleDateString()}
+                      </p>
+                    </CardContent>
+
+                    <CardFooter className="pt-0 flex gap-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1"
+                        onClick={() => setSelectedPhoto(photo)}
+                      >
+                        <Eye className="mr-2 h-4 w-4" />
+                        View
+                      </Button>
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        onClick={() => {
+                          setSelectedPhoto(photo);
+                          setDeleteDialogOpen(true);
+                        }}
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                ))}
+              </div>
+
+              {paginationData.totalPages > 1 && (
+                <div className="flex justify-center items-center gap-4 mt-8">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handlePageChange(page - 1)}
+                    disabled={page === 1 || loading}
+                  >
+                    <ChevronLeft className="h-4 w-4 mr-2" />
+                    Previous
+                  </Button>
+
+                  <div className="text-sm font-medium">
+                    Page {page} of {paginationData.totalPages}
+                  </div>
+
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handlePageChange(page + 1)}
+                    disabled={page === paginationData.totalPages || loading}
+                  >
+                    Next
+                    <ChevronRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </div>
+              )}
+            </>
+          )}
+        </TabsContent>
+
+        <TabsContent value="upload">
+          <Card>
+            <CardHeader>
+              <CardTitle>Upload New Image</CardTitle>
+              <p className="text-sm text-muted-foreground">
+                Add a new image to your gallery
+              </p>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleUpload} className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="title">Title *</Label>
+                  <Input
+                    id="title"
+                    name="title"
+                    placeholder="Enter image title"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="image">Image *</Label>
+                  <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center hover:border-muted-foreground/50 transition-colors">
+                    <Upload className="h-10 w-10 text-muted-foreground mx-auto mb-4" />
+                    <div className="space-y-2">
+                      <Input
+                        id="image"
+                        name="image"
+                        type="file"
+                        accept="image/*"
+                        required
+                        className="max-w-sm mx-auto"
+                      />
+                      <p className="text-sm text-muted-foreground">
+                        Upload a JPG, PNG, or GIF image (max 5MB)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <Button type="submit" className="w-full" disabled={uploading}>
+                  {uploading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Uploading...
+                    </>
+                  ) : (
+                    <>
+                      <Plus className="mr-2 h-4 w-4" />
+                      Upload Image
+                    </>
+                  )}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+
+      {/* View Image Dialog */}
       <Dialog
         open={!!selectedPhoto && !deleteDialogOpen}
         onOpenChange={(open) => !open && setSelectedPhoto(null)}
       >
         {selectedPhoto && (
-          <DialogContent className="max-w-3xl">
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
             <DialogHeader>
-              <DialogTitle>{selectedPhoto.title}</DialogTitle>
-              {/* <DialogDescription>
-                {selectedPhoto.description || "No description"}
-              </DialogDescription> */}
+              <DialogTitle className="text-xl">
+                {selectedPhoto.title}
+              </DialogTitle>
+              <DialogDescription>
+                Uploaded on{" "}
+                {new Date(selectedPhoto.CreatedAt).toLocaleDateString()}
+              </DialogDescription>
             </DialogHeader>
-            <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted">
               <Image
-                src={getImageUrl(selectedPhoto.file_path)}
+                src={getImageUrl(selectedPhoto.file_path) || "/placeholder.svg"}
                 alt={selectedPhoto.title}
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>
-            <div className="text-sm text-muted-foreground">
-              Uploaded on{" "}
-              {new Date(selectedPhoto.CreatedAt).toLocaleDateString()}
-            </div>
-            <div className="flex justify-end gap-2">
+
+            <div className="flex justify-between items-center pt-4">
+              <Button
+                variant="outline"
+                onClick={() =>
+                  copyToClipboard(getImageUrl(selectedPhoto.file_path))
+                }
+              >
+                <Copy className="mr-2 h-4 w-4" />
+                Copy URL
+              </Button>
+
               <Button
                 variant="destructive"
-                onClick={() => {
-                  setDeleteDialogOpen(true);
-                }}
+                onClick={() => setDeleteDialogOpen(true)}
               >
                 <Trash2 className="mr-2 h-4 w-4" />
                 Delete
@@ -607,16 +571,17 @@ export function GalleryDashboard() {
         )}
       </Dialog>
 
+      {/* Delete Confirmation Dialog */}
       <Dialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Delete Image</DialogTitle>
             <DialogDescription>
-              Are you sure you want to delete this image? This action cannot be
-              undone.
+              Are you sure you want to delete {selectedPhoto?.title}? This
+              action cannot be undone.
             </DialogDescription>
           </DialogHeader>
-          <div className="flex justify-end gap-2">
+          <div className="flex justify-end gap-2 pt-4">
             <Button
               variant="outline"
               onClick={() => setDeleteDialogOpen(false)}
@@ -624,11 +589,12 @@ export function GalleryDashboard() {
               Cancel
             </Button>
             <Button variant="destructive" onClick={handleDelete}>
+              <Trash2 className="mr-2 h-4 w-4" />
               Delete
             </Button>
           </div>
         </DialogContent>
       </Dialog>
-    </Tabs>
+    </div>
   );
 }

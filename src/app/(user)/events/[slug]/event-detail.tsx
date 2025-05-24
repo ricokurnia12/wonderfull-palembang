@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
@@ -8,8 +8,8 @@ import {
   Calendar,
   Clock,
   MapPin,
-  Share2,
-  Heart,
+  // Share2,
+  // Heart,
   Tag,
   Users,
   ArrowLeft,

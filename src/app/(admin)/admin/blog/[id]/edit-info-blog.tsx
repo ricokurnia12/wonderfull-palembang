@@ -100,7 +100,7 @@ const EditInfo = () => {
             <FormField
               control={form.control}
               name="date"
-              render={({ field }) => (
+              render={() => (
                 <FormItem>
                   <FormLabel>Tanggal Posting</FormLabel>
                   <FormControl>

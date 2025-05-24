@@ -1,6 +1,6 @@
-'use client'
+"use client";
 // hooks/useEvents.ts
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import qs from "query-string";
 import axios from "axios";
 export type Event = {
@@ -20,19 +20,26 @@ type UseEventsParams = {
   category?: string;
 };
 
-const fetchEvents = async ({ page, limit, search, category }: UseEventsParams) => {
+const fetchEvents = async ({
+  page,
+  limit,
+  search,
+  category,
+}: UseEventsParams) => {
   const query = qs.stringify({ page, limit, search, category });
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events?${query}`);
-//   if (!res.ok) throw new Error("Failed to fetch events");
-//   return res.json(); // Expected shape: { data: Event[], total: number }
-try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/events?${query}`);
+  //   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events?${query}`);
+  //   if (!res.ok) throw new Error("Failed to fetch events");
+  //   return res.json(); // Expected shape: { data: Event[], total: number }
+  try {
+    const res = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/events?${query}`
+    );
     console.log(res.data.total);
     return res.data;
-} catch (error) {
+  } catch (error) {
     console.log(error);
     throw new Error("Failed to fetch events");
-}
+  }
 };
 
 export function useEvents(params: UseEventsParams) {

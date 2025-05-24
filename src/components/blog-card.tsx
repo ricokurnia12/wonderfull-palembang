@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { format } from "date-fns"
-import { Clock, Calendar } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import type { BlogPost } from "@/types/blog-post"
+// import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { format } from "date-fns";
+import { Clock, Calendar } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import type { BlogPost } from "@/types/blog-post";
 
 interface BlogCardProps {
-  post: BlogPost
-  index: number
+  post: BlogPost;
+  index: number;
 }
 
 export function BlogCard({ post, index }: BlogCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
+  // const [isHovered, setIsHovered] = useState(false)
 
   // Different card styles based on category
   const getCategoryStyles = () => {
@@ -28,7 +28,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
           shadowColor: "shadow-amber-200",
           badgeColor: "bg-amber-100 text-amber-800",
           iconBg: "bg-amber-100",
-        }
+        };
       case "Culture":
         return {
           gradientFrom: "from-purple-500",
@@ -36,7 +36,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
           shadowColor: "shadow-purple-200",
           badgeColor: "bg-purple-100 text-purple-800",
           iconBg: "bg-purple-100",
-        }
+        };
       case "Religion":
         return {
           gradientFrom: "from-emerald-500",
@@ -44,7 +44,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
           shadowColor: "shadow-emerald-200",
           badgeColor: "bg-emerald-100 text-emerald-800",
           iconBg: "bg-emerald-100",
-        }
+        };
       default:
         return {
           gradientFrom: "from-gray-500",
@@ -52,11 +52,11 @@ export function BlogCard({ post, index }: BlogCardProps) {
           shadowColor: "shadow-gray-200",
           badgeColor: "bg-gray-100 text-gray-800",
           iconBg: "bg-gray-100",
-        }
+        };
     }
-  }
+  };
 
-  const styles = getCategoryStyles()
+  const styles = getCategoryStyles();
 
   // Animation variants
   const cardVariants = {
@@ -69,7 +69,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
         delay: index * 0.1,
       },
     },
-  }
+  };
 
   return (
     <motion.div
@@ -77,8 +77,8 @@ export function BlogCard({ post, index }: BlogCardProps) {
       initial="hidden"
       animate="visible"
       className={`group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ${styles.shadowColor}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      // onMouseEnter={() => setIsHovered(true)}
+      // onMouseLeave={() => setIsHovered(false)}
     >
       {/* Category indicator */}
       <div
@@ -97,7 +97,11 @@ export function BlogCard({ post, index }: BlogCardProps) {
 
         {/* Category badge */}
         <div className="absolute top-4 right-4 z-20">
-          <Badge className={`${styles.badgeColor} px-3 py-1 text-sm font-medium`}>{post.category}</Badge>
+          <Badge
+            className={`${styles.badgeColor} px-3 py-1 text-sm font-medium`}
+          >
+            {post.category}
+          </Badge>
         </div>
       </div>
 
@@ -126,7 +130,10 @@ export function BlogCard({ post, index }: BlogCardProps) {
         {/* Author */}
         <div className="flex items-center pt-4 border-t border-gray-100">
           <Avatar className="h-10 w-10 mr-3">
-            <AvatarImage src={post.author.avatar || "/placeholder.svg"} alt={post.author.name} />
+            <AvatarImage
+              src={post.author.avatar || "/placeholder.svg"}
+              alt={post.author.name}
+            />
             <AvatarFallback>{post.author.name.charAt(0)}</AvatarFallback>
           </Avatar>
           <div>
@@ -139,5 +146,5 @@ export function BlogCard({ post, index }: BlogCardProps) {
       {/* Read more link with animated underline */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-transparent to-transparent group-hover:via-purple-500 transition-all duration-300"></div>
     </motion.div>
-  )
+  );
 }
