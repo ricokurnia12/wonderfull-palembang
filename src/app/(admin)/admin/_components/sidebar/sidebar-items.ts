@@ -85,9 +85,9 @@ export const sidebarItems: NavGroup[] = [
     items: [
       {
         title: "Blog",
-        url: "/mail",
+        url: "/admin/blog",
         icon: Mail,
-        comingSoon: true,
+        // comingSoon: true,
       },
       {
         title: "Event",

@@ -20,6 +20,7 @@ import {
   Edit,
   Eye,
   MoreHorizontal,
+  PlusIcon,
   Trash,
 } from "lucide-react";
 
@@ -262,6 +263,11 @@ export function EventsTable() {
             className="max-w-sm"
           />
           <div className="flex items-center gap-2">
+            <Link href="/admin/events/new">
+              <Button variant="default" className="ml-auto cursor-pointer">
+                Add events <PlusIcon className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="ml-auto">
