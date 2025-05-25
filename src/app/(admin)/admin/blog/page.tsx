@@ -62,6 +62,10 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
+import { SiteHeader } from "../_components/sidebar/site-header";
+import WrapperComponent from "../../Wrapper-Component";
+import { LoadingSkeletonTable } from "@/components/Loading-Skeleton";
+import Link from "next/link";
 
 interface BlogPost {
   ID: number;
@@ -201,21 +205,7 @@ export default function BlogPostsPage() {
 
   const totalPages = Math.ceil(total / limit);
 
-  const LoadingSkeleton = () => (
-    <div className="space-y-4">
-      {[...Array(5)].map((_, i) => (
-        <div key={i} className="flex items-center space-x-4">
-          <Skeleton className="h-16 w-16 rounded" />
-          <div className="space-y-2 flex-1">
-            <Skeleton className="h-4 w-[250px]" />
-            <Skeleton className="h-4 w-[200px]" />
-          </div>
-          <Skeleton className="h-8 w-20" />
-          <Skeleton className="h-8 w-8" />
-        </div>
-      ))}
-    </div>
-  );
+
 
   // Error state
   if (error && !loading) {
@@ -235,319 +225,313 @@ export default function BlogPostsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight">Blog Posts</h1>
-            <p className="text-muted-foreground">
-              Manage your blog posts and content
-            </p>
-          </div>
-          <Button
-            onClick={() => router.push("/admin/blog/new")}
-            className="mt-4 sm:mt-0"
-          >
-            <Plus className="h-4 w-4 mr-2" />
-            Create New Post
-          </Button>
-        </div>
+    <WrapperComponent>
+      {/* Header */}
+      < SiteHeader title="Blog Posts List" />
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center justify-between">
-              <span>All Posts ({total})</span>
-              {totalPages > 0 && (
-                <div className="flex items-center space-x-2">
-                  <Badge variant="outline" className="text-xs">
-                    Page {page} of {totalPages}
-                  </Badge>
-                </div>
-              )}
-            </CardTitle>
-            <CardDescription>
-              Manage and organize your blog content
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            {/* Filters */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                <Input
-                  placeholder="Search posts..."
-                  value={search}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  className="pl-10"
-                />
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center justify-between">
+            <span>All Posts ({total})</span>
+            {totalPages > 0 && (
+              <div className="flex items-center space-x-2">
+                <Badge variant="outline" className="text-xs">
+                  Page {page} of {totalPages}
+                </Badge>
               </div>
-              <Select
-                value={category || "all"}
-                onValueChange={handleCategoryFilter}
-              >
-                <SelectTrigger className="w-full sm:w-[180px]">
-                  <Filter className="h-4 w-4 mr-2" />
-                  <SelectValue placeholder="Category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Categories</SelectItem>
-                  {categories.map((cat) => (
-                    <SelectItem key={cat} value={cat}>
-                      {cat.charAt(0).toUpperCase() + cat.slice(1)}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            )}
+          </CardTitle>
+          <CardDescription>
+            Manage and organize your blog content
+          </CardDescription>
+          <Link href={'/admin/blog/new'} >
+            <Button
 
-            {/* Table */}
-            {loading ? (
-              <LoadingSkeleton />
-            ) : (
-              <>
-                <div className="rounded-md border">
-                  <Table>
-                    <TableHeader>
+              className="mt-4 sm:mt-0 w-full"
+            >
+              <Plus className="h-4 w-4 mr-2" />
+              Create New Post
+            </Button>
+          </Link>
+        </CardHeader>
+        <CardContent>
+          {/* Filters */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+              <Input
+                placeholder="Search posts..."
+                value={search}
+                onChange={(e) => handleSearch(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+            <Select
+              value={category || "all"}
+              onValueChange={handleCategoryFilter}
+            >
+              <SelectTrigger className="w-full sm:w-[180px]">
+                <Filter className="h-4 w-4 mr-2" />
+                <SelectValue placeholder="Category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Categories</SelectItem>
+                {categories.map((cat) => (
+                  <SelectItem key={cat} value={cat}>
+                    {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Table */}
+          {loading ? (
+            <LoadingSkeletonTable />
+          ) : (
+            <>
+              <div className="rounded-md border">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="w-[60px]">Cover</TableHead>
+                      <TableHead>Title</TableHead>
+                      <TableHead>Category</TableHead>
+                      <TableHead>Date</TableHead>
+                      <TableHead>Read Time</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead className="text-right">Actions</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {!posts || posts.length === 0 ? (
                       <TableRow>
-                        <TableHead className="w-[60px]">Cover</TableHead>
-                        <TableHead>Title</TableHead>
-                        <TableHead>Category</TableHead>
-                        <TableHead>Date</TableHead>
-                        <TableHead>Read Time</TableHead>
-                        <TableHead>Status</TableHead>
-                        <TableHead className="text-right">Actions</TableHead>
+                        <TableCell colSpan={7} className="text-center py-8">
+                          <div className="flex flex-col items-center space-y-2">
+                            <div className="text-muted-foreground">
+                              {search || category
+                                ? "No blog posts found matching your criteria"
+                                : "No blog posts found"}
+                            </div>
+                            <Button
+                              variant="outline"
+                              onClick={() => router.push("/admin/blog/new")}
+                            >
+                              <Plus className="h-4 w-4 mr-2" />
+                              Create your first post
+                            </Button>
+                          </div>
+                        </TableCell>
                       </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {!posts || posts.length === 0 ? (
-                        <TableRow>
-                          <TableCell colSpan={7} className="text-center py-8">
-                            <div className="flex flex-col items-center space-y-2">
-                              <div className="text-muted-foreground">
-                                {search || category
-                                  ? "No blog posts found matching your criteria"
-                                  : "No blog posts found"}
-                              </div>
-                              <Button
-                                variant="outline"
-                                onClick={() => router.push("/admin/blog/new")}
-                              >
-                                <Plus className="h-4 w-4 mr-2" />
-                                Create your first post
-                              </Button>
+                    ) : (
+                      posts.map((post) => (
+                        <TableRow key={post.ID}>
+                          <TableCell>
+                            <div className="w-12 h-12 rounded-md overflow-hidden bg-muted">
+                              {post.coverImage ? (
+                                <Image
+                                  width={100}
+                                  height={100}
+                                  src={post.coverImage || "/placeholder.svg"}
+                                  alt={post.title || "Blog post"}
+                                  className="w-full h-full object-cover"
+                                  onError={(e) => {
+                                    e.currentTarget.src =
+                                      "/placeholder.svg?height=48&width=48";
+                                  }}
+                                />
+                              ) : (
+                                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800" />
+                              )}
                             </div>
                           </TableCell>
-                        </TableRow>
-                      ) : (
-                        posts.map((post) => (
-                          <TableRow key={post.ID}>
-                            <TableCell>
-                              <div className="w-12 h-12 rounded-md overflow-hidden bg-muted">
-                                {post.coverImage ? (
-                                  <Image
-                                    width={100}
-                                    height={100}
-                                    src={post.coverImage || "/placeholder.svg"}
-                                    alt={post.title || "Blog post"}
-                                    className="w-full h-full object-cover"
-                                    onError={(e) => {
-                                      e.currentTarget.src =
-                                        "/placeholder.svg?height=48&width=48";
-                                    }}
-                                  />
-                                ) : (
-                                  <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800" />
-                                )}
+                          <TableCell className="max-w-[200px]">
+                            <div className="space-y-1">
+                              <div className="font-medium line-clamp-1">
+                                {post.title || "Untitled"}
                               </div>
-                            </TableCell>
-                            <TableCell className="max-w-[200px]">
-                              <div className="space-y-1">
-                                <div className="font-medium line-clamp-1">
-                                  {post.title || "Untitled"}
-                                </div>
-                                <div className="text-sm text-muted-foreground line-clamp-1">
-                                  {post.excerpt || "No excerpt available"}
-                                </div>
+                              <div className="text-sm text-muted-foreground line-clamp-1">
+                                {post.excerpt || "No excerpt available"}
                               </div>
-                            </TableCell>
-                            <TableCell>
-                              <Badge variant="secondary">
-                                {post.category
-                                  ? post.category.charAt(0).toUpperCase() +
-                                    post.category.slice(1)
-                                  : "Uncategorized"}
-                              </Badge>
-                            </TableCell>
-                            <TableCell>
-                              <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-                                <Calendar className="h-3 w-3" />
-                                <span>
-                                  {post.date
-                                    ? format(
-                                        new Date(post.date),
-                                        "MMM dd, yyyy"
-                                      )
-                                    : "No date"}
-                                </span>
-                              </div>
-                            </TableCell>
-                            <TableCell>
-                              <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-                                <Clock className="h-3 w-3" />
-                                <span>{post.readTime || 0} min</span>
-                              </div>
-                            </TableCell>
-                            <TableCell>
-                              <div className="flex items-center space-x-2">
-                                {post.featured && (
-                                  <Badge
-                                    variant="default"
-                                    className="bg-yellow-100 text-yellow-800 border-yellow-300"
-                                  >
-                                    <Star className="h-3 w-3 mr-1" />
-                                    Featured
-                                  </Badge>
-                                )}
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <Badge variant="secondary">
+                              {post.category
+                                ? post.category.charAt(0).toUpperCase() +
+                                post.category.slice(1)
+                                : "Uncategorized"}
+                            </Badge>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center space-x-1 text-sm text-muted-foreground">
+                              <Calendar className="h-3 w-3" />
+                              <span>
+                                {post.date
+                                  ? format(
+                                    new Date(post.date),
+                                    "MMM dd, yyyy"
+                                  )
+                                  : "No date"}
+                              </span>
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center space-x-1 text-sm text-muted-foreground">
+                              <Clock className="h-3 w-3" />
+                              <span>{post.readTime || 0} min</span>
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center space-x-2">
+                              {post.featured && (
                                 <Badge
-                                  variant="outline"
-                                  className="text-green-600 border-green-200"
+                                  variant="default"
+                                  className="bg-yellow-100 text-yellow-800 border-yellow-300"
                                 >
-                                  Published
+                                  <Star className="h-3 w-3 mr-1" />
+                                  Featured
                                 </Badge>
-                              </div>
-                            </TableCell>
-                            <TableCell className="text-right">
-                              <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
-                                  <Button
-                                    variant="ghost"
-                                    className="h-8 w-8 p-0"
-                                  >
-                                    <MoreHorizontal className="h-4 w-4" />
-                                  </Button>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent align="end">
-                                  <DropdownMenuItem
-                                    onClick={() =>
-                                      window.open(
-                                        `/blog/${post.slug}`,
-                                        "_blank"
-                                      )
-                                    }
-                                  >
-                                    <Eye className="h-4 w-4 mr-2" />
-                                    View
-                                  </DropdownMenuItem>
-                                  <DropdownMenuItem
-                                    onClick={() =>
-                                      router.push(`/admin/blog/edit/${post.ID}`)
-                                    }
-                                  >
-                                    <Edit className="h-4 w-4 mr-2" />
-                                    Edit
-                                  </DropdownMenuItem>
-                                  <DropdownMenuItem
-                                    onClick={() => {
-                                      setPostToDelete(post);
-                                      setDeleteDialogOpen(true);
-                                    }}
-                                    className="text-red-600"
-                                  >
-                                    <Trash2 className="h-4 w-4 mr-2" />
-                                    Delete
-                                  </DropdownMenuItem>
-                                </DropdownMenuContent>
-                              </DropdownMenu>
-                            </TableCell>
-                          </TableRow>
-                        ))
-                      )}
-                    </TableBody>
-                  </Table>
-                </div>
+                              )}
+                              <Badge
+                                variant="outline"
+                                className="text-green-600 border-green-200"
+                              >
+                                Published
+                              </Badge>
+                            </div>
+                          </TableCell>
+                          <TableCell className="text-right">
+                            <DropdownMenu>
+                              <DropdownMenuTrigger asChild>
+                                <Button
+                                  variant="ghost"
+                                  className="h-8 w-8 p-0"
+                                >
+                                  <MoreHorizontal className="h-4 w-4" />
+                                </Button>
+                              </DropdownMenuTrigger>
+                              <DropdownMenuContent align="end">
+                                <DropdownMenuItem
+                                  onClick={() =>
+                                    window.open(
+                                      `/blog/${post.slug}`,
+                                      "_blank"
+                                    )
+                                  }
+                                >
+                                  <Eye className="h-4 w-4 mr-2" />
+                                  View
+                                </DropdownMenuItem>
+                                <DropdownMenuItem
+                                  onClick={() =>
+                                    router.push(`/admin/blog/edit/${post.ID}`)
+                                  }
+                                >
+                                  <Edit className="h-4 w-4 mr-2" />
+                                  Edit
+                                </DropdownMenuItem>
+                                <DropdownMenuItem
+                                  onClick={() => {
+                                    setPostToDelete(post);
+                                    setDeleteDialogOpen(true);
+                                  }}
+                                  className="text-red-600"
+                                >
+                                  <Trash2 className="h-4 w-4 mr-2" />
+                                  Delete
+                                </DropdownMenuItem>
+                              </DropdownMenuContent>
+                            </DropdownMenu>
+                          </TableCell>
+                        </TableRow>
+                      ))
+                    )}
+                  </TableBody>
+                </Table>
+              </div>
 
-                {/* Pagination */}
-                {totalPages > 1 && (
-                  <div className="flex items-center justify-between mt-6">
-                    <div className="text-sm text-muted-foreground">
-                      Showing {(page - 1) * limit + 1} to{" "}
-                      {Math.min(page * limit, total)} of {total} posts
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => setPage(page - 1)}
-                        disabled={page === 1}
-                      >
-                        <ChevronLeft className="h-4 w-4" />
-                        Previous
-                      </Button>
-
-                      <div className="flex items-center space-x-1">
-                        {[...Array(Math.min(5, totalPages))].map((_, i) => {
-                          const pageNum = Math.max(
-                            1,
-                            Math.min(page - 2 + i, totalPages - 4 + i)
-                          );
-                          return (
-                            <Button
-                              key={pageNum}
-                              variant={page === pageNum ? "default" : "outline"}
-                              size="sm"
-                              onClick={() => setPage(pageNum)}
-                              className="w-8 h-8 p-0"
-                            >
-                              {pageNum}
-                            </Button>
-                          );
-                        })}
-                      </div>
-
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => setPage(page + 1)}
-                        disabled={page === totalPages}
-                      >
-                        Next
-                        <ChevronRight className="h-4 w-4" />
-                      </Button>
-                    </div>
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-between mt-6">
+                  <div className="text-sm text-muted-foreground">
+                    Showing {(page - 1) * limit + 1} to{" "}
+                    {Math.min(page * limit, total)} of {total} posts
                   </div>
-                )}
-              </>
-            )}
-          </CardContent>
-        </Card>
+                  <div className="flex items-center space-x-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setPage(page - 1)}
+                      disabled={page === 1}
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                      Previous
+                    </Button>
 
-        {/* Delete Confirmation Dialog */}
-        <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-              <AlertDialogDescription>
-                This action cannot be undone. This will permanently delete the
-                blog post
-                <strong className="block mt-2">
-                  "{postToDelete?.title || "Untitled"}"
-                </strong>
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction
-                onClick={handleDelete}
-                disabled={deleting}
-                className="bg-red-600 hover:bg-red-700"
-              >
-                {deleting ? "Deleting..." : "Delete"}
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
-      </div>
-    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(Math.min(5, totalPages))].map((_, i) => {
+                        const pageNum = Math.max(
+                          1,
+                          Math.min(page - 2 + i, totalPages - 4 + i)
+                        );
+                        return (
+                          <Button
+                            key={pageNum}
+                            variant={page === pageNum ? "default" : "outline"}
+                            size="sm"
+                            onClick={() => setPage(pageNum)}
+                            className="w-8 h-8 p-0"
+                          >
+                            {pageNum}
+                          </Button>
+                        );
+                      })}
+                    </div>
+
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setPage(page + 1)}
+                      disabled={page === totalPages}
+                    >
+                      Next
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Delete Confirmation Dialog */}
+      <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete the
+              blog post
+              <strong className="block mt-2">
+                "{postToDelete?.title || "Untitled"}"
+              </strong>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={handleDelete}
+              disabled={deleting}
+              className="bg-red-600 hover:bg-red-700"
+            >
+              {deleting ? "Deleting..." : "Delete"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </WrapperComponent>
+
   );
 }

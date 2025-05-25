@@ -28,7 +28,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { EventCard } from "../components/event-card";
 import type { Event } from "@/types/event";
-import { events } from "@/data/event.data";
+// import { events } from "@/data/event.data";
 import { useLanguage } from "@/context/LanguageContext";
 interface EventDetailProps {
   event: Event;
@@ -38,9 +38,9 @@ export default function EventDetail({ event }: EventDetailProps) {
   // const [isFavorite, setIsFavorite] = useState(false)
   const { language } = useLanguage();
   // Get related events (same category, different event)
-  const relatedEvents = events
-    .filter((e) => e.category === event.category && e.id !== event.id)
-    .slice(0, 3);
+  // const relatedEvents = events
+  //   .filter((e) => e.category === event.category && e.id !== event.id)
+  //   .slice(0, 3);
 
   // Format date for display
   const formattedDate = format(new Date(event.date), "EEEE, MMMM d, yyyy");
@@ -197,7 +197,7 @@ export default function EventDetail({ event }: EventDetailProps) {
                     // allowfullscreen=""
                     loading="lazy"
                     className="w-full h-full"
-                    // referrerpolicy="no-referrer-when-downgrade"
+                  // referrerpolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
               </div>
@@ -353,11 +353,11 @@ export default function EventDetail({ event }: EventDetailProps) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {relatedEvents.map((relatedEvent) => (
             <EventCard key={relatedEvent.id} event={relatedEvent} />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

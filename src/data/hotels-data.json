@@ -1,0 +1,1967 @@
+{
+    "hotels": [
+        {
+            "maps": "http",
+            "phone": "081234",
+            "id": 1,
+            "name": "The Arista Hotel Palembang",
+            "address": "Jalan Kapten A. Rivai, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30129",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi",
+                "Lift"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "562",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.04",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10001036-d4f4736856800224138f3ddfcf31fc18.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/indonesia/the-arista-hotel-palembang-3000010001036?clickref=1101lBkXJNMh&utm_id=6wVpZzyA&campaign_id=1100l6465&partner_id=1101l345763&gad_source=1",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi",
+                "Elevator"
+            ]
+        },
+        {
+            "maps": "http",
+            "phone": "081234",
+            "id": 2,
+            "name": "The Alts Hotel Palembang",
+            "address": "Jl. Rajawali No. 8, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30113",
+            "facilities": [
+                "Tidak ditemukan"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "748",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.71",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/LdXeLXA+oqXWNIFrLYC99QYOtlA3jqOwSUvgo5h4Cg0=/hotelImages/230345/-1/a676a2f3aace30ce4667caa0325bd18d.jpg?ca=8&ce=1&s=312x&_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000005648636.The%20Alts%20Hotel%20Palembang.2&contexts=%7B%7D&loginPromo=1&prevSearchId=1833074445303971286",
+            "facilities_english": [
+                "Not found"
+            ]
+        },
+        {
+            "maps": "http",
+            "phone": "081234",
+            "star": 4,
+            "description": "",
+            "description_egnlish": "",
+            "id": 3,
+            "name": "The Excelton Hotel",
+            "address": "Jalan Demang Lebar DaunNo. 58, Ilir Barat I, Palembang, Sumatra Selatan, Indonesia, 30137",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.33",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "2.07",
+                    "distance": "km"
+                },
+                {
+                    "name": "Kantor Pusat Yoanda Prima",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10034754-5c4d8061d1ed47a158edaaabe8f10559.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/indonesia/the-excelton-hotel-3000010034754",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Novotel Palembang Hotel & Residence",
+            "address": "Jalan R Sukamto No 8A, South Sumatera, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30127",
+            "facilities": [
+                "Selengkapnya",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang Trade Center",
+                    "distance": "Mall"
+                },
+                {
+                    "name": "771",
+                    "distance": "m"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.93",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/rvN7CENfvyT2YVqT-7R6UjRIibYDnsWI+-nAv8mJ7GI=/37474/photos/75066107_XL.jpg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.71977.Novotel%20Palembang%20Hotel%20%26%20Residence.2",
+            "facilities_english": [
+                "Read More",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Harper Palembang by ASTON",
+            "address": "Jalan R. Sukamto No. 20 Palembang, South Sumatra, Indonesia, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30114",
+            "facilities": [
+                "Selengkapnya",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang Trade Center",
+                    "distance": "Mall"
+                },
+                {
+                    "name": "397",
+                    "distance": "m"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "2.00",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20018623-36dece21bd06378a8c103cc9550eec27.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000020018623.Harper%20Palembang%20by%20ASTON.2",
+            "facilities_english": [
+                "Read More",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Sintesa Peninsula Hotel Palembang",
+            "address": "Jalan Residen H.A. Rozak No. 168 , Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30118",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang Trade Center",
+                    "distance": "Mall"
+                },
+                {
+                    "name": "2.56",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "2.58",
+                    "distance": "km"
+                },
+                {
+                    "name": "Masjid Jami Nurul Hidayah Bendung",
+                    "distance": "Ilir"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10002363-7220dcbf81dc64b704b39e943d11940c.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.2000000217848.Sintesa%20Peninsula%20Hotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Aston Palembang Hotel & Conference Center",
+            "address": "Jalan Basuki Rachmat No.189, Palembang, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30126",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.60",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "2.44",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10007189-aa8977b26c16b6039d88d63ff90eaf7d.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010007189.Aston%20Palembang%20Hotel%20%26%20Conference%20Center.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "THE 1O1 Palembang Rajawali",
+            "address": "Jalan. Rajawali No. 18, 9 Ilir, Ilir Timur 2, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30113",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "557",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.62",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/Ixf4aptF5N2Qdfmh4fGGYhTN274kJXuNMkUAzpL5HuD9jzSxIGG5kZNhhHY-p7nw/hotel/asset/10028750-694eb463cb0fc333ef063aa5666e190e.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010028750.THE%201O1%20Palembang%20Rajawali.2&contexts=%7B%22inventoryRateKey%22%3A%22povEwB3ZzsU2C6pd%2B6MdU13LUNuufACdbU0usK5vg0fvd3tqMbwF23Gao23EjXn9fwxXnYiRzoxM4HX9sDmt9%2FAm1AYn3MeGz8Xcpq5hCtgkoYhCABuc4UBUJdDpIzcBkjYFe7E9Hsd3uMKwzSkUl5pNkVNrbZlWauR9OJSMSOhqSdeRrOIJdiNjtKln2V62y4sTk7d5l%2FIwxsZUWOJb9o%2BbdPKyeEcnUCrwiPsukDU4xJaQCNZd7Dm9H%2BzKz3SoHlBcSNHFk%2B6M%2Bed81rVbweEHGIhg0KJ7gZAJpw17ItAcEtGPm1fxqcNnBgMR8yyWhYTQr%2FzR3K27ivAqQCAb%2BJhAEL0jJ1aCAPaWTLUPGXtE5lH7CkmhuKUZUVANNehphMam%2BEpcElzU%2BdVSsGBJoEGmb3UOlN0uD7%2FMrpBj8gr0VZx0fVEuUrDwDhp20YPk%2FprV1QNJ3uRWGzkuuDXCivVMqpd5DzEqmU1M05W8LH6wIyUeP2DaQOstd8W4ab9%2FWuE%2FNiGnciUzLhpyw4ZvzjSRkAserqbchG3IPY0C996rOuF%2B%2FAsDeSmZKHQMjtagj0lqorsQFjKyKoIaAceTduhw7niBWzPymmEHph8NwIUrk4AkYbgcD%2FDODqraz1CdwYjLMLGFA8rdSnJZFEJrTTvaUCob0OuksMpkvFc6akX%2B81Uy96MZccC7uUIHIa8a82jyAIdSdNmAZHYnVMM5on33g%2Baw%2BvS39ce9sEtl9S8Mqn7wniRHLH37Zcc0q8QSh5c5FNOFOoxQsg0uRc55q37mlgKXndxM5jiJfgN1tTC7ONFszYwmlD3JO6Le6UUvM1sv7BCtqrZBz1XQJwFMUffqOCu6hReVcmCUfhCPHWtRXJjhAfJMgixriEkvvyEGGey4aM0hrxMVUXFcEpretOFjxDz0MBvbGUg%2FlzLbE%2B8WdKTrble81LqEEuxncl5GoWlIhf7J3Fpyklvt9dZhf10SfK%2BGtC9wfEXxMgVSB6cIMw11T4FlyoNEow0e5n1q%2BY66L7uYTrCIqlPT9HL0U%2FuFyXn5sxIbV9VlSDR%2F1uU%2Fj3fMZWjZlt1ISE%2B3CIu%2BAk5%2Fj%2FRcIAfTmpeUsMwKIDNX106WLgnoVO6%2BcyZp%2FcXpRR4D07nh93Qn2Z4qY4vYBfGP2qZm%2BQxl4Su0DDPBkBPmeEJKgSaY8Y7mKCyp8KMQJ2Ycni5AFgvNH64pd9o%2Fa2ciBKR9gVUufkAZWm3GVKlScVB0HMPmbHEkqb6RSSA%3D%22%7D&loginPromo=1&prevSearchId=1833074659494486902",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Hotel Santika Radial Palembang",
+            "address": "Jalan Brigjen HM Dhani Effendi (Jl. Radial) No. 1688 (Terletak tepat di depan Transmart), Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "892",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.36",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10019656-cf9a6e01ccf3aff8f14c9a897ed89ff5.png?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010019656.Hotel%20Santika%20Radial%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Hotel Santika Premiere Bandara - Palembang",
+            "address": "Jl. Gubernur H. Asnawi Mangku Alam No. 168 – 169, Palembang 30961, Sukarame, Palembang, Sumatra Selatan, Indonesia, 30961",
+            "facilities": [
+                "Selengkapnya",
+                "Kolam Renang",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "BNI Tanjung Api Api",
+                    "distance": "N/A"
+                },
+                {
+                    "name": "1.53",
+                    "distance": "km"
+                },
+                {
+                    "name": "Bandar Udara Internasional Sultan Mahmud Badaruddin II",
+                    "distance": "(PLM)"
+                },
+                {
+                    "name": "2.18",
+                    "distance": "km"
+                },
+                {
+                    "name": "P&D Manis KM 11",
+                    "distance": "N/A"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20009024-a91a82ab47510545c397db2b3ff10345.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000020009024.Hotel%20Santika%20Premiere%20Bandara%20-%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "Swimming Pool",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Beston Hotel Palembang (FKA Horison Ultima Palembang)",
+            "address": "Jl. Jend Sudirman No 57, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30125",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.43",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.71",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10002189-1348873e821b45ae7d6984c01c4413c4.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010002189.Beston%20Hotel%20Palembang%20(FKA%20Horison%20Ultima%20Palembang).2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Grand Daira Hotel Palembang",
+            "address": "Jalan. Jendral. Sudirman No. 153, Palembang Sumatera Selatan 30126, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30126",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Kolam Renang",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "562",
+                    "distance": "m"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.12",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/Ixf4aptF5N2Qdfmh4fGGYhTN274kJXuNMkUAzpL5HuD9jzSxIGG5kZNhhHY-p7nw/hotel/asset/10009083-f4b1717f10650e0cb9d9cf90bf5fc7e7.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010009083.Grand%20Daira%20Hotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Swimming Pool",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Rio City Hotel",
+            "address": "Jl. Lingkaran 1 No. 1 Dempo, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30113",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.46",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "2.09",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10001611-01fd76620c792955ac5990e1e0425db7.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.2000000212517.Rio%20City%20Hotel.2&contexts=%7B%22inventoryRateKey%22%3A%22DnBaUnrbmBEGjOYodOvBrHxXEKEvgKxtu2ufp7hU9AxA76inION%2BSmCh0Vf%2BXKjl5kOavwDEMCRbwsFgCO05GDxVlcjvxi7Q7dPGxDH5Te4StNecMK4x8leYqFeakdftvWUFZDRStcGqoGAM7Uu2FJSsHynY9KEzxElNQf1XRP5576mYffuQgaB5iqKtXIIZGQ%2FnHq%2B%2F%2F7jQbagKUbNEa%2FUf7Q4Xqn5I4GJRiql3k3bLXg2Qd4M%2BJHfj2UYRc7v0zuhiLXJPfoE%2FI4RCz%2FkLlzpGEb76XFb1Cd8iCmSn1LIStNecMK4x8leYqFeakdftOkYRvvpcVvUJ3yIKZKfUsseG1yPB0zcnpQYydRB2z%2BJC1QJQH%2BFjuiecdmZfvnn7FBCCpgxshIv9b3mfNjB92UGHoRAWkOOyUI%2F9jlssO48gzPEMSthD7g%2FJ58EmZBo4Xya8r1wErXp1FTU3tRyyFMJ5bSNwHLCNpcDdin5vdJpPWY3qykIQa4IyqneZNNYUjUmW%2BTj%2Fohl1zu3C2IGZopg3PR1un5PcKRt2ISSf2lK%2B8E5ffriKqUqPgNBdLfPQ9SePzDqdfAQpXPJVz5%2F6VrGj86XL7e50ju4SKDihdmzsfcg5YamzQQrD1hVC0kRlWeBbkfZJxLEIu057OgP5XLCyrXBiKVNDke%2BA5CnxEuhwxVSQnW9YfEfo%2FPvBSS9MpANDeD%2BIAvrGTirO3BJ1%2B5kPhkdNq6y756VbTdUf%2F2hSZUySmNjkUwTBjAHXj8lKX2yv5rg5W9c0KgIn02hk6zajkdbgqwPos%2FYjj713P%2Bgzr1XiueVrKD0wPVkQmKDF3rbFaYKg%2BdZNv%2FHPaJM2clltOVBTVRnuY%2Fw5ITo7ZAV3mlDn4fDUnVMroTkV6hPpPwBW9n2oslMPBupvzyFPD1jCXHRdZrzAOfLKC1%2FsKuan9zobqYv15aiAgSNNRP6%2FF2aMDSmo2z%2Bnr%2FZR60h4zH7QAIVNYlWHCRH7LSx%2B3S4qFu4r9wBFxEAAjwhp%2Fb7GRDo0qH9%2FmptuS0IZ%2B9uJadA1jY%2BzeL2pqldaBAEzMxT1jfjoqbCUFBC4sFyXBrEKX6quZ1SiDAEidyQEroto%2FBL2d3DpZYCo%2FJPRpCIcd3QhFK%2Fu4%2BAXFCC%2BKRXwCWeRRcUqkLv9sw1r2lxJH%2FjVRr26PedDbAfMrfFzJ2fkr5qgNlFFCJr9pbMji1zPnycV%2Fi9r4kCvPP%2BbKQ1okSPsMzT%2Ftpp2zLnREqkFw%2BFLtfSU9rx1%2BSrsf1TkoF0FZts2ttapwfxT31j53Lnn2bdeqtj7Jv9%2FgpdKTfe7KA5UdBHtEuQpq92zvyJwOD5Ad3pP%22%7D&loginPromo=1&prevSearchId=1833074860737188911",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Super OYO Collection O 166 Hotel Princess",
+            "address": "Tidak ditemukan",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.40",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.63",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/Ixf4aptF5N2Qdfmh4fGGYhTN274kJXuNMkUAzpL5HuD9jzSxIGG5kZNhhHY-p7nw/hotel/asset/10004965-0e6e6e2212aa4861b80bb5ef515b6a02.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010004965.Super%20OYO%20Collection%20O%20166%20Hotel%20Princess.2&contexts=%7B%22inventoryRateKey%22%3A%22povEwB3ZzsU2C6pd%2B6MdU%2B0DXZ%2BT%2Bqw8uON7NhQf%2Ft46R%2F2%2FUZY7jlbXjf%2B2nONifwxXnYiRzoxM4HX9sDmt9%2FAm1AYn3MeGz8Xcpq5hCtgkoYhCABuc4UBUJdDpIzcBkjYFe7E9Hsd3uMKwzSkUl5pNkVNrbZlWauR9OJSMSOjT2kAb5PFnnUsj4yv%2BE8%2BE7nFlkIQNF73emJJ9OOwUBY%2BbdPKyeEcnUCrwiPsukDU4xJaQCNZd7Dm9H%2BzKz3SoHlBcSNHFk%2B6M%2Bed81rVbweEHGIhg0KJ7gZAJpw17ItAcEtGPm1fxqcNnBgMR8yyWhYTQr%2FzR3K27ivAqQCAb%2BJhAEL0jJ1aCAPaWTLUPGXtE5lH7CkmhuKUZUVANNehphMam%2BEpcElzU%2BdVSsGBJoEGmb3UOlN0uD7%2FMrpBj8gr0VZx0fVEuUrDwDhp20YPk%2FprV1QNJ3uRWGzkuuDXCivVMqpd5DzEqmU1M05W8LH6wIyUeP2DaQOstd8W4ab9%2FWuE%2FNiGnciUzLhpyw4ZvzjSRkAserqbchG3IPY0C996rOuF%2B%2FAsDeSmZKHQMjtagj0lqorsQFjKyKoIaAceTduhw7niBWzPymmEHph8NwIUrk4AkYbgcD%2FDODqraz1CdwYjLMLGFA8rdSnJZFEJrTZtKcD%2FtICICKp8TIACWC4WG9Cov8nQX%2BErNEUcJvaGP82jyAIdSdNmAZHYnVMM5oiSRPkf%2FWi1a%2BDSrYvlUkcPbvBWjfyZ3RSglOgbRrDGhDeDusr9%2FkMVDSp1aqi2Kvuame0UnupydsqAaOQ%2BdoxR7y9lYiTUlU7qZDaAwgDCLpHNJWdQQ0E7Hip%2BEAHv8XpdpfaAqnnzJX6xewlKC17ffL5t1HdKQtVEwsrKcffjPDDcuCeYyIwtYjMP5LHiao0kSvAFuHEhp%2Fxrhwu8DvJ%2FJQQl7dof1lqwbZ08HtEmuWUkpoqrQBbsH6aGkVAOIe7cbtCqw8strezJOcru00Ejrb7LOMupEZmIVEizDsDBq4YhaSGtAmcIk%2FqfsngGfG30js0eqUoWb2M2H8Fzz89VCVtlXFXOwtMj12jYw9i%2FhykUYSIR9RjivUWVvYKpQ9MPvfq42vDOjFQL3BUaNgRXxQgZTFHIYBcHFaeKcykZXKr81KDB7fMROiV2HbrmV9ZdjpdX086cqu6KeDRjhMjQccv4Gx2Kst6Z8rrYJ6HT5%22%7D&loginPromo=1&prevSearchId=1833074903033609686",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Hotel Anugerah Palembang",
+            "address": "Komp. Hotel Anugerah, Jl. Jend. Sudirman No.149, Sungai Pangeran, Kec. Ilir Tim. I, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30129",
+            "facilities": [
+                "Selengkapnya",
+                "Lift"
+            ],
+            "nearest_places": [
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "652",
+                    "distance": "m"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.22",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/oJLNzNs71wS3RVcWVniLgofXtaluprJ7ristt-jspoM=/images//22060r000000gy0lf9B1B_R_1080_808_R5_Mtrip.jpg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000003253036.Hotel%20Anugerah%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "Elevator"
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Aryaduta Palembang",
+            "address": "Jalan POM IX Palembang Square, Ilir Barat I, Palembang, Sumatra Selatan, Indonesia, 30137",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "133",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.32",
+                    "distance": "km"
+                },
+                {
+                    "name": "Kantor Pusat Yoanda Prima",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10000819-c96b0761a08ff046387e6be5eb5a703a.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.149200.Aryaduta%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Hotel Swarna Dwipa Palembang",
+            "address": "Jalan Tasik No.2, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30136",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.73",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "2.41",
+                    "distance": "km"
+                },
+                {
+                    "name": "Rama Tranz",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10012969-3605x1974-FIT_AND_TRIM-c32a7a900102e98504855abddf38249d.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010012969.Hotel%20Swarna%20Dwipa%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 18,
+            "name": "The Zuri Palembang",
+            "address": "Jalan Radial No. 1371, 24 Ilir, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "822",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.42",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/Ixf4aptF5N2Qdfmh4fGGYhTN274kJXuNMkUAzpL5HuD9jzSxIGG5kZNhhHY-p7nw/hotel/asset/20009998-b17f1fb5d1f768f261b0181228145f7a.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000020009998.The%20Zuri%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Emilia Hotel By Amazing - Palembang",
+            "address": "Jl. Letkol. Iskandar, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 40115",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.65",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.79",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10002012-2048x1356-FIT_AND_TRIM-5efa603f737887dfb1576d61e9535966.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.1000000509594.Emilia%20Hotel%20By%20Amazing%20-%20Palembang.2&contexts=%7B%22inventoryRateKey%22%3A%22povEwB3ZzsU2C6pd%2B6MdU13LUNuufACdbU0usK5vg0cfjXOtQgoArJmWA5dhGu1ofwxXnYiRzoxM4HX9sDmt9%2FAm1AYn3MeGz8Xcpq5hCtgkoYhCABuc4UBUJdDpIzcBkjYFe7E9Hsd3uMKwzSkUl5pNkVNrbZlWauR9OJSMSOjrKNUemG6lN9zinrcFk9lNYCs2iGeoGqHxz5CkrRIXxY%2BbdPKyeEcnUCrwiPsukDU4xJaQCNZd7Dm9H%2BzKz3SoHlBcSNHFk%2B6M%2Bed81rVbweEHGIhg0KJ7gZAJpw17ItAcEtGPm1fxqcNnBgMR8yyWhYTQr%2FzR3K27ivAqQCAb%2BJhAEL0jJ1aCAPaWTLUPGXtE5lH7CkmhuKUZUVANNehphMam%2BEpcElzU%2BdVSsGBJoEGmb3UOlN0uD7%2FMrpBj8gr0VZx0fVEuUrDwDhp20YPk%2FprV1QNJ3uRWGzkuuDXCivVMqpd5DzEqmU1M05W8LH6wIyUeP2DaQOstd8W4ab9%2FWuE%2FNiGnciUzLhpyw4ZvzjSRkAserqbchG3IPY0C996rOuF%2B%2FAsDeSmZKHQMjtagj0lqorsQFjKyKoIaAceTduhw7niBWzPymmEHph8NwIUrk4AkYbgcD%2FDODqraz1CdOE6DzdCODCPDNw6OC3q%2FyCblOmVTe2Stzik%2F5l6T0ZgbMf2cA1ENYB3lzlv6tT%2Fo82jyAIdSdNmAZHYnVMM5orT%2F2VByRdYdTJ3XoUhJBixQlA1HvtHaGeKsslt61BSTh1wT8uHOZUXTeJ5Ut1pKSOALw%2FA9PtZivOrZLjWeF1%2Fu2OLu%2BHyJrydRxniz34guHKunonm7dVhMi6D%2FYgpZz%2Fo9BRa9uKubucVruLbVy1ivCzW8Jwh37h7RUHYSGqnmvquXf2VcRm2lHO4uWndQbrIk55%2F433o%2BfHcoetVSmn0EJksjFG2rrkppmteq4YoGx%2FC8tbbfQjuFBXj%2F2f6WIXG2cXzY8hj0ZNHmRZBea4TQWznh4GgYX09YAJLsjLsFTPgEpMlBy5OD%2FAlwNXx%2F9KtRa1NLYimwjGII%2Bfpdtwlx918yv34332woRXzSXwdGT2s5dP8tHkeyw8987yYCDj2QBYq6heg%2FrPIf5UrflkqmbIGIunePep3D92xh4nUJadwycJJSDkP1rnROmVzJBoNPbRJb2%2FTsZ%2Ft%2BbDNQA6IS6crXSWALvx5XGXF2wz6z%22%7D&loginPromo=1&prevSearchId=1833094638562475478",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 20,
+            "name": "Airish Hotel Palembang",
+            "address": "Jl. Suka Bangun I, No 2233, Palembang, Sumatra Selatan., Sukarame, Palembang, Sumatra Selatan, Indonesia, 30151",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Lorena Cabang",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "2.78",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang Trade Center",
+                    "distance": "Mall"
+                },
+                {
+                    "name": "2.89",
+                    "distance": "km"
+                },
+                {
+                    "name": "Paud Kaisah Kemuning",
+                    "distance": "Sekip"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20014567-8cad06279734c1df63cd515014e429a6.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000020014567.Airish%20Hotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 21,
+            "name": "Classie Hotel",
+            "address": "Tidak ditemukan",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "938",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.78",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10002719-43f78a752b52770ffc5dad8cd1c8d1ac.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010002719.Classie%20Hotel.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 22,
+            "name": "Hayo Hotel Palembang",
+            "address": "Jalan Malaka IV, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30961",
+            "facilities": [
+                "Selengkapnya",
+                "Restoran"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang Trade Center",
+                    "distance": "Mall"
+                },
+                {
+                    "name": "1.44",
+                    "distance": "km"
+                },
+                {
+                    "name": "Paud Kaisah Kemuning",
+                    "distance": "Sekip"
+                },
+                {
+                    "name": "2.35",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/d36OB5NausLck4EYZKMeUb-FTC7-kb3ssAhRaSwsKPM=/xdata/images/hotel/max500/467733617.jpg?k=75dbdccde85dfc7621a8d7635e213c6b38555c1ac5f106b18dc2ea6f1cba3f2e&o=&s=312x&_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000003290772.Hayo%20Hotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "Restaurant"
+            ]
+        },
+        {
+            "id": 23,
+            "name": "Ayola Sentosa Palembang",
+            "address": "Tidak ditemukan",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "2.10",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "2.22",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10026278-7851ed62521b679eae3aa38a64061480.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010026278.Ayola%20Sentosa%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 24,
+            "name": "Luminor Hotel Palembang By WH",
+            "address": "Jl. Jend. Sudirman No.1111A, Sungai Pangeran, Kec. Ilir Tim. I, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30128",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "321",
+                    "distance": "m"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.11",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/Ixf4aptF5N2Qdfmh4fGGYhTN274kJXuNMkUAzpL5HuD9jzSxIGG5kZNhhHY-p7nw/hotel/asset/20046671-4f2d06d308b28f36f2546c08e560abbd.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000000952536.Luminor%20Hotel%20Palembang%20By%20WH.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Parking",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 25,
+            "name": "Hotel Budi",
+            "address": "Jalan. Letnal Kolonel Iskandar, 24 Ilir, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
+            "facilities": [
+                "Tidak ditemukan"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.36",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.59",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20016200-0729501ba1b54971014aa787099a6e2f.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000020016200.Hotel%20Budi.2",
+            "facilities_english": [
+                "Not found"
+            ]
+        },
+        {
+            "id": 26,
+            "name": "Algoritma Hotel Palembang",
+            "address": "Jl. Dr. M. Isa No. 988 , Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30114",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "377",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "2.22",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang Icon",
+                    "distance": "Mall"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10002919-1f77da158f7f8b7f5c8173f5323ca43b.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010002919.Algoritma%20Hotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 27,
+            "name": "Hotel Alam Sutra",
+            "address": "Jalan Kolonel H. Burlian No. 182, Kecamatan Sukarame, Sukarame, Palembang, Sumatra Selatan, Indonesia, 30151",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Taman Punti",
+                    "distance": "Kayu"
+                },
+                {
+                    "name": "709",
+                    "distance": "m"
+                },
+                {
+                    "name": "Filia Hotel",
+                    "distance": "N/A"
+                },
+                {
+                    "name": "2.53",
+                    "distance": "km"
+                },
+                {
+                    "name": "Rama Tranz",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10011593-57775fdff00ca393e2c4fa952fe018af.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010011593.Hotel%20Alam%20Sutra.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 28,
+            "name": "BATIQA Hotel Palembang",
+            "address": "Jalan Kapten A. Rivai No. 219, Ilir Barat I, Palembang, Sumatra Selatan, Indonesia, 30121",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "965",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.82",
+                    "distance": "km"
+                },
+                {
+                    "name": "Kantor Pusat Yoanda Prima",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/Ixf4aptF5N2Qdfmh4fGGYhTN274kJXuNMkUAzpL5HuD9jzSxIGG5kZNhhHY-p7nw/hotel/asset/10007593-1efa981eb019bc7faab252eeeb7c8f8e.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010007593.BATIQA%20Hotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 29,
+            "name": "Tidak ditemukan",
+            "address": "Tidak ditemukan",
+            "facilities": [
+                "Tidak ditemukan"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Tidak",
+                    "distance": "ditemukan"
+                }
+            ],
+            "image_url": "Tidak ditemukan",
+            "traveloka_url": "https://www.traveloka.com/if-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010001911.Wisata%20Hotel%20Palembang.2&contexts=%7B%22inventoryRateKey%22%3A%22r%2F4%2FIbSpsApptn70HsOVHP1%2Bi1SHhkRa3idkrzICNj4dEvvW%2BsMTfF0LL0XINC9J5I6jeAPHvTJ2o6dNXRmbCPsiEbiy2n3yBgneU5TLRjIa7aLchboS7wdNkBRjAqgQL8Wgf%2Fmzqcmw3PrdUN%2BC4uT3cmC%2BBzZqbR8W%2FZADv0rcLzwFIvhl3NGqhf0y7SOqXhqLaEPXGwlj76pFqnbl9X%2Ff%2F1gcG%2F3mkKToP2qTtiEdZQ%2Bmo27xejTh5Oc4izw39PCWSVDKwnP%2FUeFnHAmHq0P1a2C211JkQoCvOnw%2FXAF26T8o790RIclYDsF7jT9%2BcrFY9oFTmI%2BuhAf1m4i0MfdsWB4bF2tVXJFhl5WBRbn%2BmtXVA0ne5FYbOS64NcKKi2RalMT1SOM9NHDOSsxKQs6BN18yFBXNoit%2BV5xPYi9FyqUtDgL35KICecvAYRs7lYL5jFbWFXucdOfwHAd5zn3VAebwepT0JovBkO9RpL5GOtaiV%2Bgh4YG%2FkiP9POwHKlCruogOL6WbeuLc4mU6qCW3ezhfU35p%2FXzdibK3m%2BDH4I2O3aHbyDsm5HKxOpJnWSE9FwnN%2BCVxkggKfLHoh3fXWEcw8TZSKa9nBmpWOcTiigT0lrroqthy0y9qXczJbJpuobrXCSJ578tYK3NH7p6vtAYahWFlfCEo9Mj0d8SDgH4ukSYYpMadH7VewyDOPzWxL67zzwO2d%2FyBgtedt72T5Lz9s1Z6HausXm5g6ewhc2fpsiF1aRnQq%2BNfmjdyDeDusr9%2FkMVDSp1aqi2Kvuame0UnupydsqAaOQ%2BdoxR7y9lYiTUlU7qZDaAwgDCLpHNJWdQQ0E7Hip%2BEAHv8XpdpfaAqnnzJX6xewlKC17ffL5t1HdKQtVEwsrKcffjPDDcuCeYyIwtYjMP5LHiao0kSvAFuHEhp%2Fxrhwu8DvJ8S6islcUw9lEXQ%2Fz59DzKFWUkpoqrQBbsH6aGkVAOIe5eypqi3LaqUE8Sk91ZjZJDrb7LOMupEZmIVEizDsDBqDkpq1tIUTgPVheBDIjrE%2FH0js0eqUoWb2M2H8Fzz89VCVtlXFXOwtMj12jYw9i%2FhykUYSIR9RjivUWVvYKpQ9MPvfq42vDOjFQL3BUaNgRXxQgZTFHIYBcHFaeKcykZXKr81KDB7fMROiV2HbrmV9ZdjpdX086cqu6KeDRjhMjQccv4Gx2Kst6Z8rrYJ6HT5%22%7D&loginPromo=1&prevSearchId=1833093473337634639",
+            "facilities_english": [
+                "Not found"
+            ]
+        },
+        {
+            "id": 30,
+            "name": "MaxOneHotels.com @ Vivo Palembang",
+            "address": "Jl. R. Soekamto No. B1-B4, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30114",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang Trade Center",
+                    "distance": "Mall"
+                },
+                {
+                    "name": "175",
+                    "distance": "m"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.95",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10000293-787x591-FIT_AND_TRIM-f4a276e3491b8f4809ee4c16e430977d.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.335926.MaxOneHotels%252Ecom%20%40%20Vivo%20Palembang%20.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 31,
+            "name": "Hotel Grand Duta Syariah",
+            "address": "Jalan Radial No. 1, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.31",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.67",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10002223-2048x1377-FIT_AND_TRIM-aab7e7411940e04e61a455c01545e22d.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010002223.Hotel%20Grand%20Duta%20Syariah.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 32,
+            "name": "Hotel Grand Duta Syariah",
+            "address": "Jalan Radial No. 1, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.31",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.67",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10002223-2048x1377-FIT_AND_TRIM-aab7e7411940e04e61a455c01545e22d.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010002223.Hotel%20Grand%20Duta%20Syariah.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 33,
+            "name": "De' Premium Hotel Soekarno Hatta",
+            "address": "Tidak ditemukan",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Kantor Pusat Yoanda Prima",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.47",
+                    "distance": "km"
+                },
+                {
+                    "name": "SMK PGRI 1",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.88",
+                    "distance": "km"
+                },
+                {
+                    "name": "Bukit Siguntang",
+                    "distance": "N/A"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20047794-68a97af011949e1e5da85f5d1b3b7621.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000000957640.De%27%20Premium%20Hotel%20Soekarno%20Hatta.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 34,
+            "name": "All Nite And Day Veteran",
+            "address": "Tidak ditemukan",
+            "facilities": [
+                "Tidak ditemukan"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "932",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.93",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/image/imageResource/2025/01/05/1736039010989-7595d02099b0647547a9e4e8ec19d408.png?tr=h-24",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000004047832.All%20Nite%20And%20Day%20Veteran.2",
+            "facilities_english": [
+                "Not found"
+            ]
+        },
+        {
+            "id": 35,
+            "name": "Grand Malaka Ethical Hotel",
+            "address": "Jl. Malaka Ii No.5, Bukit Sangkal, Kalidoni, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30961",
+            "facilities": [
+                "Selengkapnya",
+                "Kolam Renang",
+                "Restoran"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang Trade Center",
+                    "distance": "Mall"
+                },
+                {
+                    "name": "1.29",
+                    "distance": "km"
+                },
+                {
+                    "name": "Paud Kaisah Kemuning",
+                    "distance": "Sekip"
+                },
+                {
+                    "name": "2.19",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/bZSi52mPfjGt5XSA0UTsnnzP9Aa1taHW1q0wgSQYefw=/cloudcontent/fotos/agregadorHotelero/0022/60279/2260279/1.jpg?f=17301769&_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000006201046.Grand%20Malaka%20Ethical%20Hotel.2",
+            "facilities_english": [
+                "Read More",
+                "Swimming Pool",
+                "Restaurant"
+            ]
+        },
+        {
+            "id": 36,
+            "name": "Azza Hotel Palembang by Horison",
+            "address": "Jalan Kapten Anwar Sastro No. 1296, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30129",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "515",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.04",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10001796-5554bc7470a5d50baef318ea416e1538.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010001796.Azza%20Hotel%20Palembang%20by%20Horison.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 37,
+            "name": "Amaris Hotel Palembang",
+            "address": "Lokasi yang strategis di sekitar Jl. Demang Lebar Daun, salah satu jalan utama di Palembang dan dekat dengan stasiun LRT",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Rama Tranz",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.08",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.65",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10000601-b154494fc3803b3da6e03a7439a0a72e.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010000601.Amaris%20Hotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 38,
+            "name": "favehotel Palembang",
+            "address": "Jalan Basuki Rahmat No. 1681, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30128",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.48",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "2.26",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10007230-853x1280-FIT_AND_TRIM-0956a565e4af2678a976422141963b8f.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010007230.favehotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "Swimming Pool",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 39,
+            "name": "Swarna Dwipa Residence",
+            "address": "Jalan Bay Salim No. 25, Kemuning, Sekip Tengah, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30114",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "952",
+                    "distance": "m"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.02",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20017579-dfe6801d7bf22048d7d5dfacd9f01e8f.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000020017579.Swarna%20Dwipa%20Residence.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 40,
+            "name": "Monoloog Hotel Palembang",
+            "address": "Jl. Jendral Sudirman Kelurahan 20 Ilir III, Kecamatan Ilir Timur 1 , Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30129",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "544",
+                    "distance": "m"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.24",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/Ixf4aptF5N2Qdfmh4fGGYhTN274kJXuNMkUAzpL5HuD9jzSxIGG5kZNhhHY-p7nw/hotel/asset/10001247-aa298016abc770fd5aa5bfc9500a4079.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.568340.Monoloog%20Hotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 41,
+            "name": "Winer Hotel",
+            "address": "Jalan Veteran, Lorong Karyawan, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30114",
+            "facilities": [
+                "Selengkapnya",
+                "Resepsionis 24 Jam"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.04",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "2.13",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20065089-0962c6c6de94b0b2e1575db0d951c10a.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000001136366.Winer%20Hotel.2&contexts=%7B%22inventoryRateKey%22%3A%22povEwB3ZzsU2C6pd%2B6MdU0EQyXUDrrTvnasVAw0smVmEvA45lpvGBxltHOfQ3fKOfwxXnYiRzoxM4HX9sDmt9%2FAm1AYn3MeGz8Xcpq5hCtgkoYhCABuc4UBUJdDpIzcBkjYFe7E9Hsd3uMKwzSkUl5pNkVNrbZlWauR9OJSMSOg3Ecwbn2%2F2IuOUXTOX6qJU56iebVNvd%2B9ZsMIGrUtPS4%2BbdPKyeEcnUCrwiPsukDU4xJaQCNZd7Dm9H%2BzKz3SoHlBcSNHFk%2B6M%2Bed81rVbweEHGIhg0KJ7gZAJpw17ItAcEtGPm1fxqcNnBgMR8yyWhYTQr%2FzR3K27ivAqQCAb%2BJhAEL0jJ1aCAPaWTLUPGXtE5lH7CkmhuKUZUVANNehphMam%2BEpcElzU%2BdVSsGBJoEGmb3UOlN0uD7%2FMrpBj8gr0VZx0fVEuUrDwDhp20YPk%2FprV1QNJ3uRWGzkuuDXCivVMqpd5DzEqmU1M05W8LH6wIyUeP2DaQOstd8W4ab9%2FWuE%2FNiGnciUzLhpyw4ZvzjSRkAserqbchG3IPY0C996rOuF%2B%2FAsDeSmZKHQMjtagj0lqorsQFjKyKoIaAceTduhw7niBWzPymmEHph8NwIUrk4AkYbgcD%2FDODqraz1CdvyijENbpW7%2FeVjv6a4WF4an%2BXONqg4RmNxUtHeyuw6zLKcelHGPYJy71LTeTFSSE82jyAIdSdNmAZHYnVMM5oo0TVguixxNTr1f57jWt%2Bukh5SNitIMp9hEw9bwlUmiTh1wT8uHOZUXTeJ5Ut1pKSOALw%2FA9PtZivOrZLjWeF1%2Fu2OLu%2BHyJrydRxniz34guHKunonm7dVhMi6D%2FYgpZz%2Fo9BRa9uKubucVruLbVy1ivCzW8Jwh37h7RUHYSGqnmvquXf2VcRm2lHO4uWndQbrIk55%2F433o%2BfHcoetVSmn3oIKBwM9dncIhBFrU0z5A2x%2FC8tbbfQjuFBXj%2F2f6WIUBvKGUuz63g8TzlP%2FSxxU3QWznh4GgYX09YAJLsjLsFC6R7DHnxZBC6fGw4WoDH9atRa1NLYimwjGII%2Bfpdtwlx918yv34332woRXzSXwdGT2s5dP8tHkeyw8987yYCDj2QBYq6heg%2FrPIf5UrflkqmbIGIunePep3D92xh4nUJadwycJJSDkP1rnROmVzJBoNPbRJb2%2FTsZ%2Ft%2BbDNQA6IS6crXSWALvx5XGXF2wz6z%22%7D&loginPromo=1&prevSearchId=1833094154244095446",
+            "facilities_english": [
+                "Read More",
+                "24-Hour Front Desk"
+            ]
+        },
+        {
+            "id": 42,
+            "name": "Majestic Hotel Palembang",
+            "address": "Jl. Sumpah Pemuda No. 07 (POM IX), Ilir Barat I, Palembang, Sumatra Selatan, Indonesia, 30136",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "528",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.62",
+                    "distance": "km"
+                },
+                {
+                    "name": "Kantor Pusat Yoanda Prima",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10002195-dab0491b939daba1a80816a039a40823.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010002195.Majestic%20Hotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Parking",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 43,
+            "name": "Hotel Sentosa Palembang",
+            "address": "Jalan Radial No. 999, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                },
+                {
+                    "name": "1.18",
+                    "distance": "km"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.57",
+                    "distance": "km"
+                },
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20002800-7c5fd647057ba1d3110743159295033a.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000020002800.Hotel%20Sentosa%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi"
+            ]
+        },
+        {
+            "id": 44,
+            "name": "Vehotel Palembang",
+            "address": "Jalan Mayor Ruslan No. 2012, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30113",
+            "facilities": [
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi"
+            ],
+            "nearest_places": [
+                {
+                    "name": "Pool Putra Remaja",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "516",
+                    "distance": "m"
+                },
+                {
+                    "name": "GraPARI Telkom Group Sudirman",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "1.51",
+                    "distance": "km"
+                },
+                {
+                    "name": "Palembang",
+                    "distance": "Square"
+                }
+            ],
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10002575-1152x2048-FIT_AND_TRIM-5aa8eee65bcf6be9a1a55286641bc5b2.jpeg?_src=imagekit&tr=c-at_max",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010002575.Vehotel%20Palembang.2",
+            "facilities_english": [
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi"
+            ]
+        }
+    ]
+}

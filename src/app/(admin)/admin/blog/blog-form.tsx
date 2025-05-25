@@ -32,6 +32,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import Editor from "@/components/novel-editor";
+import { categories } from "@/types/category-types";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const formSchema = z.object({
   title: z.string().min(3, { message: "Title must be at least 3 characters" }),
@@ -46,10 +48,10 @@ const formSchema = z.object({
     }),
   excerpt: z
     .string()
-    .min(10, { message: "Excerpt must be at least 10 characters" }),
+    .min(10, { message: "Excerpt must be at least 10 characters" }).max(160, { message: "Excerpt must be less than 160 characters" }),
   english_excerpt: z
     .string()
-    .min(10, { message: "English excerpt must be at least 10 characters" }),
+    .min(10, { message: "English excerpt must be at least 10 characters" }).max(160, { message: "English excerpt must be less than 100 characters" }),
   content: z
     .string()
     .min(20, { message: "Content must be at least 20 characters" }),
@@ -151,6 +153,7 @@ export default function BlogPostForm() {
   };
 
   async function onSubmit(data: FormValues) {
+    console.log({ data })
     setIsSubmitting(true);
     try {
       let response;
@@ -454,7 +457,7 @@ export default function BlogPostForm() {
                       )}
                     />
 
-                    <FormField
+                    {/* <FormField
                       control={form.control}
                       name="category"
                       render={({ field }) => (
@@ -466,6 +469,48 @@ export default function BlogPostForm() {
                               {...field}
                             />
                           </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    /> */}
+                    <FormField
+                      control={form.control}
+                      name="category"
+                      render={({ field }) => (
+                        <FormItem>
+                          <div className="mb-4">
+                            <FormLabel className="text-base">Categories</FormLabel>
+                            <p className="text-sm text-muted-foreground">Select one or more categories for your post.</p>
+                          </div>
+                          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                            {categories.map((category) => {
+                              const selectedCategories = field.value ? field.value.split(" ").filter(Boolean) : []
+                              return (
+                                <FormItem key={category.id} className="flex flex-row items-start space-x-3 space-y-0">
+                                  <FormControl>
+                                    <Checkbox
+                                      checked={selectedCategories.includes(category.id)}
+                                      onCheckedChange={(checked) => {
+                                        const currentCategories = field.value ? field.value.split(" ").filter(Boolean) : []
+                                        let newCategories
+
+                                        if (checked) {
+                                          newCategories = [...currentCategories, category.id]
+                                          console.log("Updated categories:", newCategories.join(" "))
+                                        } else {
+                                          newCategories = currentCategories.filter((cat) => cat !== category.id)
+                                        }
+                                        // form.setValue("category", newCategories.join(" "), { shouldValidate: true })
+                                        field.onChange(newCategories.join(" "))
+                                      }}
+                                    />
+                                  </FormControl>
+                                  <FormLabel className="text-sm font-normal">{category.label}</FormLabel>
+                                </FormItem>
+                              )
+                            })}
+                          </div>
+                          {field.value && <p className="text-xs text-muted-foreground mt-2">Selected: {field.value}</p>}
                           <FormMessage />
                         </FormItem>
                       )}
@@ -536,8 +581,8 @@ export default function BlogPostForm() {
                             ? "Updating..."
                             : "Creating..."
                           : isEdit
-                          ? "Update Post"
-                          : "Create Post"}
+                            ? "Update Post"
+                            : "Create Post"}
                       </Button>
                       <Button
                         type="button"

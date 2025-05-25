@@ -253,6 +253,23 @@
   }
 }
 
+.ampera-gradient {
+  background-image: linear-gradient(to right, #ff615f, #e53935 );
+}
+
+.ampera-text-gradient {
+  background: linear-gradient(to right, #e53935, #f84d4a, #f5a700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.group:hover .ampera-text-gradient-hover {
+  background: linear-gradient(to right, #e53935, #f5a700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 /* .swiper {
   width: 340px;
   height: 420px;
