@@ -20,6 +20,9 @@ import {
   Edit,
   Eye,
   MoreHorizontal,
+  Plus,
+
+  Search,
   Trash,
 } from "lucide-react";
 
@@ -44,9 +47,13 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useEvents } from "@/hooks/use-event";
 import Link from "next/link";
+import { LoadingSkeletonTable } from "./Loading-Skeleton";
+import WrapperComponent from "@/app/(admin)/Wrapper-Component";
+import { SiteHeader } from "@/app/(admin)/admin/_components/sidebar/site-header";
+
 
 type Event = {
   id: string;
@@ -139,13 +146,12 @@ export const columns: ColumnDef<Event>[] = [
       return (
         <Badge
           variant="outline"
-          className={`${
-            category === "music"
-              ? "border-blue-500 text-blue-500"
-              : category === "art"
+          className={`${category === "music"
+            ? "border-blue-500 text-blue-500"
+            : category === "art"
               ? "border-orange-500 text-orange-500"
               : "border-green-500 text-green-500"
-          }`}
+            }`}
         >
           {category}
         </Badge>
@@ -250,127 +256,157 @@ export function EventsTable() {
   };
 
   return (
-    <Card>
-      <div className="p-4">
-        <div className="flex items-center justify-between py-4">
-          <Input
-            placeholder="Filter events..."
-            value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
-            onChange={(event) =>
-              table.getColumn("title")?.setFilterValue(event.target.value)
-            }
-            className="max-w-sm"
-          />
-          <div className="flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="ml-auto">
-                  Columns <ChevronDown className="ml-2 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                {table
-                  .getAllColumns()
-                  .filter((column) => column.getCanHide())
-                  .map((column) => {
-                    return (
-                      <DropdownMenuCheckboxItem
-                        key={column.id}
-                        className="capitalize"
-                        checked={column.getIsVisible()}
-                        onCheckedChange={(value) =>
-                          column.toggleVisibility(!!value)
-                        }
-                      >
-                        {column.id}
-                      </DropdownMenuCheckboxItem>
-                    );
-                  })}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-        </div>
+    <WrapperComponent >
+      <SiteHeader title="Events list" />
+      <Card>
+        <CardHeader >
+          <CardTitle className="flex items-center justify-between">
+            <span>All Posts ({total})</span>
+            {totalPages > 0 && (
+              <div className="flex items-center space-x-2">
+                <Badge variant="outline" className="text-xs">
+                  Page {pageIndex + 1} of {totalPages}
+                </Badge>
+              </div>
+            )}
+          </CardTitle>
+          <CardDescription>
+            Manage and organize your event content
+          </CardDescription>
+          <Link className="mt-4 sm:mt-0 " href="/admin/events/new">
+            <Button className="w-full"
+            // onClick={() => router.push("/admin/events/new")}
 
-        <div className="rounded-md border">
-          <Table>
-            <TableHeader>
-              {table.getHeaderGroups().map((headerGroup) => (
-                <TableRow key={headerGroup.id}>
-                  {headerGroup.headers.map((header) => {
-                    return (
-                      <TableHead key={header.id}>
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(
+            >
+              <Plus className="h-4 w-4 mr-2" />
+              Create New Event
+            </Button>
+          </Link>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+              <Input
+                placeholder="Search events..."
+                value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
+                onChange={(event) =>
+                  table.getColumn("title")?.setFilterValue(event.target.value)
+                }
+                className="pl-10"
+              />
+            </div>
+            <div className="flex items-center gap-2">
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="ml-auto">
+                    Columns <ChevronDown className="ml-2 h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  {table
+                    .getAllColumns()
+                    .filter((column) => column.getCanHide())
+                    .map((column) => {
+                      return (
+                        <DropdownMenuCheckboxItem
+                          key={column.id}
+                          className="capitalize"
+                          checked={column.getIsVisible()}
+                          onCheckedChange={(value) =>
+                            column.toggleVisibility(!!value)
+                          }
+                        >
+                          {column.id}
+                        </DropdownMenuCheckboxItem>
+                      );
+                    })}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          </div>
+
+          <div className="rounded-md border">
+            <Table>
+              <TableHeader>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <TableRow key={headerGroup.id}>
+                    {headerGroup.headers.map((header) => {
+                      return (
+                        <TableHead key={header.id}>
+                          {header.isPlaceholder
+                            ? null
+                            : flexRender(
                               header.column.columnDef.header,
                               header.getContext()
                             )}
-                      </TableHead>
-                    );
-                  })}
-                </TableRow>
-              ))}
-            </TableHeader>
-            <TableBody>
-              {table.getRowModel().rows?.length ? (
-                table.getRowModel().rows.map((row) => (
-                  <TableRow
-                    key={row.id}
-                    data-state={row.getIsSelected() && "selected"}
-                  >
-                    {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
-                      </TableCell>
-                    ))}
+                        </TableHead>
+                      );
+                    })}
                   </TableRow>
-                ))
-              ) : (
-                <TableRow>
-                  <TableCell
-                    colSpan={columns.length}
-                    className="h-24 text-center"
-                  >
-                    {loading ? "Loading..." : "No results."}
-                  </TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </div>
-
-        <div className="flex items-center justify-end space-x-2 py-4">
-          <div className="flex-1 text-sm text-muted-foreground">
-            {table.getFilteredSelectedRowModel().rows.length} of{" "}
-            {table.getFilteredRowModel().rows.length} row(s) selected.
+                ))}
+              </TableHeader>
+              <TableBody>
+                {table.getRowModel().rows?.length ? (
+                  table.getRowModel().rows.map((row) => (
+                    <TableRow
+                      key={row.id}
+                      data-state={row.getIsSelected() && "selected"}
+                    >
+                      {row.getVisibleCells().map((cell) => (
+                        <TableCell key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell
+                      colSpan={columns.length}
+                      className="h-24 text-center"
+                    >
+                      {loading ? <LoadingSkeletonTable /> : "No results."}
+                    </TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
           </div>
 
-          <div className="flex items-center justify-between space-x-4">
-            <div className="text-sm text-muted-foreground">
-              Page {pageIndex + 1} of {totalPages} — Total: {total} items
+          <div className="flex items-center justify-end space-x-2 py-4">
+            <div className="flex-1 text-sm text-muted-foreground">
+              {table.getFilteredSelectedRowModel().rows.length} of{" "}
+              {table.getFilteredRowModel().rows.length} row(s) selected.
             </div>
-            <div className="space-x-2">
-              <Button
-                onClick={handlePreviousPage}
-                disabled={pageIndex <= 0 || loading}
-                variant="outline"
-              >
-                Previous
-              </Button>
-              <Button
-                onClick={handleNextPage}
-                disabled={pageIndex >= totalPages - 1 || loading}
-                variant="outline"
-              >
-                Next
-              </Button>
+
+
+            <div className="flex items-center justify-between space-x-4">
+
+              <div className="space-x-2">
+                <Button
+                  onClick={handlePreviousPage}
+                  disabled={pageIndex <= 0 || loading}
+                  variant="outline"
+                >
+                  Previous
+                </Button>
+                <Button
+                  onClick={handleNextPage}
+                  disabled={pageIndex >= totalPages - 1 || loading}
+                  variant="outline"
+                >
+                  Next
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </Card>
+        </CardContent>
+      </Card>
+    </WrapperComponent>
   );
 }

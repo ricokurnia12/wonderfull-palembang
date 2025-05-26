@@ -41,25 +41,6 @@ import {
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080/api";
 
-// Mock data for development or when API is unavailable
-const mockPhotos: Photo[] = [
-  {
-    ID: 1,
-    CreatedAt: new Date().toISOString(),
-    UpdatedAt: new Date().toISOString(),
-    DeletedAt: null,
-    title: "Sample Image 1",
-    file_path: "/placeholder.svg?height=500&width=500",
-  },
-  {
-    ID: 2,
-    CreatedAt: new Date().toISOString(),
-    UpdatedAt: new Date().toISOString(),
-    DeletedAt: null,
-    title: "Sample Image 2",
-    file_path: "/placeholder.svg?height=500&width=500",
-  },
-];
 
 // Create Axios instance with common configuration
 const api = axios.create({
@@ -115,17 +96,7 @@ export function GalleryDashboard() {
   const fetchPhotos = useCallback(async (pageNum: number) => {
     setLoading(true);
     try {
-      if (!API_BASE_URL || API_BASE_URL.includes("localhost")) {
-        // Use mock data for development
-        setPhotos(mockPhotos);
-        setPaginationData({
-          limit: LIMIT,
-          page: 1,
-          total: mockPhotos.length,
-          totalPages: 1,
-        });
-        return;
-      }
+    
 
       const response = await api.get<PaginatedResponse>(`/photos/paginated`, {
         params: { page: pageNum, limit: LIMIT },
@@ -141,13 +112,7 @@ export function GalleryDashboard() {
     } catch (error) {
       console.error("Failed to fetch photos:", error);
       // Fallback to mock data
-      setPhotos(mockPhotos);
-      setPaginationData({
-        limit: LIMIT,
-        page: 1,
-        total: mockPhotos.length,
-        totalPages: 1,
-      });
+ 
       toast.error("Failed to load images. Using sample data.");
     } finally {
       setLoading(false);

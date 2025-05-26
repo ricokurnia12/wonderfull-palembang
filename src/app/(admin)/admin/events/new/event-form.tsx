@@ -33,6 +33,7 @@ import { cn } from "@/lib/utils";
 import { SiteHeader } from "../../_components/sidebar/site-header";
 import Editor from "@/components/novel-editor";
 import axios from "axios";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   title: z.string().min(3, { message: "Title must be at least 3 characters" }),
@@ -105,13 +106,11 @@ export default function EventForm() {
       );
 
       console.log("Response:", response.data);
-      alert("Event created successfully!");
+      toast("Event created successfully!");
 
       // Reset form and redirect
       form.reset();
-      router.push("/events");
-
-      alert("Event created successfully!");
+      router.push("/admin/events");
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Failed to create event. Please try again.");

@@ -74,16 +74,20 @@ export default function Editor({
   onChange,
   initialValue,
 }: TEditorProps) {
-  const [initialContent, setInitialContent] = useState<JSONContent>(defaultEditorContent);
+  const [initialContent, setInitialContent] =
+    useState<JSONContent>(defaultEditorContent);
   const [saveStatus, setSaveStatus] = useState<TStatus>("Saved");
   const [charsCount, setCharsCount] = useState();
-  const [editorInstance, setEditorInstance] = useState<EditorInstance | null>(null);
+  const [editorInstance, setEditorInstance] = useState<EditorInstance | null>(
+    null
+  );
+  const [htmlToConvert, setHtmlToConvert] = useState<string | null>(null);
 
   const [openNode, setOpenNode] = useState(false);
   const [openColor, setOpenColor] = useState(false);
   const [openLink, setOpenLink] = useState(false);
   const [openAI, setOpenAI] = useState(false);
-  
+
   // Image URL Dialog states
   const [showImageDialog, setShowImageDialog] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
@@ -93,39 +97,61 @@ export default function Editor({
   // Process initialValue when it changes
   useEffect(() => {
     if (initialValue) {
-      if (typeof initialValue === 'string') {
-        setInitialContent({
-          type: "doc",
-          content: [
-            {
-              type: "paragraph",
-              content: [
-                {
-                  type: "text",
-                  text: initialValue.replace(/<[^>]*>/g, ''),
-                }
-              ],
-            },
-          ],
-        });
+      if (typeof initialValue === "string") {
+        // Store the HTML string to be converted once editor is ready
+        setHtmlToConvert(initialValue);
+        setInitialContent(defaultEditorContent);
       } else {
         setInitialContent(initialValue);
+        setHtmlToConvert(null);
       }
     } else {
-      const savedContent = window.localStorage.getItem(`novel-content-${contentname}`);
+      const savedContent = window.localStorage.getItem(
+        `novel-content-${contentname}`
+      );
       if (savedContent) {
         try {
           const parsedContent = JSON.parse(savedContent);
           setInitialContent(parsedContent);
         } catch (error) {
-          console.error('Error parsing saved content:', error);
+          console.error("Error parsing saved content:", error);
           setInitialContent(defaultEditorContent);
         }
       } else {
         setInitialContent(defaultEditorContent);
       }
+      setHtmlToConvert(null);
     }
   }, [initialValue, contentname]);
+
+  // Convert HTML to editor content once editor is ready
+  useEffect(() => {
+    if (htmlToConvert && editorInstance) {
+      try {
+        // Create a temporary div to parse HTML
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = htmlToConvert;
+
+        // Use the editor's schema to generate JSON from HTML
+        // const parser = new DOMParser();
+        // const doc = parser.parseFromString(htmlToConvert, "text/html");
+
+        // Clear the editor and insert the HTML content
+        editorInstance.commands.clearContent();
+        editorInstance.commands.insertContent(htmlToConvert);
+
+        setHtmlToConvert(null);
+      } catch (error) {
+        console.error("Error converting HTML to editor content:", error);
+        // Fallback to plain text if HTML parsing fails
+        editorInstance.commands.clearContent();
+        editorInstance.commands.insertContent(
+          htmlToConvert.replace(/<[^>]*>/g, "")
+        );
+        setHtmlToConvert(null);
+      }
+    }
+  }, [htmlToConvert, editorInstance]);
 
   // Listen for custom image URL dialog events
   useEffect(() => {
@@ -135,10 +161,16 @@ export default function Editor({
       setShowImageDialog(true);
     };
 
-    window.addEventListener('showImageUrlDialog', handleImageUrlDialog as EventListener);
-    
+    window.addEventListener(
+      "showImageUrlDialog",
+      handleImageUrlDialog as EventListener
+    );
+
     return () => {
-      window.removeEventListener('showImageUrlDialog', handleImageUrlDialog as EventListener);
+      window.removeEventListener(
+        "showImageUrlDialog",
+        handleImageUrlDialog as EventListener
+      );
     };
   }, []);
 
@@ -177,14 +209,14 @@ export default function Editor({
       const json = editor.getJSON();
       const html = editor.getHTML();
       setCharsCount(editor.storage.characterCount.words());
-      
+
       if (!initialValue) {
         window.localStorage.setItem(
           `novel-content-${contentname}`,
           JSON.stringify(json)
         );
       }
-      
+
       setSaveStatus("Saved");
       if (onChange) {
         onChange(html);
@@ -238,6 +270,9 @@ export default function Editor({
                   class:
                     "prose dark:prose-invert prose-headings:font-title min-h-96 font-default focus:outline-none max-w-full",
                 },
+              }}
+              onCreate={({ editor }) => {
+                setEditorInstance(editor);
               }}
               onUpdate={({ editor }) => {
                 debouncedUpdates(editor);
@@ -308,7 +343,7 @@ export default function Editor({
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' && imageUrl.trim()) {
+                  if (e.key === "Enter" && imageUrl.trim()) {
                     handleImageInsert();
                   }
                 }}
@@ -328,10 +363,7 @@ export default function Editor({
             <Button variant="outline" onClick={handleDialogClose}>
               Cancel
             </Button>
-            <Button 
-              onClick={handleImageInsert}
-              disabled={!imageUrl.trim()}
-            >
+            <Button onClick={handleImageInsert} disabled={!imageUrl.trim()}>
               Insert Image
             </Button>
           </DialogFooter>
