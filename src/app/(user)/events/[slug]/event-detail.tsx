@@ -26,7 +26,6 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { EventCard } from "../components/event-card";
 import type { Event } from "@/types/event";
 // import { events } from "@/data/event.data";
 import { useLanguage } from "@/context/LanguageContext";

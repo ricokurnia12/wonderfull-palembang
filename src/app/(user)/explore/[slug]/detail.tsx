@@ -11,13 +11,12 @@ import {
   ArrowLeft,
   Bookmark,
   Heart,
-  MessageCircle,
+
   Facebook,
   Twitter,
   Linkedin,
   LinkIcon,
-  ChevronLeft,
-  ChevronRight,
+
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 

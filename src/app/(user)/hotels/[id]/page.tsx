@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
@@ -43,13 +44,13 @@ export default async function HotelDetailPage({ params }: PageProps) {
         notFound()
     }
 
-    const formatPrice = (price: number) => {
-        return new Intl.NumberFormat("id-ID", {
-            style: "currency",
-            currency: "IDR",
-            minimumFractionDigits: 0,
-        }).format(price)
-    }
+    // const formatPrice = (price: number) => {
+    //     return new Intl.NumberFormat("id-ID", {
+    //         style: "currency",
+    //         currency: "IDR",
+    //         minimumFractionDigits: 0,
+    //     }).format(price)
+    // }
 
     // Process nearest places - combine pairs to create meaningful location info
     const processedPlaces = []
@@ -138,10 +139,10 @@ export default async function HotelDetailPage({ params }: PageProps) {
                                 <CardTitle>Informasi Harga</CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-4">
-                                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                                    <p className="text-2xl font-bold text-blue-600 mb-1">{formatPrice(hotel.price_per_night)}</p>
+                                {/* <div className="text-center p-4 bg-blue-50 rounded-lg">
+                                    <p className="text-2xl font-bold text-blue-600 mb-1">{formatPrice(hotel.}</p>
                                     <p className="text-sm text-gray-600">per malam (estimasi)</p>
-                                </div>
+                                </div> */}
 
                                 <Button asChild className="w-full" size="lg">
                                     <a href={hotel.traveloka_url} target="_blank" rel="noopener noreferrer">

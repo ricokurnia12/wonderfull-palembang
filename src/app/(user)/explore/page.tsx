@@ -29,7 +29,7 @@ async function BlogContent({ searchParams }: BlogPageProps) {
     return (
       <div className="container mx-auto px-4 py-12 text-center">
         <h1 className="text-2xl font-bold mb-4">Error Loading Blog Posts</h1>
-        <p className="text-gray-600">We're having trouble loading the blog posts. Please try again later.</p>
+        <p className="text-gray-600">Were having trouble loading the blog posts. Please try again later.</p>
       </div>
     )
   }

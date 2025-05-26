@@ -21,7 +21,7 @@ import {
   Eye,
   MoreHorizontal,
   Plus,
-  PlusIcon,
+
   Search,
   Trash,
 } from "lucide-react";
@@ -53,7 +53,7 @@ import Link from "next/link";
 import { LoadingSkeletonTable } from "./Loading-Skeleton";
 import WrapperComponent from "@/app/(admin)/Wrapper-Component";
 import { SiteHeader } from "@/app/(admin)/admin/_components/sidebar/site-header";
-import { useRouter } from "next/navigation";
+
 
 type Event = {
   id: string;

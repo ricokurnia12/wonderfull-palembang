@@ -2,7 +2,7 @@
 import hotels from '../../../data/hotels-data.json'
 import { HotelCard } from './_components/hotel-card'
 import { HeroSection } from './_components/hotel-hero-section'
-import { SearchFilters } from './_components/search-filter'
+
 
 export default function HotelsPage() {
     console.log(hotels);

@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link"
 import Image from "next/image"
-import { MapPin, Star, Heart, Eye } from "lucide-react"
+import { MapPin } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -24,14 +24,14 @@ interface HotelCardProps {
 }
 
 export function HotelCard({ hotel, index }: HotelCardProps) {
-    const formatPrice = (price: number) => {
-        return new Intl.NumberFormat("id-ID", {
-            style: "currency",
-            currency: "IDR",
-            minimumFractionDigits: 0,
-        }).format(price)
-    }
-    console.log({ hotel });
+    // const formatPrice = (price: number) => {
+    //     return new Intl.NumberFormat("id-ID", {
+    //         style: "currency",
+    //         currency: "IDR",
+    //         minimumFractionDigits: 0,
+    //     }).format(price)
+    // }
+    // console.log({ hotel });
 
     // Filter out "Selengkapnya" and get top 3 facilities
     const displayFacilities = hotel.facilities.filter((f) => f !== "Selengkapnya").slice(0, 3)

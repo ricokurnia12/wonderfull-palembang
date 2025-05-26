@@ -3,9 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { PlusCircleIcon, MailIcon, ChevronRight } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
 import {
   Collapsible,
   CollapsibleContent,

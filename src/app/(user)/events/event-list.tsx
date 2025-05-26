@@ -22,7 +22,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { DatePickerWithRange } from "@/components/date-range-picker";
+// import { DatePickerWithRange } from "@/components/date-range-picker";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import type { DateRange } from "react-day-picker";
 import { format } from "date-fns";
@@ -115,9 +115,9 @@ export default function EventsList({
   };
 
   // Handle date range change
-  const handleDateRangeChange = (range: DateRange | undefined) => {
-    setFilters({ ...filters, dateRange: range });
-  };
+  // const handleDateRangeChange = (range: DateRange) => {
+  //   setFilters({ ...filters, dateRange: range });
+  // };
 
   // Apply filters
   const applyFilters = () => {
@@ -252,13 +252,13 @@ export default function EventsList({
               </div>
 
               {/* Date Range Filter */}
-              <div>
+              {/* <div>
                 <Label className="mb-2 block">Date Range</Label>
                 <DatePickerWithRange
                   date={filters.dateRange}
-                  onDateChange={handleDateRangeChange}
+                  setDate={handleDateRangeChange}
                 />
-              </div>
+              </div> */}
             </div>
 
             <div className="mt-4 flex justify-end">

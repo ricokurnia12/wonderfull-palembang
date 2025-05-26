@@ -60,7 +60,6 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
 import { SiteHeader } from "../_components/sidebar/site-header";
 import WrapperComponent from "../../Wrapper-Component";
@@ -85,12 +84,12 @@ interface BlogPost {
   UpdatedAt: string;
 }
 
-interface ApiResponse {
-  data: BlogPost[];
-  total: number;
-  page: number;
-  limit: number;
-}
+// interface ApiResponse {
+//   data: BlogPost[];
+//   total: number;
+//   page: number;
+//   limit: number;
+// }
 
 export default function BlogPostsPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -515,7 +514,7 @@ export default function BlogPostsPage() {
               This action cannot be undone. This will permanently delete the
               blog post
               <strong className="block mt-2">
-                "{postToDelete?.title || "Untitled"}"
+                {postToDelete?.title || "Untitled"}
               </strong>
             </AlertDialogDescription>
           </AlertDialogHeader>
