@@ -38,13 +38,19 @@ const formSchema = z.object({
   title: z.string().min(3, { message: "Title must be at least 3 characters" }),
   description: z
     .string()
-    .min(10, { message: "Description must be at least 10 characters" }),
+    .min(10, { message: "Description must be at least 10 characters" })
+    .max(174, {
+      message: "Description must be less than 174 characters",
+    }),
   english_title: z
     .string()
     .min(3, { message: "Title must be at least 3 characters" }),
   english_description: z
     .string()
-    .min(10, { message: "Description must be at least 10 characters" }),
+    .min(10, { message: "Description must be at least 10 characters" })
+    .max(174, {
+      message: "Description must be less than 174 characters",
+    }),
   content: z
     .string()
     .min(20, { message: "Content must be at least 20 characters" }),
@@ -299,8 +305,10 @@ export default function EventForm() {
                   <FormItem>
                     <FormLabel>Content</FormLabel>
                     <FormControl>
-                      <EditorWithForm field={field} contentname='blog-english-content' />
-
+                      <EditorWithForm
+                        field={field}
+                        contentname="blog-english-content"
+                      />
                     </FormControl>
                     <FormDescription>
                       Full details about the event, including schedule,
@@ -317,7 +325,10 @@ export default function EventForm() {
                   <FormItem>
                     <FormLabel>English Content</FormLabel>
                     <FormControl>
-                      <EditorWithForm field={field} contentname='englsih-blog-content' />
+                      <EditorWithForm
+                        field={field}
+                        contentname="englsih-blog-content"
+                      />
                     </FormControl>
                     <FormDescription>
                       Full details about the event, including schedule,

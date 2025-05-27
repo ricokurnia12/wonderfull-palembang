@@ -13,7 +13,6 @@ import {
   Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
   Popover,
   PopoverContent,
@@ -28,6 +27,8 @@ import type { DateRange } from "react-day-picker";
 import { format } from "date-fns";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { EventCard } from "./components/event-card";
+import Image from "next/image";
 // Event type definition
 type Event = {
   id: number;
@@ -77,6 +78,7 @@ export default function EventsList({
   totalPages,
   initialFilters,
 }: EventsListProps) {
+  const { language } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -165,7 +167,9 @@ export default function EventsList({
             Indonesia
           </p>
         </div>
-        <img
+        <Image
+          width={1200}
+          height={400}
           src="/placeholder.svg?height=400&width=1200"
           alt="Events in Indonesia"
           className="absolute inset-0 w-full h-full object-cover"
@@ -271,11 +275,25 @@ export default function EventsList({
       {/* Events Grid */}
       {data && data.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {data.map((event) => (
-            <Link key={event.id} href={`/events/${event.slug}`}>
-              <EventCard event={event} />
-            </Link>
-          ))}
+          {data.map((event) => {
+            const newEvent = {
+              title: language === "en" ? event.english_title : event.title,
+              description:
+                language === "en"
+                  ? event.english_description
+                  : event.description,
+              image: event.image || "/placeholder.svg?height=500&width=400",
+              location: event.location,
+              province: event.province,
+              category: event.category,
+              date: new Date(event.date).toLocaleDateString(),
+            };
+            return (
+              <Link key={event.id} href={`/events/${event.slug}`}>
+                <EventCard event={newEvent} />
+              </Link>
+            );
+          })}
         </div>
       ) : (
         <div className="text-center py-12">
@@ -323,42 +341,6 @@ export default function EventsList({
           </Button>
         </div>
       )}
-    </div>
-  );
-}
-
-// Event Card Component
-function EventCard({ event }: { event: Event }) {
-  const { language } = useLanguage();
-
-  return (
-    <div className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-      <div className="aspect-video relative">
-        <img
-          src={event.image || "/placeholder.svg?height=200&width=400"}
-          alt={event.title}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="p-4">
-        <div className="flex justify-between items-start mb-2">
-          <Badge variant="outline">{event.category}</Badge>
-          <div className="text-sm text-muted-foreground">
-            {new Date(event.date).toLocaleDateString()}
-          </div>
-        </div>
-        <h3 className="font-bold text-lg mb-2 line-clamp-1">
-          {language === "id" ? event.title : event.english_title}
-        </h3>
-        <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
-          {language === "id" ? event.description : event.english_description}
-        </p>
-        <div className="flex items-center text-sm text-muted-foreground">
-          <span className="line-clamp-1">
-            {event.location}, {event.province}
-          </span>
-        </div>
-      </div>
     </div>
   );
 }

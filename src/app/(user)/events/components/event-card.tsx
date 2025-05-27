@@ -1,43 +1,52 @@
-import Image from "next/image"
-import { CalendarIcon, MapPin } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { format } from "date-fns"
-import type { Event } from "@/types/event"
-
+// Event Card Component
+import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
 interface EventCardProps {
-  event: Event
+  title: string;
+  image: string;
+  description: string;
+  location: string;
+  province: string;
+  category: string;
+  date: string;
 }
 
-export function EventCard({ event }: EventCardProps) {
+export function EventCard({ event }: { event: EventCardProps }) {
   return (
-    <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-      <div className="relative h-48 w-full overflow-hidden">
+    <div className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow max-w-sm mx-auto">
+      {/* Foto dengan aspect ratio 4:5 (Instagram portrait) */}
+      <div className="relative w-full" style={{ aspectRatio: "4/5" }}>
         <Image
-          src={event.image || "/placeholder.svg"}
+          width={400}
+          height={500}
+          src={event.image || "/placeholder.svg?height=500&width=400"}
           alt={event.title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover"
         />
-        <Badge className="absolute top-3 right-3 z-10" variant="secondary">
-          {event.category}
-        </Badge>
       </div>
+
       <div className="p-4">
-        <h3 className="font-bold text-lg mb-2 line-clamp-2">{event.title}</h3>
-        <div className="flex items-center text-sm text-gray-500 mb-2">
-          <CalendarIcon className="h-4 w-4 mr-1" />
-          <span>{format(new Date(event.date), "MMMM d, yyyy")}</span>
+        <div className="flex justify-between items-start mb-2">
+          <Badge variant="outline" className="text-xs">
+            {event.category}
+          </Badge>
+          <div className="text-xs text-muted-foreground">{event.date}</div>
         </div>
-        <div className="flex items-center text-sm text-gray-500 mb-3">
-          <MapPin className="h-4 w-4 mr-1" />
-          <span>
+
+        <h3 className="font-bold text-lg mb-2 line-clamp-2 leading-tight">
+          {event.title || "No title available."}
+        </h3>
+
+        <p className="text-muted-foreground text-sm mb-3 line-clamp-3 leading-relaxed">
+          {event.description || "No description available."}
+        </p>
+
+        <div className="flex items-center text-sm text-muted-foreground">
+          <span className="line-clamp-1">
             {event.location}, {event.province}
           </span>
         </div>
-        <p className="text-sm text-gray-600 mb-4 line-clamp-2">{event.description}</p>
-        <Button className="w-full">See Event Details</Button>
       </div>
     </div>
-  )
+  );
 }

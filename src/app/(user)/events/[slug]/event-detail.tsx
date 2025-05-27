@@ -1,6 +1,5 @@
 "use client";
 
-// import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
@@ -8,8 +7,6 @@ import {
   Calendar,
   Clock,
   MapPin,
-  // Share2,
-  // Heart,
   Tag,
   Users,
   ArrowLeft,
@@ -26,20 +23,28 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import type { Event } from "@/types/event";
-// import { events } from "@/data/event.data";
 import { useLanguage } from "@/context/LanguageContext";
+interface Event {
+  id: string;
+  title: string;
+  english_title: string;
+  content: string;
+  englishcontent: string;
+  date: string;
+  location: string;
+  province: string;
+  category: string;
+  image?: string;
+  map_url?: string;
+}
+
 interface EventDetailProps {
   event: Event;
 }
 
 export default function EventDetail({ event }: EventDetailProps) {
-  // const [isFavorite, setIsFavorite] = useState(false)
   const { language } = useLanguage();
-  // Get related events (same category, different event)
-  // const relatedEvents = events
-  //   .filter((e) => e.category === event.category && e.id !== event.id)
-  //   .slice(0, 3);
+  console.log("Event Detail:", event);
 
   // Format date for display
   const formattedDate = format(new Date(event.date), "EEEE, MMMM d, yyyy");
@@ -55,149 +60,93 @@ export default function EventDetail({ event }: EventDetailProps) {
         Back to Events
       </Link>
 
-      {/* Hero Section */}
-      <div className="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden mb-8">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
-        <Image
-          src={event.image || "/placeholder.svg"}
-          alt={event.title}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-20 text-white">
-          <Badge className="mb-4" variant="secondary">
+      {/* Hero Section - Instagram Vertical Layout */}
+      <div className="grid lg:grid-cols-5 gap-8 mb-8">
+        {/* Image Section - Instagram 4:5 Aspect Ratio */}
+        <div className="lg:col-span-2">
+          <div
+            className="relative w-full max-w-md mx-auto"
+            style={{ aspectRatio: "4/5" }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 rounded-xl" />
+            <Image
+              src={event.image || "/placeholder.svg?height=500&width=400"}
+              alt={event.title}
+              fill
+              className="object-cover rounded-xl"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="lg:col-span-3 flex flex-col justify-center">
+          <Badge className="mb-4 w-fit" variant="secondary">
             {event.category}
           </Badge>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
-            {event.title}
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+            {language === "id" ? event.title : event.english_title}
           </h1>
-          <div className="flex flex-wrap items-center gap-4 text-sm md:text-base">
+          <div className="flex flex-col gap-3 text-muted-foreground mb-6">
             <div className="flex items-center">
-              <Calendar className="h-4 w-4 mr-2" />
-              {formattedDate}
+              <Calendar className="h-5 w-5 mr-3 text-primary" />
+              <span className="text-base">{formattedDate}</span>
             </div>
             <div className="flex items-center">
-              <MapPin className="h-4 w-4 mr-2" />
-              {event.location}, {event.province}
+              <MapPin className="h-5 w-5 mr-3 text-primary" />
+              <span className="text-base">
+                {event.location}, {event.province}
+              </span>
             </div>
+            <div className="flex items-center">
+              <Clock className="h-5 w-5 mr-3 text-primary" />
+              <span className="text-base">09:00 AM - 05:00 PM</span>
+            </div>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="flex gap-3">
+            {/* <Button size="lg" className="flex-1 lg:flex-none">
+              Register Now
+            </Button> */}
+            <Button size="lg">Share Event</Button>
           </div>
         </div>
       </div>
 
-      {/* Action Buttons */}
-      {/* <div className="flex flex-wrap gap-4 mb-8">
-        <Button className="flex-1 sm:flex-none">Register Now</Button>
-        <Button
-          variant="outline"
-          className="flex-1 sm:flex-none"
-          onClick={() => setIsFavorite(!isFavorite)}
-        >
-          <Heart
-            className={`mr-2 h-4 w-4 ${
-              isFavorite ? "fill-red-500 text-red-500" : ""
-            }`}
-          />
-          {isFavorite ? "Saved" : "Save Event"}
-        </Button>
-        <Button variant="outline" className="flex-1 sm:flex-none">
-          <Share2 className="mr-2 h-4 w-4" />
-          Share
-        </Button>
-      </div> */}
-
       {/* Main Content */}
-      <div className="grid md:grid-cols-3 gap-8">
-        <div className="md:col-span-2">
+      <div className="grid lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2">
           <Tabs defaultValue="about">
             <TabsList className="w-full grid grid-cols-2 mb-6">
               <TabsTrigger value="about">About</TabsTrigger>
-              {/* <TabsTrigger value="schedule">Schedule</TabsTrigger> */}
               <TabsTrigger value="location">Location</TabsTrigger>
             </TabsList>
 
             <TabsContent value="about" className="mt-0">
-              <div
-                className="prose max-w-none"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    language === "id" ? event.content : event.englishcontent,
-                }}
-              />
-            </TabsContent>
-
-            {/* <TabsContent value="schedule" className="mt-0">
-              <h2 className="text-2xl font-bold mb-6">Event Schedule</h2>
-              <div className="space-y-6">
-                <div className="bg-muted rounded-lg p-4">
-                  <h3 className="font-semibold text-lg mb-2">
-                    Day 1 - Opening Ceremony
-                  </h3>
-                  <div className="flex items-center text-sm mb-2">
-                    <Clock className="h-4 w-4 mr-2" />
-                    <span>09:00 AM - 12:00 PM</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Official opening ceremony with traditional performances and
-                    speeches from dignitaries.
-                  </p>
-                </div>
-
-                <div className="bg-muted rounded-lg p-4">
-                  <h3 className="font-semibold text-lg mb-2">
-                    Day 1 - Cultural Exhibition
-                  </h3>
-                  <div className="flex items-center text-sm mb-2">
-                    <Clock className="h-4 w-4 mr-2" />
-                    <span>01:00 PM - 05:00 PM</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Exhibition of traditional arts, crafts, and cultural
-                    artifacts from various regions.
-                  </p>
-                </div>
-
-                <div className="bg-muted rounded-lg p-4">
-                  <h3 className="font-semibold text-lg mb-2">
-                    Day 2 - Workshops
-                  </h3>
-                  <div className="flex items-center text-sm mb-2">
-                    <Clock className="h-4 w-4 mr-2" />
-                    <span>10:00 AM - 03:00 PM</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Interactive workshops on traditional crafts, dance, and
-                    music.
-                  </p>
-                </div>
-
-                <div className="bg-muted rounded-lg p-4">
-                  <h3 className="font-semibold text-lg mb-2">
-                    Day 3 - Grand Performance
-                  </h3>
-                  <div className="flex items-center text-sm mb-2">
-                    <Clock className="h-4 w-4 mr-2" />
-                    <span>07:00 PM - 10:00 PM</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Grand finale featuring spectacular performances from all
-                    participating groups.
-                  </p>
-                </div>
+              <div className="prose max-w-none">
+                <h2 className="text-2xl font-bold mb-4">About This Event</h2>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      language === "id" ? event.content : event.englishcontent,
+                  }}
+                />
               </div>
-            </TabsContent> */}
+            </TabsContent>
 
             <TabsContent value="location" className="mt-0">
               <h2 className="text-2xl font-bold mb-6">Event Location</h2>
               <div className="bg-muted rounded-lg overflow-hidden mb-6">
                 <div className="h-[300px] relative">
                   <iframe
-                    src={event.map_url}
-                    // allowfullscreen=""
+                    src={
+                      event.map_url ||
+                      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e67356080477!2sTaman%20Mini%20Indonesia%20Indah!5e0!3m2!1sen!2sid!4v1635724073795!5m2!1sen!2sid"
+                    }
                     loading="lazy"
-                    className="w-full h-full"
-                  // referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
+                    className="w-full h-full border-0"
+                  />
                 </div>
               </div>
 
@@ -207,23 +156,10 @@ export default function EventDetail({ event }: EventDetailProps) {
                   <div>
                     <h3 className="font-semibold">Address</h3>
                     <p className="text-muted-foreground">
-                      {event.location}
-                      {event.province}, Indonesia
+                      {event.location}, {event.province}, Indonesia
                     </p>
                   </div>
                 </div>
-
-                {/* <div className="flex items-start gap-3">
-                  <Globe className="h-5 w-5 text-primary mt-0.5" />
-                  <div>
-                    <h3 className="font-semibold">Getting There</h3>
-                    <p className="text-muted-foreground">
-                      The venue is located 15 minutes from the city center and
-                      is accessible by public transportation. Parking is
-                      available on site for those coming by car.
-                    </p>
-                  </div>
-                </div> */}
               </div>
             </TabsContent>
           </Tabs>
@@ -323,7 +259,7 @@ export default function EventDetail({ event }: EventDetailProps) {
               <Separator className="my-6" />
 
               <h3 className="text-lg font-semibold mb-4">Follow Event</h3>
-              <div className="flex gap-4">
+              <div className="flex gap-3">
                 <Button variant="outline" size="icon">
                   <Facebook className="h-4 w-4" />
                 </Button>
@@ -352,11 +288,12 @@ export default function EventDetail({ event }: EventDetailProps) {
           </Link>
         </div>
 
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {relatedEvents.map((relatedEvent) => (
-            <EventCard key={relatedEvent.id} event={relatedEvent} />
-          ))}
-        </div> */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Placeholder for related events */}
+          <div className="text-center text-muted-foreground py-8">
+            Related events will be displayed here
+          </div>
+        </div>
       </div>
     </div>
   );

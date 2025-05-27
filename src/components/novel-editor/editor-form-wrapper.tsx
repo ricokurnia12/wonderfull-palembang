@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Editor from "@/components/novel-editor";
 import { useMemo, useRef } from "react";
 
