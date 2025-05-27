@@ -28,12 +28,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import Editor from "@/components/novel-editor";
 import { categories } from "@/types/category-types";
 import { Checkbox } from "@/components/ui/checkbox";
+import EditorWithForm from "../../../../components/novel-editor/editor-form-wrapper";
 
 const formSchema = z.object({
   title: z.string().min(3, { message: "Title must be at least 3 characters" }),
@@ -398,9 +396,9 @@ export default function BlogPostForm() {
                               <FormLabel>Indonesian Content</FormLabel>
                               <FormControl>
                                 <div className="min-h-[400px] border rounded-lg">
-                                  <Editor
-                                    onChange={(html) => field.onChange(html)}
-                                    initialValue={field.value}
+                                  <EditorWithForm
+                                    contentname="blog-content"
+                                    field={field}
                                   />
                                 </div>
                               </FormControl>
@@ -419,9 +417,7 @@ export default function BlogPostForm() {
                               <FormLabel>English Content</FormLabel>
                               <FormControl>
                                 <div className="min-h-[400px] border rounded-lg">
-                                  <Editor
-                                    onChange={(html) => field.onChange(html)}
-                                    initialValue={field.value}
+                                  <EditorWithForm field={field} contentname="blog-english-content"
                                   />
                                 </div>
                               </FormControl>

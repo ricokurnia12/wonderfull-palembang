@@ -21,7 +21,7 @@ async function fetchBlogPost(slug: string): Promise<BlogPost | null> {
   try {
     const response = await fetch(`${apiUrl}/blogposts/slug/${slug}`, {
       // Add cache revalidation if needed
-      next: { revalidate: 3600 }, // Revalidate every hour
+      // next: { revalidate: 3600 }, // Revalidate every hour
     })
 
     if (!response.ok) {
@@ -79,25 +79,4 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 }
 
 // Generate static params for better performance (optional)
-export async function generateStaticParams() {
-  const apiUrl = process.env.PUBLIC_API_URL
-
-  if (!apiUrl) {
-    return []
-  }
-
-  try {
-    const response = await fetch(`${apiUrl}/blogposts`)
-    if (!response.ok) {
-      return []
-    }
-
-    const posts: BlogPost[] = await response.json()
-    return posts.map((post) => ({
-      slug: post.slug,
-    }))
-  } catch (error) {
-    console.error("Error generating static params:", error)
-    return []
-  }
-}
+// s

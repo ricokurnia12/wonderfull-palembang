@@ -96,7 +96,7 @@ export function GalleryDashboard() {
   const fetchPhotos = useCallback(async (pageNum: number) => {
     setLoading(true);
     try {
-    
+
 
       const response = await api.get<PaginatedResponse>(`/photos/paginated`, {
         params: { page: pageNum, limit: LIMIT },
@@ -112,7 +112,7 @@ export function GalleryDashboard() {
     } catch (error) {
       console.error("Failed to fetch photos:", error);
       // Fallback to mock data
- 
+
       toast.error("Failed to load images. Using sample data.");
     } finally {
       setLoading(false);
@@ -125,7 +125,7 @@ export function GalleryDashboard() {
 
   const handlePageChange = (newPage: number) => {
     if (newPage < 1 || newPage > paginationData.totalPages) return;
-    router.push(`/admin?page=${newPage}`);
+    router.push(`/admin/gallery?page=${newPage}`);
   };
 
   // Handle photo upload

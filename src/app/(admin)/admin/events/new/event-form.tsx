@@ -30,10 +30,9 @@ import {
 } from "@/components/ui/popover";
 // import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
-import { SiteHeader } from "../../_components/sidebar/site-header";
-import Editor from "@/components/novel-editor";
 import axios from "axios";
 import { toast } from "sonner";
+import EditorWithForm from "../../../../../components/novel-editor/editor-form-wrapper";
 
 const formSchema = z.object({
   title: z.string().min(3, { message: "Title must be at least 3 characters" }),
@@ -122,7 +121,7 @@ export default function EventForm() {
   return (
     <div className="w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
       <Card>
-        <SiteHeader />
+        {/* <SiteHeader /> */}
         <CardContent className="p-6">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -300,11 +299,8 @@ export default function EventForm() {
                   <FormItem>
                     <FormLabel>Content</FormLabel>
                     <FormControl>
-                      <Editor
-                        onChange={(html) => {
-                          field.onChange(html); // Simpan ke form
-                        }}
-                      />
+                      <EditorWithForm field={field} contentname='blog-english-content' />
+
                     </FormControl>
                     <FormDescription>
                       Full details about the event, including schedule,
@@ -321,11 +317,7 @@ export default function EventForm() {
                   <FormItem>
                     <FormLabel>English Content</FormLabel>
                     <FormControl>
-                      <Editor
-                        onChange={(html) => {
-                          field.onChange(html); // Simpan ke form
-                        }}
-                      />
+                      <EditorWithForm field={field} contentname='englsih-blog-content' />
                     </FormControl>
                     <FormDescription>
                       Full details about the event, including schedule,

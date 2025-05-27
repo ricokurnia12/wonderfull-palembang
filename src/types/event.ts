@@ -10,4 +10,5 @@ export interface Event {
   category: string;
   image: string;
   featured?: boolean;
+  map_url:string
 }

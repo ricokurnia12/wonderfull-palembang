@@ -70,7 +70,7 @@ type TEditorProps = {
 export default function Editor({
   className,
   title = "Content Editor",
-  contentname = "novel",
+  contentname ,
   onChange,
   initialValue,
 }: TEditorProps) {
@@ -242,9 +242,8 @@ export default function Editor({
             </Badge>
             <Badge variant="outline" className="gap-1.5">
               <span
-                className={`size-1.5 rounded-full ${
-                  saveStatus === "Saved" ? "bg-emerald-500" : "bg-red-500"
-                }`}
+                className={`size-1.5 rounded-full ${saveStatus === "Saved" ? "bg-emerald-500" : "bg-red-500"
+                  }`}
                 aria-hidden="true"
               ></span>
               {saveStatus}
@@ -254,7 +253,7 @@ export default function Editor({
         <CardContent>
           <EditorRoot>
             <EditorContent
-              key={`${contentname}-${JSON.stringify(initialContent)}`}
+              key={`${contentname}`}
               initialContent={initialContent}
               extensions={extensions}
               className="relative min-h-96"

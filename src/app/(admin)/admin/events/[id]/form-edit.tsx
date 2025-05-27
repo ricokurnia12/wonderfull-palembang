@@ -30,9 +30,8 @@ import {
 } from "@/components/ui/popover";
 // import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
-import { SiteHeader } from "../../_components/sidebar/site-header";
-import Editor from "@/components/novel-editor";
 import axios from "axios";
+import EditorWithForm from "../../../../../components/novel-editor/editor-form-wrapper";
 
 const formSchema = z.object({
   title: z.string().min(3, { message: "Title must be at least 3 characters" }),
@@ -121,8 +120,7 @@ export default function EditEventForm() {
           throw new Error("Server error occurred");
         } else {
           throw new Error(
-            `Failed to fetch event: ${
-              error.response?.data?.message || error.message
+            `Failed to fetch event: ${error.response?.data?.message || error.message
             }`
           );
         }
@@ -161,6 +159,7 @@ export default function EditEventForm() {
           category: eventData.category,
           image: eventData.image,
           map_url: eventData.map_url,
+          slug: eventData.slug
 
           // featured: eventData.featured,
         });
@@ -196,7 +195,7 @@ export default function EditEventForm() {
       alert("Event updated successfully!");
 
       // Redirect back to events list or event detail page
-      router.push("/events");
+      router.push("/admin/events");
     } catch (error) {
       console.error("Error updating event:", error);
 
@@ -209,8 +208,7 @@ export default function EditEventForm() {
           alert("Server error occurred. Please try again later.");
         } else {
           alert(
-            `Failed to update event: ${
-              error.response?.data?.message || error.message
+            `Failed to update event: ${error.response?.data?.message || error.message
             }`
           );
         }
@@ -227,7 +225,7 @@ export default function EditEventForm() {
     return (
       <div className="w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
         <Card>
-          <SiteHeader />
+          {/* <SiteHeader /> */}
           <CardContent className="p-6">
             <div className="flex items-center justify-center h-64">
               <div className="text-center">
@@ -246,7 +244,7 @@ export default function EditEventForm() {
     return (
       <div className="w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
         <Card>
-          <SiteHeader />
+          {/* <SiteHeader /> */}
           <CardContent className="p-6">
             <div className="flex items-center justify-center h-64">
               <div className="text-center">
@@ -268,7 +266,7 @@ export default function EditEventForm() {
   return (
     <div className="w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
       <Card>
-        <SiteHeader />
+        {/* <SiteHeader /> */}
         <CardContent className="p-6">
           <div className="mb-6">
             <h1 className="text-2xl font-bold">Edit Event</h1>
@@ -454,12 +452,7 @@ export default function EditEventForm() {
                   <FormItem>
                     <FormLabel>Content</FormLabel>
                     <FormControl>
-                      <Editor
-                        initialValue={field.value}
-                        onChange={(html) => {
-                          field.onChange(html);
-                        }}
-                      />
+                      <EditorWithForm field={field} contentname='content-event' />
                     </FormControl>
                     <FormDescription>
                       Full details about the event, including schedule,
@@ -477,12 +470,7 @@ export default function EditEventForm() {
                   <FormItem>
                     <FormLabel>English Content</FormLabel>
                     <FormControl>
-                      <Editor
-                        initialValue={field.value}
-                        onChange={(html) => {
-                          field.onChange(html);
-                        }}
-                      />
+                      <EditorWithForm contentname='event-english-content-edit' field={field} />
                     </FormControl>
                     <FormDescription>
                       Full details about the event, including schedule,
@@ -546,7 +534,7 @@ export default function EditEventForm() {
                           type="button"
                           variant="outline"
                           className="ml-2"
-                          onClick={() => {}}
+                          onClick={() => { }}
                         >
                           <ImageIcon className="h-4 w-4 mr-2" />
                           Browse

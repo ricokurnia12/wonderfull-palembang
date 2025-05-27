@@ -1,15 +1,20 @@
 'use client'
+import { title } from 'process'
 import hotels from '../../../data/hotels-data.json'
 import { HotelCard } from './_components/hotel-card'
 import { HeroSection } from './_components/hotel-hero-section'
-
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function HotelsPage() {
-    console.log(hotels);
+    const { language } = useLanguage()
+    const dataTextHotel = {
+        title: language === "id" ? "Jelajahi Hotel di Palembang" : "Explore Hotels in Palembang",
+        description: language === "id" ? "Dapatkan informasi lengkap seputar pilihan hotel di Palembang. Bandingkan harga, fasilitas, dan lokasi untuk pengalaman menginap yang nyaman" : "Find details about hotel options in Palembang. Simply compare prices, facilities and locations for a great experience.",
 
+    }
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-            <HeroSection />
+            <HeroSection data={dataTextHotel} />
 
             <div id="hotel-list" className="container mx-auto px-4 py-12">
                 {/* <SearchFilters /> */}
@@ -38,6 +43,6 @@ export default function HotelsPage() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

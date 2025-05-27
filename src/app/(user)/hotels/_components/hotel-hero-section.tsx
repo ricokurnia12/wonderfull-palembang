@@ -2,7 +2,13 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
-export function HeroSection() {
+interface HeroHotel {
+    title: string
+    description: string
+
+}
+export function HeroSection({ data }: { data: HeroHotel }) {
+
     return (
         <div className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
             {/* Background with gradient overlay */}
@@ -21,15 +27,11 @@ export function HeroSection() {
             <div className="relative z-10 container mx-auto px-4 text-center">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-in slide-in-from-bottom-8 duration-1000">
-                        Jelajahi Hotel
-                        <span className="block">
-                            di Palembang
-                        </span>
+                        {data.title}
                     </h1>
 
                     <p className="text-xl md:text-2xl text-gray-200 mb-12 animate-in slide-in-from-bottom-8 duration-1000 delay-200">
-                        Temukan informasi lengkap tentang hotel-hotel terbaik di Palembang. Bandingkan fasilitas, lokasi, dan harga
-                        untuk referensi perjalanan Anda.
+                        {data.description}
                     </p>
 
                     <div className="animate-in slide-in-from-bottom-8 duration-1000 delay-600">
@@ -42,21 +44,6 @@ export function HeroSection() {
                         </Button>
                     </div>
 
-                    {/* Stats */}
-                    <div className="grid grid-cols-3 gap-8 mt-16 animate-in slide-in-from-bottom-8 duration-1000 delay-400">
-                        <div className="text-center">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-2">25+</div>
-                            <div className="text-gray-300">Hotel Terdaftar</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
-                            <div className="text-gray-300">Informasi Akurat</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
-                            <div className="text-gray-300">Akses Informasi</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div >

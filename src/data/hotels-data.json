@@ -1,8 +1,11 @@
 {
     "hotels": [
         {
-            "maps": "http",
-            "phone": "081234",
+            "maps": "https://maps.app.goo.gl/Pg4cJVC5QJZrbyvm8",
+            "phone": "0711-355000",
+            "star": 5,
+            "description": "The Arista Hotel Palembang adalah tempat yang cocok buat Anda yang mengutamakan kenyamanan dan profesionalitas saat bepergian untuk urusan bisnis. Sebagai hotel bintang 5, suasana di dalamnya memancarkan nuansa elegan dan tenang, pas banget buat rehat setelah jadwal yang padat. Pelayanannya cepat dan ramah, sementara fasilitas pendukung bisnis seperti ruang meeting dan ballroom benar-benar memadai. Cocok untuk pebisnis, delegasi, atau siapa saja yang ingin pengalaman menginap premium di pusat kota.",
+            "description_english": "The Arista Hotel Palembang is an ideal choice for travelers who prioritize comfort and professionalism, especially on business trips. As a 5-star hotel, it exudes an elegant and calming atmosphere. Perfect for unwinding after a busy day. Service is swift and courteous, and business facilities such as meeting rooms and ballrooms are top-notch. Great for corporate guests, business delegations, or anyone looking for a premium stay right in the heart of the city.",
             "id": 1,
             "name": "The Arista Hotel Palembang",
             "address": "Jalan Kapten A. Rivai, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30129",
@@ -52,13 +55,22 @@
             ]
         },
         {
-            "maps": "http",
-            "phone": "081234",
+            "maps": "https://maps.app.goo.gl/1a2y9cjezLiiAHUJ9",
+            "phone": "0711-313800",
+            "star": 5,
+            "description": "The Alts Hotel membawa suasana stylish yang terasa begitu modern namun tetap nyaman. Nuansa downtown business-nya terasa catchy, cocok buat Anda yang ingin tetap produktif dalam suasana yang trendi. Pelayanan yang ramah dan profesional membuat pengalaman menginap terasa lebih personal. Fasilitasnya pun lengkap, mulai dari restoran keren hingga gym modern. Pilihan menarik untuk pebisnis muda, solo traveler, atau pasangan yang ingin staycation bergaya.",
+            "description_english": "The Alts Hotel offers a stylish, modern ambiance that balances comfort and cool urban energy. Its catchy downtown business vibe makes it perfect for staying productive in a trendy setting. Warm, professional service adds a personal touch to your stay, while the facilities—from a chic restaurant to a modern gym—tick all the right boxes. Ideal for young professionals, solo travelers, or couples on a stylish staycation.",
             "id": 2,
             "name": "The Alts Hotel Palembang",
             "address": "Jl. Rajawali No. 8, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30113",
             "facilities": [
-                "Tidak ditemukan"
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
             ],
             "nearest_places": [
                 {
@@ -85,15 +97,21 @@
             "image_url": "https://ik.imagekit.io/tvlk/apr-asset/LdXeLXA+oqXWNIFrLYC99QYOtlA3jqOwSUvgo5h4Cg0=/hotelImages/230345/-1/a676a2f3aace30ce4667caa0325bd18d.jpg?ca=8&ce=1&s=312x&_src=imagekit&tr=c-at_max",
             "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000005648636.The%20Alts%20Hotel%20Palembang.2&contexts=%7B%7D&loginPromo=1&prevSearchId=1833074445303971286",
             "facilities_english": [
-                "Not found"
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
             ]
         },
         {
-            "maps": "http",
-            "phone": "081234",
-            "star": 4,
-            "description": "",
-            "description_egnlish": "",
+            "maps": "https://maps.app.goo.gl/oxabUgegtWMnN8Pp9",
+            "phone": "0711-362222",
+            "star": 5,
+            "description": "The Excelton Hotel menyajikan pengalaman menginap yang mewah dengan sentuhan modern. Interiornya elegan dan fasilitasnya lengkap, mulai dari spa, rooftop lounge, hingga kolam renang indoor. Lokasinya juga strategis, dekat dengan berbagai destinasi populer di Palembang. Sangat cocok bagi wisatawan yang ingin memanjakan diri, pasangan yang mencari suasana romantis, ataupun pebisnis yang menginginkan kenyamanan maksimal.",
+            "description_english": "The Excelton Hotel offers a luxurious stay wrapped in modern elegance. From a rooftop lounge to a relaxing spa and indoor pool, every facility adds to the upscale experience. The location is also a big plus—close to many of Palembang’s must-visit spots. Perfect for leisure travelers looking to indulge, romantic couples, or business guests who value comfort and convenience.",
             "id": 3,
             "name": "The Excelton Hotel",
             "address": "Jalan Demang Lebar DaunNo. 58, Ilir Barat I, Palembang, Sumatra Selatan, Indonesia, 30137",
@@ -143,6 +161,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/pSpWha3wC1zn8qsv7",
+            "phone": "0711-365222",
+            "star": 4,
+            "description": "Novotel Palembang menghadirkan nuansa eksklusif sejak pertama kali Anda menginjakkan kaki. Arsitektur yang elegan, layanan kelas satu, dan fasilitas lengkap seperti kolam renang outdoor, gym, dan area bersantai membuat setiap hari terasa spesial. Baik Anda bepergian sendiri, bersama keluarga, maupun pasangan, hotel ini cocok untuk liburan maupun urusan bisnis.",
+            "description_english": "From the moment you arrive, Novotel Palembang radiates exclusivity. Its elegant design, first-class service, and complete facilities—including an outdoor pool, gym, and chill-out spaces make every moment enjoyable. Whether traveling solo, with your partner, or family, this hotel is perfect for both business and leisure stays.",
             "id": 4,
             "name": "Novotel Palembang Hotel & Residence",
             "address": "Jalan R Sukamto No 8A, South Sumatera, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30127",
@@ -186,6 +209,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/nW1mEXS8APLPSzYt8",
+            "phone": "0711-6208118",
+            "star": 4,
+            "description": "Harper Palembang by ASTON menyuguhkan suasana hangat dan profesional yang sangat cocok untuk tamu bisnis. Hotel ini menyediakan fasilitas lengkap mulai dari ruang pertemuan, ballroom, hingga restoran yang nyaman untuk diskusi santai. Pelayanannya cepat dan efisien, dengan staf yang ramah dan sigap. Cocok untuk pebisnis yang sedang menghadiri konferensi, pertemuan perusahaan, atau sekadar transit dengan kenyamanan maksimal.",
+            "description_english": "Harper Palembang by ASTON offers a warm yet professional ambiance, making it an excellent choice for business travelers. The hotel comes equipped with everything from meeting rooms and ballrooms to a cozy restaurant perfect for informal discussions. Service is efficient, friendly, and tailored to guest needs. A great pick for those attending conferences, corporate meetings, or simply seeking a comfortable transit stay.",
             "id": 5,
             "name": "Harper Palembang by ASTON",
             "address": "Jalan R. Sukamto No. 20 Palembang, South Sumatra, Indonesia, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30114",
@@ -233,6 +261,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/JTtMxuELH6WJ49R4A",
+            "phone": "0711-388999",
+            "star": 4,
+            "description": "Sintesa Peninsula Hotel Palembang menawarkan suasana yang tenang dan profesional — sebuah tempat yang tepat untuk melepas penat setelah hari panjang bertemu klien atau menghadiri konferensi. Hotel ini terasa seperti perpanjangan dari kantor yang nyaman. Pelayanan di sini konsisten ramah dan efisien, membuat proses check-in hingga menginap jadi menyenangkan. Fasilitas seperti business center, restoran yang cozy, dan kamar-kamar luas mendukung kenyamanan menginap Anda.",
+            "description_english": "Sintesa Peninsula Hotel Palembang offers a calm and professional atmosphere - a great place to unwind after a long day of meeting clients or attending conferences. The hotel feels like an extension of a cozy office. The service here is consistently friendly and efficient, making the check-in to stay process a pleasure. Facilities such as a business center, a cozy restaurant, and spacious rooms support a comfortable stay.",
             "id": 6,
             "name": "Sintesa Peninsula Hotel Palembang",
             "address": "Jalan Residen H.A. Rozak No. 168 , Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30118",
@@ -280,6 +313,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/h3ZCWGByDbM5Mf8o8",
+            "phone": "0711-388000",
+            "star": 4,
+            "description": "Aston Palembang Hotel & Conference Center adalah pilihan andal jika Anda mencari hotel dengan fasilitas konferensi yang serius. Ruang pertemuannya luas dan modern, siap mengakomodasi berbagai jenis acara — dari seminar skala besar hingga rapat internal perusahaan. Namun bukan hanya soal bisnis, kenyamanan kamar dan pelayanan hangat juga membuat pengalaman menginap terasa lengkap. ",
+            "description_english": "Aston Palembang Hotel & Conference Center is a reliable choice if you're looking for serious conference facilities. The meeting spaces are spacious and modern, accommodating everything from corporate seminars to internal board meetings. But it’s not all business — the cozy rooms and genuinely warm service make your stay feel personal",
             "id": 7,
             "name": "Aston Palembang Hotel & Conference Center",
             "address": "Jalan Basuki Rachmat No.189, Palembang, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30126",
@@ -329,6 +367,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/koBvC2kWvDNoYFmw9",
+            "phone": "0711-3031101",
+            "star": 4,
+            "description": "THE 1O1 Palembang Rajawali adalah pilihan cerdas bagi backpacker atau pelancong hemat yang tetap ingin kenyamanan saat rehat. Hotel ini mengusung desain modern dan kasual, dengan nuansa yang hangat dan menyambut — pas untuk melepas lelah setelah eksplorasi kota seharian. Pelayanan staf sangat ramah dan informatif, sering memberikan tips lokal yang berguna. ",
+            "description_english": "THE 1O1 Palembang Rajawali is a smart pick for budget-conscious travelers who still value comfort. The hotel blends casual modern design with a warm, welcoming vibe — perfect after a day of exploring the city. Staff are friendly and often share handy local tips.",
             "id": 8,
             "name": "THE 1O1 Palembang Rajawali",
             "address": "Jalan. Rajawali No. 18, 9 Ilir, Ilir Timur 2, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30113",
@@ -378,6 +421,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/X7TvFW3SYYkcUwaq9",
+            "phone": "0711-5556655",
+            "star": 4,
+            "description": "Hotel Santika Radial Palembang memadukan kenyamanan khas Santika dengan suasana yang homey dan tenang. Dari lobi hingga kamar, semuanya dirancang dengan sentuhan hangat yang mengundang. Cocok untuk tamu yang ingin suasana familiar di tengah kota.",
+            "description_english": "Hotel Santika Radial Palembang combines signature Santika comfort with a peaceful, homey vibe. From the lobby to the rooms, everything is designed with warmth and familiarity. Ideal for guests looking for a comforting stay in the city.",
             "id": 9,
             "name": "Hotel Santika Radial Palembang",
             "address": "Jalan Brigjen HM Dhani Effendi (Jl. Radial) No. 1688 (Terletak tepat di depan Transmart), Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
@@ -427,6 +475,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/f8A78ykBqPbb6Mar9",
+            "phone": "0711-5714999",
+            "star": 4,
+            "description": "Hotel Santika Premiere Bandara Palembang cocok banget untuk kamu yang sedang transit atau punya penerbangan pagi. Letaknya yang sangat dekat dengan Bandara Sultan Mahmud Badaruddin II bikin perjalanan jadi lebih praktis dan tanpa stres. Suasananya tenang, pelayanannya ramah, dan kamarnya cukup luas untuk beristirahat dengan nyaman. Cocok untuk pebisnis, pelancong solo, atau keluarga yang butuh istirahat sejenak sebelum atau sesudah terbang.",
+            "description_english": "Hotel Santika Premiere Bandara Palembang is the perfect stopover for travelers in transit or with early flights. Its location just minutes from Sultan Mahmud Badaruddin II Airport—makes travel super convenient and stress-free. The atmosphere is calm, the staff is friendly, and the rooms are spacious enough for a restful stay. Ideal for business travelers, solo adventurers, or families looking to relax before or after a flight.",
             "id": 10,
             "name": "Hotel Santika Premiere Bandara - Palembang",
             "address": "Jl. Gubernur H. Asnawi Mangku Alam No. 168 – 169, Palembang 30961, Sukarame, Palembang, Sumatra Selatan, Indonesia, 30961",
@@ -474,6 +527,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/69dRGq3mcAcNEsYe8",
+            "phone": "0711-388000",
+            "star": 4,
+            "description": "Menginap di Beston Hotel Palembang memberikan kesan yang profesional tapi tetap nyaman. Hotel ini punya berbagai fasilitas bisnis seperti ruang rapat dan ballroom, jadi cocok banget buat para pebisnis. Tapi bukan berarti suasananya kaku—pelayanannya tetap hangat dan kamarnya nyaman buat istirahat setelah seharian kerja. Lokasinya juga strategis di pusat kota, gampang ke mana-mana.",
+            "description_english": "Beston Hotel Palembang offers a professional yet comfortable stay. With business-friendly features like meeting rooms and a spacious ballroom, it’s clearly a great pick for corporate travelers. Still, the atmosphere isn’t too formal—the service is warm, and the rooms are just right for relaxing after a busy day. Plus, the central location makes getting around the city a breeze.",
             "id": 11,
             "name": "Beston Hotel Palembang (FKA Horison Ultima Palembang)",
             "address": "Jl. Jend Sudirman No 57, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30125",
@@ -523,6 +581,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/fDwxceU9ZuWrdqoC9",
+            "phone": "0711-364222",
+            "star": 3,
+            "description": "Grand Daira punya lokasi yang strategis banget di pusat kota Palembang, cocok untuk kamu yang ingin dekat dengan berbagai spot menarik. Kamarnya cukup luas, pelayanan stafnya ramah, dan ada fasilitas seperti pusat kebugaran yang bikin kamu tetap bisa jaga rutinitas meski sedang bepergian. Cocok untuk wisatawan, pebisnis, dan pasangan yang ingin eksplorasi kota.",
+            "description_english": "Grand Daira is strategically located right in the heart of Palembang—perfect if you want easy access to the city’s highlights. The rooms are spacious, the staff is welcoming, and there’s a fitness center if you want to keep up your routine while away. Great for tourists, business travelers, and couples looking to explore the city.",
             "id": 12,
             "name": "Grand Daira Hotel Palembang",
             "address": "Jalan. Jendral. Sudirman No. 153, Palembang Sumatera Selatan 30126, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30126",
@@ -572,17 +635,19 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/jCLGoePmMKfQfZqc6",
+            "phone": "0711-310777",
+            "star": 1,
+            "description": "Salvator Hotel menawarkan kenyamanan di tengah kota Palembang — lokasinya strategis, dekat dengan fasilitas umum dan hanya beberapa menit dari ikon kota seperti Jembatan Ampera. Kamar bersih, suasana cukup tenang untuk ukuran hotel yang berada di pusat kota, dan akses ke transportasi umum mudah.",
+            "description_english": "Salvator Hotel delivers comfort right in the heart of Palembang — with a strategic location near public amenities and just minutes from the city's landmark, Ampera Bridge. Rooms are clean and surprisingly quiet for a downtown property, and transportation access is easy.",
             "id": 13,
-            "name": "Rio City Hotel",
-            "address": "Jl. Lingkaran 1 No. 1 Dempo, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30113",
+            "name": "Salvator Hotel",
+            "address": "Jl. Jend. Sudirman No.792-793, 24 Ilir, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan 30114",
             "facilities": [
                 "Selengkapnya",
                 "AC",
-                "Restoran",
                 "Resepsionis 24 Jam",
-                "Parkir",
-                "Lift",
-                "WiFi"
+                "Parkir"
             ],
             "nearest_places": [
                 {
@@ -590,7 +655,7 @@
                     "distance": "Palembang"
                 },
                 {
-                    "name": "1.46",
+                    "name": "2.01",
                     "distance": "km"
                 },
                 {
@@ -598,7 +663,7 @@
                     "distance": "Palembang"
                 },
                 {
-                    "name": "2.09",
+                    "name": "1.61",
                     "distance": "km"
                 },
                 {
@@ -606,68 +671,31 @@
                     "distance": "Square"
                 }
             ],
-            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10001611-01fd76620c792955ac5990e1e0425db7.jpeg?_src=imagekit&tr=c-at_max",
-            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.2000000212517.Rio%20City%20Hotel.2&contexts=%7B%22inventoryRateKey%22%3A%22DnBaUnrbmBEGjOYodOvBrHxXEKEvgKxtu2ufp7hU9AxA76inION%2BSmCh0Vf%2BXKjl5kOavwDEMCRbwsFgCO05GDxVlcjvxi7Q7dPGxDH5Te4StNecMK4x8leYqFeakdftvWUFZDRStcGqoGAM7Uu2FJSsHynY9KEzxElNQf1XRP5576mYffuQgaB5iqKtXIIZGQ%2FnHq%2B%2F%2F7jQbagKUbNEa%2FUf7Q4Xqn5I4GJRiql3k3bLXg2Qd4M%2BJHfj2UYRc7v0zuhiLXJPfoE%2FI4RCz%2FkLlzpGEb76XFb1Cd8iCmSn1LIStNecMK4x8leYqFeakdftOkYRvvpcVvUJ3yIKZKfUsseG1yPB0zcnpQYydRB2z%2BJC1QJQH%2BFjuiecdmZfvnn7FBCCpgxshIv9b3mfNjB92UGHoRAWkOOyUI%2F9jlssO48gzPEMSthD7g%2FJ58EmZBo4Xya8r1wErXp1FTU3tRyyFMJ5bSNwHLCNpcDdin5vdJpPWY3qykIQa4IyqneZNNYUjUmW%2BTj%2Fohl1zu3C2IGZopg3PR1un5PcKRt2ISSf2lK%2B8E5ffriKqUqPgNBdLfPQ9SePzDqdfAQpXPJVz5%2F6VrGj86XL7e50ju4SKDihdmzsfcg5YamzQQrD1hVC0kRlWeBbkfZJxLEIu057OgP5XLCyrXBiKVNDke%2BA5CnxEuhwxVSQnW9YfEfo%2FPvBSS9MpANDeD%2BIAvrGTirO3BJ1%2B5kPhkdNq6y756VbTdUf%2F2hSZUySmNjkUwTBjAHXj8lKX2yv5rg5W9c0KgIn02hk6zajkdbgqwPos%2FYjj713P%2Bgzr1XiueVrKD0wPVkQmKDF3rbFaYKg%2BdZNv%2FHPaJM2clltOVBTVRnuY%2Fw5ITo7ZAV3mlDn4fDUnVMroTkV6hPpPwBW9n2oslMPBupvzyFPD1jCXHRdZrzAOfLKC1%2FsKuan9zobqYv15aiAgSNNRP6%2FF2aMDSmo2z%2Bnr%2FZR60h4zH7QAIVNYlWHCRH7LSx%2B3S4qFu4r9wBFxEAAjwhp%2Fb7GRDo0qH9%2FmptuS0IZ%2B9uJadA1jY%2BzeL2pqldaBAEzMxT1jfjoqbCUFBC4sFyXBrEKX6quZ1SiDAEidyQEroto%2FBL2d3DpZYCo%2FJPRpCIcd3QhFK%2Fu4%2BAXFCC%2BKRXwCWeRRcUqkLv9sw1r2lxJH%2FjVRr26PedDbAfMrfFzJ2fkr5qgNlFFCJr9pbMji1zPnycV%2Fi9r4kCvPP%2BbKQ1okSPsMzT%2Ftpp2zLnREqkFw%2BFLtfSU9rx1%2BSrsf1TkoF0FZts2ttapwfxT31j53Lnn2bdeqtj7Jv9%2FgpdKTfe7KA5UdBHtEuQpq92zvyJwOD5Ad3pP%22%7D&loginPromo=1&prevSearchId=1833074860737188911",
-            "facilities_english": [
-                "Read More",
-                "AC",
-                "Restaurant",
-                "24-Hour Front Desk",
-                "Parking",
-                "Elevator",
-                "WiFi"
-            ]
-        },
-        {
-            "id": 14,
-            "name": "Super OYO Collection O 166 Hotel Princess",
-            "address": "Tidak ditemukan",
-            "facilities": [
-                "Selengkapnya",
-                "AC",
-                "Resepsionis 24 Jam",
-                "Parkir",
-                "WiFi"
-            ],
-            "nearest_places": [
-                {
-                    "name": "Palembang",
-                    "distance": "Square"
-                },
-                {
-                    "name": "1.40",
-                    "distance": "km"
-                },
-                {
-                    "name": "GraPARI Telkom Group Sudirman",
-                    "distance": "Palembang"
-                },
-                {
-                    "name": "1.63",
-                    "distance": "km"
-                },
-                {
-                    "name": "Pool Putra Remaja",
-                    "distance": "Palembang"
-                }
-            ],
-            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/Ixf4aptF5N2Qdfmh4fGGYhTN274kJXuNMkUAzpL5HuD9jzSxIGG5kZNhhHY-p7nw/hotel/asset/10004965-0e6e6e2212aa4861b80bb5ef515b6a02.jpeg?_src=imagekit&tr=c-at_max",
-            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010004965.Super%20OYO%20Collection%20O%20166%20Hotel%20Princess.2&contexts=%7B%22inventoryRateKey%22%3A%22povEwB3ZzsU2C6pd%2B6MdU%2B0DXZ%2BT%2Bqw8uON7NhQf%2Ft46R%2F2%2FUZY7jlbXjf%2B2nONifwxXnYiRzoxM4HX9sDmt9%2FAm1AYn3MeGz8Xcpq5hCtgkoYhCABuc4UBUJdDpIzcBkjYFe7E9Hsd3uMKwzSkUl5pNkVNrbZlWauR9OJSMSOjT2kAb5PFnnUsj4yv%2BE8%2BE7nFlkIQNF73emJJ9OOwUBY%2BbdPKyeEcnUCrwiPsukDU4xJaQCNZd7Dm9H%2BzKz3SoHlBcSNHFk%2B6M%2Bed81rVbweEHGIhg0KJ7gZAJpw17ItAcEtGPm1fxqcNnBgMR8yyWhYTQr%2FzR3K27ivAqQCAb%2BJhAEL0jJ1aCAPaWTLUPGXtE5lH7CkmhuKUZUVANNehphMam%2BEpcElzU%2BdVSsGBJoEGmb3UOlN0uD7%2FMrpBj8gr0VZx0fVEuUrDwDhp20YPk%2FprV1QNJ3uRWGzkuuDXCivVMqpd5DzEqmU1M05W8LH6wIyUeP2DaQOstd8W4ab9%2FWuE%2FNiGnciUzLhpyw4ZvzjSRkAserqbchG3IPY0C996rOuF%2B%2FAsDeSmZKHQMjtagj0lqorsQFjKyKoIaAceTduhw7niBWzPymmEHph8NwIUrk4AkYbgcD%2FDODqraz1CdwYjLMLGFA8rdSnJZFEJrTZtKcD%2FtICICKp8TIACWC4WG9Cov8nQX%2BErNEUcJvaGP82jyAIdSdNmAZHYnVMM5oiSRPkf%2FWi1a%2BDSrYvlUkcPbvBWjfyZ3RSglOgbRrDGhDeDusr9%2FkMVDSp1aqi2Kvuame0UnupydsqAaOQ%2BdoxR7y9lYiTUlU7qZDaAwgDCLpHNJWdQQ0E7Hip%2BEAHv8XpdpfaAqnnzJX6xewlKC17ffL5t1HdKQtVEwsrKcffjPDDcuCeYyIwtYjMP5LHiao0kSvAFuHEhp%2Fxrhwu8DvJ%2FJQQl7dof1lqwbZ08HtEmuWUkpoqrQBbsH6aGkVAOIe7cbtCqw8strezJOcru00Ejrb7LOMupEZmIVEizDsDBq4YhaSGtAmcIk%2FqfsngGfG30js0eqUoWb2M2H8Fzz89VCVtlXFXOwtMj12jYw9i%2FhykUYSIR9RjivUWVvYKpQ9MPvfq42vDOjFQL3BUaNgRXxQgZTFHIYBcHFaeKcykZXKr81KDB7fMROiV2HbrmV9ZdjpdX086cqu6KeDRjhMjQccv4Gx2Kst6Z8rrYJ6HT5%22%7D&loginPromo=1&prevSearchId=1833074903033609686",
+            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/67713215-1086x724-FIT_AND_TRIM-26603879f6b7ae0e69705fac0e4e5ada.jpeg?_src=imagekit&tr=dpr-2,c-at_max,f-jpg,h-360,pr-true,q-80,w-640",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=09-06-2025.10-06-2025.1.1.HOTEL.3000010043243.Salvator%20Hotel%20Palembang.2",
             "facilities_english": [
                 "Read More",
                 "AC",
                 "24-Hour Front Desk",
-                "Parking",
-                "WiFi"
+                "Parking"
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/ru194rSo1LWzcor77",
+            "phone": "0711-312828",
+            "star": 2,
+            "description": "Hotel Anugerah Palembang adalah tipe hotel yang tak mencoba terlalu keras untuk tampil mewah, namun tetap menawarkan kenyamanan yang tulus. Suasananya tenang, pelayanan stafnya hangat, dan fasilitas dasarnya cukup lengkap untuk mendukung pengalaman menginap yang menyenangkan. ",
+            "description_english": "Hotel Anugerah Palembang is the kind of place that doesn’t try too hard to be fancy, yet still offers genuine comfort. The atmosphere is calm, the staff are warm, and the basic facilities are more than enough for a pleasant stay.",
             "id": 15,
             "name": "Hotel Anugerah Palembang",
             "address": "Komp. Hotel Anugerah, Jl. Jend. Sudirman No.149, Sungai Pangeran, Kec. Ilir Tim. I, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30129",
             "facilities": [
                 "Selengkapnya",
-                "Lift"
+                "Lift",
+                "Wifi",
+                "AC",
+                "Resepsionis 24 Jam",
+                "Parkir"
             ],
             "nearest_places": [
                 {
@@ -695,10 +723,19 @@
             "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000003253036.Hotel%20Anugerah%20Palembang.2",
             "facilities_english": [
                 "Read More",
-                "Elevator"
+                "Elevator",
+                "Wifi",
+                "AC",
+                "24-Hour Front Desk",
+                "Parking"
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/S3N7feDkRQN4u7g4A",
+            "phone": "0711-383838",
+            "star": 5,
+            "description": "Menginap di Aryaduta Palembang terasa seperti memadukan keindahan alam dan kenyamanan hotel bintang lima. View Sungai Musi dan kota di malam hari jadi suguhan istimewa dari kamar Anda. Kamar-kamarnya luas, bersih, dan dilengkapi dengan fasilitas modern yang menunjang kenyamanan. Cocok untuk keluarga, pasangan, maupun tamu yang datang untuk keperluan bisnis.",
+            "description_english": "Staying at Aryaduta Palembang blends natural beauty with five-star hotel comfort. Overlooking the Musi River and the sparkling city lights at night, the view from your room is a real highlight. Spacious, clean rooms and modern amenities create a relaxing retreat. Great for families, couples, or business travelers seeking a premium experience with a scenic touch.",
             "id": 16,
             "name": "Aryaduta Palembang",
             "address": "Jalan POM IX Palembang Square, Ilir Barat I, Palembang, Sumatra Selatan, Indonesia, 30137",
@@ -748,6 +785,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/fDwxceU9ZuWrdqoC9",
+            "phone": "0711-313322",
+            "star": 3,
+            "description": "Hotel Swarna Dwipa bisa jadi opsi menarik buat para backpacker dan traveler hemat. Harganya terjangkau, tapi tetap nyaman dan bersih. Fasilitasnya cukup lengkap, dan suasananya tenang untuk istirahat setelah seharian beraktivitas. Cocok untuk solo traveler atau pelancong budget yang tetap ingin tidur nyenyak tanpa menguras dompet.",
+            "description_english": "Hotel Swarna Dwipa is a solid option for budget travelers and backpackers. It’s affordable without sacrificing comfort or cleanliness. The facilities are decent, and the atmosphere is calm—ideal for resting after a full day of exploring. Perfect for solo travelers or anyone seeking a good night’s sleep without overspending.",
             "id": 17,
             "name": "Hotel Swarna Dwipa Palembang",
             "address": "Jalan Tasik No.2, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30136",
@@ -797,6 +839,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/PxPbXFcCnBvfqr2R7",
+            "phone": "0711-313300",
+            "star": 3,
+            "description": "The Zuri Palembang punya segalanya—mulai dari fasilitas untuk acara besar sampai hiburan keluarga. Hotel ini cocok buat kamu yang datang bareng keluarga atau ingin menyelenggarakan event dengan skala besar. Kamar-kamarnya nyaman, desain hotelnya modern, dan ada banyak spot santai yang bisa dinikmati. Rasanya lengkap: fungsional sekaligus menyenangkan.",
+            "description_english": "The Zuri Palembang has it all—from spacious event halls to family-friendly entertainment. It’s a great choice whether you’re traveling with family or planning a large-scale event. The rooms are comfy, the design is sleek and modern, and there are plenty of cozy corners to unwind. It’s a mix of functionality and fun, all in one place.",
             "id": 18,
             "name": "The Zuri Palembang",
             "address": "Jalan Radial No. 1371, 24 Ilir, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
@@ -846,6 +893,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/ucfkS2njHErFvGJRA",
+            "phone": "0711-379696",
+            "star": 3,
+            "description": "Emilia Hotel by Amazing menawarkan pengalaman menginap yang nyaman dengan sentuhan kemewahan yang tidak berlebihan. Lokasinya yang strategis — dekat pusat perbelanjaan — menjadikannya opsi menarik bagi Anda yang ingin mengeksplorasi kota sambil tetap dekat dengan fasilitas modern. Hotel ini memancarkan nuansa hangat, dengan interior yang dihiasi furnitur kayu dan ornamen khas Indonesia. ",
+            "description_english": "Emilia Hotel by Amazing offers a comfortable stay with a subtle touch of luxury. Its strategic location — close to shopping centers — makes it a convenient option for those who love to explore the city while staying near modern conveniences. The hotel has a warm, homey vibe, thanks to wooden furnishings and Indonesian-inspired decor.",
             "id": 19,
             "name": "Emilia Hotel By Amazing - Palembang",
             "address": "Jl. Letkol. Iskandar, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 40115",
@@ -893,6 +945,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/ZFGpmFNZXR6jeLyc8",
+            "phone": "0711-5718999",
+            "star": 3,
+            "description": "Airish Hotel Palembang adalah opsi menarik bagi Anda yang menginginkan kenyamanan dengan bujet terbatas. Suasana hotel ini santai dan bersih, cocok untuk backpacker yang ingin istirahat tanpa harus mengorbankan kenyamanan dasar. Stafnya ramah dan sangat membantu, terutama bagi tamu dari luar kota yang membutuhkan informasi lokal.",
+            "description_english": "Airish Hotel Palembang is a great choice if you’re looking for comfort on a budget. The atmosphere is relaxed and tidy — just right for backpackers who want a good night’s sleep without compromising on basic comforts. The staff are friendly and helpful, especially if you’re new to the city and need local tips.",
             "id": 20,
             "name": "Airish Hotel Palembang",
             "address": "Jl. Suka Bangun I, No 2233, Palembang, Sumatra Selatan., Sukarame, Palembang, Sumatra Selatan, Indonesia, 30151",
@@ -938,9 +995,14 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/v8anyhyrF13dXTXq8",
+            "phone": "0711-359333",
+            "star": 3,
+            "description": "Classie Hotel Palembang cocok untuk Anda yang ingin liburan romantis berdua atau sekadar tinggal lebih lama di kota ini. Suasananya tenang dan nyaman, dengan kamar-kamar bersih dan fasilitas yang lengkap. Pelayanannya juga ramah dan hangat—bikin betah seperti di rumah sendiri. Cocok untuk pasangan yang ingin quality time atau siapa saja yang butuh penginapan jangka panjang dengan kenyamanan maksimal.",
+            "description_english": "Classie Hotel Palembang is perfect for couples looking for a romantic getaway or guests planning a longer stay. The vibe is calm and cozy, the rooms are clean, and the facilities are well-equipped for extended visits. Warm and friendly service makes it feel almost like home—great for lovebirds or anyone who values comfort for the long haul.",
             "id": 21,
             "name": "Classie Hotel",
-            "address": "Tidak ditemukan",
+            "address": "Komp. Ruko Rajawali, Jl. Rajawali No.8, 9 Ilir, Kec. Ilir Tim. II, Kota Palembang, Sumatera Selatan 30113",
             "facilities": [
                 "Selengkapnya",
                 "AC",
@@ -985,6 +1047,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/mMnuucpoYfR7F2uG6",
+            "phone": "0711-5703700",
+            "star": 3,
+            "description": "Hayo Hotel Palembang menawarkan pengalaman menginap yang simpel tapi tetap nyaman. Cocok untuk kamu yang ingin menghemat bujet tanpa mengorbankan kualitas. Kamarnya bersih, stafnya ramah, dan ada restoran di hotel yang menyajikan makanan enak. Ideal untuk backpacker, solo traveler, atau siapa pun yang cari penginapan hemat tapi tetap menyenangkan.",
+            "description_english": "Hayo Hotel Palembang keeps it simple and comfortable. It’s perfect for budget-conscious travelers who still want good service. The rooms are clean, the staff is friendly, and there’s an in-house restaurant with tasty local meals. A solid pick for backpackers, solo travelers, or anyone who wants a good night’s rest without breaking the bank.",
             "id": 22,
             "name": "Hayo Hotel Palembang",
             "address": "Jalan Malaka IV, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30961",
@@ -1022,9 +1089,14 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/cc85dzdSooh1iVr19",
+            "phone": "0711-360203",
+            "star": 3,
+            "description": "Kalau kamu liburan bareng keluarga, Ayola Sentosa Palembang bisa jadi pilihan yang pas. Hotel ini punya fasilitas yang mendukung banget untuk keluarga—mulai dari kamar yang luas sampai area hiburan. Suasananya hangat, pelayanannya memuaskan, dan lokasinya cukup strategis buat jelajah kota. Cocok untuk keluarga yang pengen nyaman tapi tetap santai.",
+            "description_english": "Ayola Sentosa Palembang is a great choice for families traveling together. The hotel offers spacious rooms and entertainment facilities that make it family-friendly. The atmosphere is warm, the staff is accommodating, and the location gives easy access to explore the city. Perfect for family trips that balance comfort and fun.",
             "id": 23,
             "name": "Ayola Sentosa Palembang",
-            "address": "Tidak ditemukan",
+            "address": "Jl. Kolonel Atmo No.16, 17 Ilir, Kec. Ilir Tim. I, Kota Palembang, Sumatera Selatan 30121",
             "facilities": [
                 "Selengkapnya",
                 "AC",
@@ -1069,6 +1141,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/tRHU9btCDFADNCzk6",
+            "phone": "0711-371000",
+            "star": 3,
+            "description": "Luminor Hotel Palembang hadir dengan desain interior yang stylish dan elegan—bikin pengalaman menginap terasa lebih estetik. Kamarnya nyaman, pelayanannya tanggap, dan ada berbagai fasilitas pendukung yang membuat perjalananmu makin lancar. Cocok untuk pebisnis maupun wisatawan yang suka tempat menginap dengan nuansa modern dan segar.",
+            "description_english": "Luminor Hotel Palembang stands out with its stylish, modern design—offering a visually pleasing stay alongside comfort. The rooms are cozy, the service is responsive, and supporting facilities make your trip run smoothly. Great for business travelers and tourists who appreciate a hotel with a fresh, aesthetic vibe.",
             "id": 24,
             "name": "Luminor Hotel Palembang By WH",
             "address": "Jl. Jend. Sudirman No.1111A, Sungai Pangeran, Kec. Ilir Tim. I, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30128",
@@ -1112,41 +1189,64 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/F7WnnHfs6LNJ4VF97",
+            "phone": "0711-5541777",
+            "star": 5,
+            "description": "Terletak di kawasan OPI dan dekat dengan pusat perbelanjaan, Wyndham Opi Hotel Palembang adalah pilihan utama untuk liburan keluarga atau event spesial. Hotel bintang lima ini punya fasilitas lengkap dan suasana modern dengan pemandangan yang masih asri. Sering dipilih untuk acara seperti pernikahan atau wisuda, hotel ini cocok untuk tamu yang ingin menginap dengan kualitas premium dan lokasi yang nyaman.",
+            "description_english": "Located in the OPI area and close to shopping centers, Wyndham Opi Hotel Palembang is a top pick for family vacations or special events. This five-star hotel offers full facilities and a modern ambiance with a hint of natural surroundings. Often chosen for weddings or graduations, it's perfect for guests looking for a premium stay in a convenient location.",
             "id": 25,
-            "name": "Hotel Budi",
-            "address": "Jalan. Letnal Kolonel Iskandar, 24 Ilir, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
+            "name": "Hotel Wyndham Opi Palembang",
+            "address": "Komplek Opi Bisnis Center, OPI MALL, Jl. Gubernur H. A Bastari, Sungai Kedukan, Rambutan, Banyuasin Regency, South Sumatra 30967",
             "facilities": [
-                "Tidak ditemukan"
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Kolam Renang",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "Lift",
+                "WiFi"
             ],
             "nearest_places": [
                 {
-                    "name": "Palembang",
-                    "distance": "Square"
-                },
-                {
-                    "name": "1.36",
-                    "distance": "km"
-                },
-                {
-                    "name": "GraPARI Telkom Group Sudirman",
-                    "distance": "Palembang"
+                    "name": "Stadion",
+                    "distance": "Jakabaring"
                 },
                 {
                     "name": "1.59",
                     "distance": "km"
                 },
                 {
-                    "name": "Pool Putra Remaja",
+                    "name": "OPI Mall",
+                    "distance": "Palembang"
+                },
+                {
+                    "name": "106",
+                    "distance": "m"
+                },
+                {
+                    "name": "Masjid Cheng Ho",
                     "distance": "Palembang"
                 }
             ],
-            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20016200-0729501ba1b54971014aa787099a6e2f.jpeg?_src=imagekit&tr=c-at_max",
-            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000020016200.Hotel%20Budi.2",
+            "image_url": "https://ik.imagekit.io/tvlk/generic-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20008697-49cd72728cc6e9b976f91b112bd58b7c.jpeg?_src=imagekit&tr=dpr-2,c-at_max,f-jpg,h-360,pr-true,q-40,w-640",
+            "traveloka_url": "https://www.traveloka.com/en-id/hotel/indonesia/wyndham-opi-hotel-palembang-3000020008697",
             "facilities_english": [
-                "Not found"
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "Elevator",
+                "WiFi"
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/BKCn7ZY9oZQpLAPU6",
+            "phone": "0711-710800",
+            "star": 2,
+            "description": "Algoritma Hotel Palembang cocok buat kamu yang lagi pengen solo trip dan butuh tempat buat recharge. Suasananya tenang, privat, dan nyaman. Salah satu nilai plusnya: layanan spa yang top banget—pas buat relaksasi setelah keliling kota. Pilihan ideal untuk solo traveler yang butuh me time berkualitas.",
+            "description_english": "Algoritma Hotel Palembang is ideal for solo travelers looking to unwind after a day of exploring. It’s quiet, cozy, and offers just the right level of privacy. One of the best parts? The spa service—perfect for relaxing and treating yourself. A great choice for those craving quality me time.",
             "id": 26,
             "name": "Algoritma Hotel Palembang",
             "address": "Jl. Dr. M. Isa No. 988 , Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30114",
@@ -1194,6 +1294,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/Zebr5Hc9rwwNs8oh6",
+            "phone": "0711-419311",
+            "star": 2,
+            "description": "Hotel Alam Sutra mungkin tidak mencolok dari luar, tapi begitu masuk, Anda akan merasakan atmosfer yang tenang dan bersih — cocok untuk transit singkat maupun perjalanan bisnis yang membutuhkan kenyamanan tanpa kerumitan. Lokasinya sangat strategis, hanya sekitar 15 menit dari Bandara Sultan Mahmud Badaruddin II dan tidak terlalu jauh dari Stasiun Kertapati. ",
+            "description_english": "Hotel Alam Sutra might not be flashy on the outside, but once inside, it offers a peaceful and clean atmosphere — perfect for short layovers or business trips that require a no-fuss stay. The location is a big plus: just about 15 minutes from Sultan Mahmud Badaruddin II Airport and also relatively close to Kertapati Station. ",
             "id": 27,
             "name": "Hotel Alam Sutra",
             "address": "Jalan Kolonel H. Burlian No. 182, Kecamatan Sukarame, Sukarame, Palembang, Sumatra Selatan, Indonesia, 30151",
@@ -1239,6 +1344,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/2FxqLcAv269FdzaPA",
+            "phone": "0711-5229600",
+            "star": 3,
+            "description": "BATIQA Hotel Palembang di Jalan A. Rivai hadir dengan nuansa yang hangat dan homey. Dominasi elemen kayu dan ornamen khas Indonesia di berbagai sudut hotel menciptakan atmosfer familiar, membuat Anda merasa seperti sedang berada di rumah sendiri. Tamu bisa memilih tipe kamar sesuai kebutuhan, termasuk kamar keluarga, smoking, atau non-smoking—pilihan yang pas untuk tamu yang membawa anak-anak atau mengutamakan kenyamanan tanpa asap rokok.",
+            "description_english": "BATIQA Hotel Palembang, located on Jalan A. Rivai, offers a warm and homey atmosphere. Wooden furniture and traditional Indonesian decor give the hotel a familiar charm that makes guests feel right at home. Rooms come in various types—including family, smoking, and non-smoking—ideal for guests traveling with children or those sensitive to smoke. ",
             "id": 28,
             "name": "BATIQA Hotel Palembang",
             "address": "Jalan Kapten A. Rivai No. 219, Ilir Barat I, Palembang, Sumatra Selatan, Indonesia, 30121",
@@ -1286,25 +1396,11 @@
             ]
         },
         {
-            "id": 29,
-            "name": "Tidak ditemukan",
-            "address": "Tidak ditemukan",
-            "facilities": [
-                "Tidak ditemukan"
-            ],
-            "nearest_places": [
-                {
-                    "name": "Tidak",
-                    "distance": "ditemukan"
-                }
-            ],
-            "image_url": "Tidak ditemukan",
-            "traveloka_url": "https://www.traveloka.com/if-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010001911.Wisata%20Hotel%20Palembang.2&contexts=%7B%22inventoryRateKey%22%3A%22r%2F4%2FIbSpsApptn70HsOVHP1%2Bi1SHhkRa3idkrzICNj4dEvvW%2BsMTfF0LL0XINC9J5I6jeAPHvTJ2o6dNXRmbCPsiEbiy2n3yBgneU5TLRjIa7aLchboS7wdNkBRjAqgQL8Wgf%2Fmzqcmw3PrdUN%2BC4uT3cmC%2BBzZqbR8W%2FZADv0rcLzwFIvhl3NGqhf0y7SOqXhqLaEPXGwlj76pFqnbl9X%2Ff%2F1gcG%2F3mkKToP2qTtiEdZQ%2Bmo27xejTh5Oc4izw39PCWSVDKwnP%2FUeFnHAmHq0P1a2C211JkQoCvOnw%2FXAF26T8o790RIclYDsF7jT9%2BcrFY9oFTmI%2BuhAf1m4i0MfdsWB4bF2tVXJFhl5WBRbn%2BmtXVA0ne5FYbOS64NcKKi2RalMT1SOM9NHDOSsxKQs6BN18yFBXNoit%2BV5xPYi9FyqUtDgL35KICecvAYRs7lYL5jFbWFXucdOfwHAd5zn3VAebwepT0JovBkO9RpL5GOtaiV%2Bgh4YG%2FkiP9POwHKlCruogOL6WbeuLc4mU6qCW3ezhfU35p%2FXzdibK3m%2BDH4I2O3aHbyDsm5HKxOpJnWSE9FwnN%2BCVxkggKfLHoh3fXWEcw8TZSKa9nBmpWOcTiigT0lrroqthy0y9qXczJbJpuobrXCSJ578tYK3NH7p6vtAYahWFlfCEo9Mj0d8SDgH4ukSYYpMadH7VewyDOPzWxL67zzwO2d%2FyBgtedt72T5Lz9s1Z6HausXm5g6ewhc2fpsiF1aRnQq%2BNfmjdyDeDusr9%2FkMVDSp1aqi2Kvuame0UnupydsqAaOQ%2BdoxR7y9lYiTUlU7qZDaAwgDCLpHNJWdQQ0E7Hip%2BEAHv8XpdpfaAqnnzJX6xewlKC17ffL5t1HdKQtVEwsrKcffjPDDcuCeYyIwtYjMP5LHiao0kSvAFuHEhp%2Fxrhwu8DvJ8S6islcUw9lEXQ%2Fz59DzKFWUkpoqrQBbsH6aGkVAOIe5eypqi3LaqUE8Sk91ZjZJDrb7LOMupEZmIVEizDsDBqDkpq1tIUTgPVheBDIjrE%2FH0js0eqUoWb2M2H8Fzz89VCVtlXFXOwtMj12jYw9i%2FhykUYSIR9RjivUWVvYKpQ9MPvfq42vDOjFQL3BUaNgRXxQgZTFHIYBcHFaeKcykZXKr81KDB7fMROiV2HbrmV9ZdjpdX086cqu6KeDRjhMjQccv4Gx2Kst6Z8rrYJ6HT5%22%7D&loginPromo=1&prevSearchId=1833093473337634639",
-            "facilities_english": [
-                "Not found"
-            ]
-        },
-        {
+            "maps": "https://maps.app.goo.gl/oemSewj9howRGCfk6",
+            "phone": "0711-817788",
+            "star": 2,
+            "description": "MaxOneHotels di Vivo Palembang menyuguhkan pengalaman menginap yang modern, muda, dan cukup artistik. Interior hotelnya menampilkan desain yang kekinian dan warna-warna cerah yang menyegarkan mata. Dengan harga yang ramah di kantong, hotel ini tetap mampu menjaga kualitas kenyamanan. Kamarnya bersih dan kasurnya empuk — cocok untuk melepas lelah setelah seharian beraktivitas di kota.",
+            "description_english": "MaxOneHotels at Vivo Palembang delivers a fun, modern stay with youthful energy and artistic flair. The hotel’s interiors feature bold colors and a contemporary design that immediately brightens your mood. Despite being budget-friendly, the comfort is well-maintained. Rooms are clean, beds are cozy — ideal after a day of city adventures.",
             "id": 30,
             "name": "MaxOneHotels.com @ Vivo Palembang",
             "address": "Jl. R. Soekamto No. B1-B4, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30114",
@@ -1352,6 +1448,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/5SXkbPhGTNjcEvLMA",
+            "phone": "0711-372700",
+            "star": 2,
+            "description": "Grand Duta Syariah menawarkan akomodasi sederhana dengan pendekatan syariah yang menenangkan dan ramah keluarga. Suasana hotel terasa bersih dan tenang, cocok bagi Anda yang mencari ketenangan dalam perjalanan. Pelayanan resepsionis yang tersedia 24 jam menjadi nilai lebih, apalagi jika Anda datang larut malam. Stafnya sigap dan sopan, membuat Anda merasa aman dan nyaman.",
+            "description_english": "Grand Duta Syariah offers modest accommodation with a calm, family-friendly atmosphere rooted in syariah values. The hotel feels clean and peaceful — perfect for travelers seeking a more tranquil environment. The 24-hour front desk is especially helpful if you're checking in late. The staff are polite and attentive, making you feel secure and welcomed.",
             "id": 31,
             "name": "Hotel Grand Duta Syariah",
             "address": "Jalan Radial No. 1, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
@@ -1397,54 +1498,14 @@
             ]
         },
         {
-            "id": 32,
-            "name": "Hotel Grand Duta Syariah",
-            "address": "Jalan Radial No. 1, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
-            "facilities": [
-                "Selengkapnya",
-                "AC",
-                "Restoran",
-                "Resepsionis 24 Jam",
-                "Parkir",
-                "WiFi"
-            ],
-            "nearest_places": [
-                {
-                    "name": "Palembang",
-                    "distance": "Square"
-                },
-                {
-                    "name": "1.31",
-                    "distance": "km"
-                },
-                {
-                    "name": "GraPARI Telkom Group Sudirman",
-                    "distance": "Palembang"
-                },
-                {
-                    "name": "1.67",
-                    "distance": "km"
-                },
-                {
-                    "name": "Pool Putra Remaja",
-                    "distance": "Palembang"
-                }
-            ],
-            "image_url": "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10002223-2048x1377-FIT_AND_TRIM-aab7e7411940e04e61a455c01545e22d.jpeg?_src=imagekit&tr=c-at_max",
-            "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.3000010002223.Hotel%20Grand%20Duta%20Syariah.2",
-            "facilities_english": [
-                "Read More",
-                "AC",
-                "Restaurant",
-                "24-Hour Front Desk",
-                "Parking",
-                "WiFi"
-            ]
-        },
-        {
+            "maps": "https://maps.app.goo.gl/CJ8d6ocRQK41XUQB8",
+            "phone": "0711-440400",
+            "star": 2,
+            "description": "De' Premium Hotel adalah salah satu pilihan menarik untuk para backpacker atau traveler bujet yang tidak ingin mengorbankan kenyamanan. Hotel ini memiliki nuansa modern minimalis, dengan kamar bersih dan cukup nyaman untuk bermalam satu atau dua malam. Lokasinya cukup strategis dan dekat dengan beberapa akses utama di Palembang, jadi mobilitas selama di kota pun jadi mudah.",
+            "description_english": "De' Premium Hotel is a smart pick for backpackers or budget-conscious travelers who still want decent comfort. The vibe is modern and minimalist, with clean, cozy rooms that work well for a night or two. t’s conveniently located near key routes in Palembang, making city travel hassle-free.",
             "id": 33,
             "name": "De' Premium Hotel Soekarno Hatta",
-            "address": "Tidak ditemukan",
+            "address": "Jl. Soekarno Hatta KEL No.234, Siring Agung, Kec. Ilir Bar. I, Kota Palembang, Sumatera Selatan 30153",
             "facilities": [
                 "Selengkapnya",
                 "AC",
@@ -1487,11 +1548,21 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/gRQcoqpRJM36ciD99",
+            "phone": "0711-377111",
+            "star": 3,
+            "description": "All Nite & Day Veteran Palembang adalah pilihan cerdas buat kamu yang cari penginapan dengan harga bersahabat tapi tetap nyaman dan bersih. Suasana hotelnya kasual dan santai, cocok buat traveler yang ingin menginap di tengah kota tanpa ribet. Stafnya ramah, proses check-in cepat, dan kamarnya cukup untuk istirahat yang tenang setelah seharian jalan-jalan. Cocok untuk solo traveler, backpacker, atau pasangan muda yang ingin eksplorasi Palembang.",
+            "description_english": "All Nite & Day Veteran Palembang is a smart choice for budget travelers who don’t want to compromise on comfort. The hotel offers a relaxed and casual atmosphere, with friendly staff and quick service. Rooms are clean and cozy—just what you need to rest after a day exploring the city. Ideal for solo travelers, backpackers, or young couples on a city trip.",
             "id": 34,
             "name": "All Nite And Day Veteran",
-            "address": "Tidak ditemukan",
+            "address": "Jl. Veteran No.939 Blok F9, 9 Ilir, Kec. Ilir Tim. II, Kota Palembang, Sumatera Selatan 30113",
             "facilities": [
-                "Tidak ditemukan"
+                "Selengkapnya",
+                "AC",
+                "Restoran",
+                "Resepsionis 24 Jam",
+                "Parkir",
+                "WiFi"
             ],
             "nearest_places": [
                 {
@@ -1518,10 +1589,20 @@
             "image_url": "https://ik.imagekit.io/tvlk/image/imageResource/2025/01/05/1736039010989-7595d02099b0647547a9e4e8ec19d408.png?tr=h-24",
             "traveloka_url": "https://www.traveloka.com/en-id/hotel/detail?spec=08-06-2025.09-06-2025.1.1.HOTEL.9000004047832.All%20Nite%20And%20Day%20Veteran.2",
             "facilities_english": [
-                "Not found"
+                "Read More",
+                "AC",
+                "Restaurant",
+                "24-Hour Front Desk",
+                "Parking",
+                "WiFi"
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/DWVTrLdzqLFY8mVBA",
+            "phone": "0711-821781",
+            "star": 2,
+            "description": "Grand Malaka Ethical Hotel punya pesona klasik yang berbeda dari kebanyakan hotel di Palembang. Interiornya bergaya vintage, dengan kolam renang yang unik sebagai salah satu spot favorit. Pelayanannya baik dan suasananya tenang, cocok buat yang ingin staycation santai. Restorannya juga layak dicoba—mereka menyajikan masakan khas yang dibuat dengan perhatian khusus. Cocok untuk pasangan, keluarga kecil, atau siapa saja yang ingin suasana yang berbeda dari hotel biasa.",
+            "description_english": "Grand Malaka Ethical Hotel brings a unique classic charm to the Palembang hotel scene. Its vintage interiors and quirky pool area make it stand out. The atmosphere is peaceful, the service attentive, and the restaurant offers delightful signature dishes worth trying. A great choice for couples, small families, or anyone seeking a stay with character and calm.",
             "id": 35,
             "name": "Grand Malaka Ethical Hotel",
             "address": "Jl. Malaka Ii No.5, Bukit Sangkal, Kalidoni, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30961",
@@ -1561,6 +1642,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/k94VnT3XnMR53NiK7",
+            "phone": "0711-315574",
+            "star": 2,
+            "description": "Azza Hotel Palembang by Horison tampil dengan desain modern minimalis yang bikin nyaman dari mata hingga suasana. Kamar-kamarnya bersih dan tertata rapi, cocok untuk istirahat setelah seharian aktivitas. Dilengkapi dengan fasilitas penunjang bisnis, hotel ini juga cocok untuk perjalanan kerja. Lokasinya strategis, dan pelayanannya cepat tanggap. Ideal untuk pebisnis, wisatawan, atau pasangan yang ingin pengalaman menginap simpel tapi tetap berkelas.",
+            "description_english": "Azza Hotel Palembang by Horison delivers a clean, minimalist design that feels both stylish and comfortable. The rooms are neat and functional, offering a peaceful place to rest after a day out. With its business-supporting facilities and strategic location, it’s great for corporate stays as well as casual visits. A solid pick for business travelers, tourists, or couples seeking modern simplicity.",
             "id": 36,
             "name": "Azza Hotel Palembang by Horison",
             "address": "Jalan Kapten Anwar Sastro No. 1296, Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30129",
@@ -1608,6 +1694,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/ahbUXNAuNEcapCQH9",
+            "phone": "0711-5710999",
+            "star": 2,
+            "description": "Terletak di jantung kota Palembang, Amaris Hotel adalah pilihan ideal untuk para traveler yang mencari akomodasi praktis dan terjangkau, tanpa harus mengorbankan kenyamanan. Nuansa hotel ini simpel dan modern, cocok untuk Anda yang lebih menyukai kesederhanaan dengan sentuhan fungsional.",
+            "description_english": "Located in the heart of Palembang city, Amaris Hotel is the ideal choice for travelers seeking practical and affordable accommodation without sacrificing comfort. The hotel offers a simple yet modern ambiance, perfect for those who appreciate minimalist design with functional touches.",
             "id": 37,
             "name": "Amaris Hotel Palembang",
             "address": "Lokasi yang strategis di sekitar Jl. Demang Lebar Daun, salah satu jalan utama di Palembang dan dekat dengan stasiun LRT",
@@ -1655,6 +1746,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/JYaCpj4QPtSnSQB46",
+            "phone": "0711-5730000",
+            "star": 2,
+            "description": "favehotel Palembang hadir dengan gaya minimalis modern yang cocok untuk kamu yang suka desain simpel tapi tetap berkelas. Dengan total 163 kamar dalam berbagai tipe, hotel ini punya fleksibilitas untuk tamu bisnis maupun wisatawan. Lokasinya juga strategis, dekat dari bandara dan pusat kota, jadi gampang dijangkau. Pelayanan profesional dan efisien jadi nilai lebih. Cocok untuk pebisnis, pasangan, bahkan keluarga kecil.",
+            "description_english": "favehotel Palembang brings a sleek, minimalist look with 163 well-designed rooms in various types—great for both business and leisure travelers. Its location is strategic, easily accessible from the airport and city center. The service is efficient and professional, making it a dependable choice. Perfect for business trips, couples, or even small families looking for style and convenience.",
             "id": 38,
             "name": "favehotel Palembang",
             "address": "Jalan Basuki Rahmat No. 1681, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30128",
@@ -1704,6 +1800,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/dwnQAmMUg7wKD5DD9",
+            "phone": "0711-315820",
+            "star": 2,
+            "description": "Swarna Dwipa Residence menawarkan suasana yang tenang dan nyaman, cocok untuk Anda yang ingin menikmati waktu berdua dengan pasangan. Nuansa homy dengan sentuhan hangat pada interior membuat setiap momen terasa lebih intim. Meski harganya terjangkau, pelayanan yang diberikan cukup memuaskan. Staf ramah dan membantu, serta kamar bersih dan tertata rapi.",
+            "description_english": "Swarna Dwipa Residence offers a peaceful, homey vibe — ideal for couples seeking a romantic yet affordable escape. The warm touches in its interior design give a sense of coziness that makes your stay feel more personal. Though budget-friendly, the service is well-maintained. Staff are friendly, and the rooms are clean and thoughtfully arranged.",
             "id": 39,
             "name": "Swarna Dwipa Residence",
             "address": "Jalan Bay Salim No. 25, Kemuning, Sekip Tengah, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30114",
@@ -1749,6 +1850,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/7Pvm9mvfsL9eF3tX7",
+            "phone": "0711-315222",
+            "star": 2,
+            "description": "Monoloog Hotel hadir sebagai pilihan segar bagi pelancong muda dan backpacker yang menginginkan kenyamanan dengan gaya simpel dan modern. Desain interiornya minimalis tapi tetap terasa stylish, cocok untuk kamu yang suka suasana kasual namun bersih. Pelayanan resepsionis 24 jam juga jadi nilai tambah, apalagi buat yang sering tiba larut malam. Stafnya sigap dan ramah.",
+            "description_english": "Monoloog Hotel is a refreshing pick for young travelers and backpackers who want clean, modern simplicity. The minimalist yet stylish interior gives off a casual but tidy vibe — perfect for low-key city stays. The 24-hour front desk is a big plus, especially for late check-ins. Staff are friendly and responsive.",
             "id": 40,
             "name": "Monoloog Hotel Palembang",
             "address": "Jl. Jendral Sudirman Kelurahan 20 Ilir III, Kecamatan Ilir Timur 1 , Ilir Timur I, Palembang, Sumatra Selatan, Indonesia, 30129",
@@ -1796,6 +1902,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/7Pvm9mvfsL9eF3tX7",
+            "phone": "0711-315222",
+            "star": 2,
+            "description": "Winer Hotel adalah akomodasi yang memberikan nilai lebih dari harga yang dibayar. Suasananya tenang dan bersih, cocok untuk Anda yang mencari tempat menginap praktis tapi tetap nyaman. Pelayanannya cukup baik dan tidak berbelit-belit — proses check-in cepat, dan staf selalu siap membantu.",
+            "description_english": "Winer Hotel offers great value for money. The atmosphere is quiet and clean, ideal for travelers needing a practical yet pleasant place to stay. Service is straightforward and helpful — check-in is fast and the staff are ready to assist when needed.",
             "id": 41,
             "name": "Winer Hotel",
             "address": "Jalan Veteran, Lorong Karyawan, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30114",
@@ -1833,6 +1944,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/BFuCg9hyhzmJbfzP7",
+            "phone": "0711-353191",
+            "star": 4,
+            "description": "Majestic Hotel memberikan kesan pertama yang menyenangkan berkat desain interior modern dan suasana bersih yang menenangkan. Terletak cukup strategis, dekat dengan bandara dan berbagai destinasi populer di Palembang. Interior yang elegan dan pemandangan kota dari beberapa kamar memberikan pengalaman menginap yang cukup menyegarkan.",
+            "description_english": "Majestic Hotel offers a refreshing first impression with its clean, modern interior and calm atmosphere. Its strategic location — near the airport and city attractions — makes it convenient for all types of travelers. Some rooms offer a nice city view, and the stylish décor adds an elegant touch to your stay.",
             "id": 42,
             "name": "Majestic Hotel Palembang",
             "address": "Jl. Sumpah Pemuda No. 07 (POM IX), Ilir Barat I, Palembang, Sumatra Selatan, Indonesia, 30136",
@@ -1874,6 +1990,11 @@
             ]
         },
         {
+            "maps": "0711-373999",
+            "phone": "https://maps.app.goo.gl/hJspNu8a7Nqo4CJ47",
+            "star": 2,
+            "description": "Sentosa Palembang mencuri perhatian dengan desain White & Wood yang estetik di setiap sudut. Suasananya cozy, bersih, dan terasa seperti ‘rumah kedua’ bagi traveler yang butuh tempat istirahat yang tenang. Hotel ini cocok untuk para backpacker yang mencari akomodasi terjangkau tapi tetap berkarakter.",
+            "description_english": "Sentosa Palembang catches your eye with its aesthetic White & Wood design throughout the hotel. The cozy, clean vibe feels like a 'second home' for travelers who need a restful, low-key stay. It’s ideal for backpackers looking for affordable lodging with a touch of personality.",
             "id": 43,
             "name": "Hotel Sentosa Palembang",
             "address": "Jalan Radial No. 999, Bukit Kecil, Palembang, Sumatra Selatan, Indonesia, 30134",
@@ -1919,6 +2040,11 @@
             ]
         },
         {
+            "maps": "https://maps.app.goo.gl/bjfFBwDboSkwBm15A",
+            "phone": "0711-353358",
+            "star": 2,
+            "description": "Vehotel Palembang punya kehangatan seperti rumah sendiri — desain interiornya sederhana namun terasa familiar dan nyaman. Hotel ini cocok untuk backpacker atau wisatawan bujet yang mencari tempat istirahat tenang setelah seharian menjelajahi kota. Pelayanannya ramah dan efisien, serta kamar disiapkan dengan cukup perhatian pada kebersihan dan kenyamanan.",
+            "description_english": "Vehotel Palembang feels like a home away from home — the interior is simple, yet familiar and inviting. It’s perfect for backpackers or budget travelers who want a quiet place to rest after a full day of exploring. Service is warm and efficient, and the rooms are clean and cozy.",
             "id": 44,
             "name": "Vehotel Palembang",
             "address": "Jalan Mayor Ruslan No. 2012, Ilir Timur II, Palembang, Sumatra Selatan, Indonesia, 30113",

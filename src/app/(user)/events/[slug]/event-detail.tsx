@@ -192,7 +192,7 @@ export default function EventDetail({ event }: EventDetailProps) {
               <div className="bg-muted rounded-lg overflow-hidden mb-6">
                 <div className="h-[300px] relative">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.911300871285!2d107.61011198550429!3d-6.9068719658218996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e63801819181%3A0xccc6c2d9ac1aff49!2sGanesha%20Operation%20PW%2036B!5e0!3m2!1sid!2sid!4v1747984186701!5m2!1sid!2sid"
+                    src={event.map_url}
                     // allowfullscreen=""
                     loading="lazy"
                     className="w-full h-full"
