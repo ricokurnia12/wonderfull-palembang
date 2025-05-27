@@ -37,7 +37,7 @@ async function BlogContent({ searchParams }: BlogPageProps) {
 
 function BlogLoading() {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 mt-8">
       <div className="text-center mb-16">
         <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500">
           Discover Perspectives

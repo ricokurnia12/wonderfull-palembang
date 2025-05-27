@@ -274,7 +274,7 @@ export default function EventsList({
 
       {/* Events Grid */}
       {data && data.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {data.map((event) => {
             const newEvent = {
               title: language === "en" ? event.english_title : event.title,
@@ -289,7 +289,7 @@ export default function EventsList({
               date: new Date(event.date).toLocaleDateString(),
             };
             return (
-              <Link key={event.id} href={`/events/${event.slug}`}>
+              <Link key={event.slug} href={`/events/${event.slug}`}>
                 <EventCard event={newEvent} />
               </Link>
             );

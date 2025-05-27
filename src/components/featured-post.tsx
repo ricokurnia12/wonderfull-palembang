@@ -17,9 +17,9 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative group bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="relative group bg-gradient-to-r from-yellow-50 to-red-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
     >
-      <Link href={`/blog/${post.slug}`}>
+      <Link href={`/explore/${post.slug}`}>
         <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
           <div className="space-y-6">
             <div className="flex items-center gap-3">

@@ -36,6 +36,8 @@ interface Event {
   category: string;
   image?: string;
   map_url?: string;
+  description?: string;
+  english_description?: string;
 }
 
 interface EventDetailProps {
@@ -87,6 +89,9 @@ export default function EventDetail({ event }: EventDetailProps) {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
             {language === "id" ? event.title : event.english_title}
           </h1>
+          <p className="text-lg text-muted-foreground mb-6">
+            {language === "id" ? event.description : event.english_description}
+          </p>
           <div className="flex flex-col gap-3 text-muted-foreground mb-6">
             <div className="flex items-center">
               <Calendar className="h-5 w-5 mr-3 text-primary" />
