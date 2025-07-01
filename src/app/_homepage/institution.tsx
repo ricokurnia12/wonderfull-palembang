@@ -1,3 +1,5 @@
+'use client'
+import { useLanguage } from "@/context/LanguageContext"
 import { Button } from "@/components/ui/button"
 import {
 
@@ -15,6 +17,7 @@ import {
 import Link from "next/link"
 
 const Institution = () => {
+    const { language } = useLanguage();
     return (
         <section className="py-16 relative z-10 w-full bg-[#9B1B30]">
             <section className="pyn">
@@ -33,8 +36,8 @@ const Institution = () => {
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Official Institutions</h2>
                         <div className="h-1 w-20 bg-white/50 mx-auto rounded-full mb-6"></div>
                         <p className="text-white/80 max-w-2xl mx-auto">
-                            Connect with official government agencies, law enforcement, educational institutions, and other important
-                            organizations in Palembang.
+                        {language === 'en'?"  Connect with official government agencies, law enforcement, educational institutions, and other importantorganizations in Palembang.":"Terhubung dengan lembaga resmi pemerintah, penegak hukum, institusi pendidikan, dan Layanan Darurat di Palembang."}
+                          
                         </p>
                     </div>
 
@@ -74,10 +77,10 @@ const Institution = () => {
                                         <Building className="h-7 w-7 text-red-600" />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-white mb-3">Pemerintah Kota Palembang</h3>
+                                        <h3 className="text-xl font-bold text-white mb-3">{language==='en'?'Palembang City Government':'Pemerintah Kota Palembang'}</h3>
                                         <p className="text-white/70 mb-5 text-sm leading-relaxed">
-                                            The official local government of Palembang city, providing public services and information to
-                                            citizens.
+                                        {language === 'en'?"   The official local government of Palembang city, providing public services and information to citizens.":"Pemerintah Kota Palembang adalah pemerintah daerah resmi kota Palembang yang menyediakan layanan publik dan informasi bagi masyarakat."}
+                                         
                                         </p>
                                         <Link
                                             href="https://palembang.go.id/"
@@ -101,38 +104,13 @@ const Institution = () => {
                                         <GraduationCap className="h-7 w-7 text-red-600" />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-white mb-3">Universitas Sriwijaya</h3>
+                                        <h3 className="text-xl font-bold text-white mb-3">Politeknik Negeri Sriwijaya (POLSRI)</h3>
                                         <p className="text-white/70 mb-5 text-sm leading-relaxed">
-                                            The largest public university in South Sumatra, named after the ancient Srivijaya Empire.
+                                        {language === 'en'?"is a vocational education institution in Palembang that offers various applied study programs to produce job-ready graduates.":"POLSRI merupakan institusi pendidikan vokasi di Palembang yang menawarkan berbagai program studi terapan untuk mencetak lulusan siap kerja."}
+                                    
                                         </p>
                                         <Link
                                             href="https://unsri.ac.id/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center text-white text-sm font-medium group-hover:underline"
-                                        >
-                                            <span className="border-b border-white/40 group-hover:border-white">Visit Official Website</span>
-                                            <ExternalLink className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* RSUP Dr. Mohammad Hoesin */}
-                        <div className="group">
-                            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:bg-white/20 hover:shadow-xl hover:shadow-red-900/20 h-full">
-                                <div className="flex items-start gap-5">
-                                    <div className="h-14 w-14 rounded-full bg-white flex items-center justify-center shrink-0">
-                                        <Stethoscope className="h-7 w-7 text-red-600" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-white mb-3">RSUP Dr. Mohammad Hoesin</h3>
-                                        <p className="text-white/70 mb-5 text-sm leading-relaxed">
-                                            The main referral hospital in South Sumatra, providing comprehensive healthcare services.
-                                        </p>
-                                        <Link
-                                            href="https://rsmh.co.id/"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center text-white text-sm font-medium group-hover:underline"
@@ -153,13 +131,13 @@ const Institution = () => {
                                         <Plane className="h-7 w-7 text-red-600" />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-white mb-3">Dinas Pariwisata</h3>
+                                        <h3 className="text-xl font-bold text-white mb-3">{language==='en'?"Dinas Pariwisata":"Tourism Oﬃce"}</h3>
                                         <p className="text-white/70 mb-5 text-sm leading-relaxed">
-                                            The tourism department of Palembang, providing information for tourists and promoting local
-                                            attractions.
+                                        {language === 'en'?" The tourism department of Palembang, providing information for tourists and promoting local attractions.":"Dinas Pariwisata Palembang, menyediakan informasi bagi wisatawan dan mempromosikan atraksi lokal."}
+                                         
                                         </p>
                                         <Link
-                                            href="https://pariwisata.palembang.go.id/"
+                                            href="https://www.instagram.com/pariwisata.palembang/?hl=en"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center text-white text-sm font-medium group-hover:underline"
@@ -172,42 +150,9 @@ const Institution = () => {
                             </div>
                         </div>
 
-                        {/* Badan Penanggulangan Bencana Daerah */}
-                        <div className="group">
-                            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:bg-white/20 hover:shadow-xl hover:shadow-red-900/20 h-full">
-                                <div className="flex items-start gap-5">
-                                    <div className="h-14 w-14 rounded-full bg-white flex items-center justify-center shrink-0">
-                                        <AlertTriangle className="h-7 w-7 text-red-600" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-white mb-3">BPBD Sumsel</h3>
-                                        <p className="text-white/70 mb-5 text-sm leading-relaxed">
-                                            The regional disaster management agency for South Sumatra, handling emergency response and
-                                            disaster mitigation.
-                                        </p>
-                                        <Link
-                                            href="https://bpbd.sumselprov.go.id/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center text-white text-sm font-medium group-hover:underline"
-                                        >
-                                            <span className="border-b border-white/40 group-hover:border-white">Visit Official Website</span>
-                                            <ExternalLink className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
 
-                    <div className="mt-14 text-center">
-                        <Button
-                            variant="outline"
-                            className="bg-white/10 text-white border-white/30 hover:bg-white/20 hover:text-white"
-                        >
-                            View All Institutions <ChevronRight className="ml-2 h-4 w-4" />
-                        </Button>
-                    </div>
                 </div>
             </section>
 

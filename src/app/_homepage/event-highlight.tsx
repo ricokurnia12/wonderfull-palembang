@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useLanguage } from "@/context/LanguageContext";
 // import SwiperCore, { Autoplay } from "swiper";
 
 import { Autoplay, Navigation, EffectCoverflow } from 'swiper/modules';
@@ -23,7 +24,7 @@ const events = [
 ];
 
 export default function EventsHighlight() {
-
+    const { language } = useLanguage();
     return (
         <div className="relative bg-yellow-500 py-12 px-4 md:px-8 lg:px-12">
             <div className="max-w-7xl mx-auto grid grid-cols-5">
@@ -32,7 +33,10 @@ export default function EventsHighlight() {
                     <div className="max-w-2xl">
                         <p className="text-sm font-medium tracking-widest uppercase mb-4">SPOTLIGHT</p>
                         <h1 className="text-5xl sm:text-6xl md:text-7xl font-serif font-medium leading-tight mb-6">
-                        Experience Palembang Like Never Before!
+                            {language === "en"
+                                ? "Experience Palembang Like Never Before!"
+                                : "Rasakan Pengalaman Palembang yang Belum Pernah Ada Sebelumnya!"}
+                         
                         </h1>
                         <div className="lg:hidden">                        <Swiper
                             // autoHeight={true}
@@ -75,7 +79,9 @@ export default function EventsHighlight() {
                         </div>
 
                         <p className="text-lg opacity-90 mb-8 max-w-xl">
-                        Discover vibrant festivals, cultural celebrations, and exciting events happening around the city.
+                            {language === "en"
+                                ? "Discover vibrant festivals, cultural celebrations, and exciting events happening around the city."
+                                : "Temukan berbagai festival, perayaan budaya, dan acara menarik yang diadakan di seluruh kota."}
                         </p>
                         <Link
                             href="/explore"

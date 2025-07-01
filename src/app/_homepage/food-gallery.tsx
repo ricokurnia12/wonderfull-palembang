@@ -1,10 +1,12 @@
+'use client'
 import Image from "next/image";
-
+import { useLanguage } from "@/context/LanguageContext";
 export default function FoodGalery() {
+    const { language } = useLanguage();
     const images = [
         {
-            src: "/images/foodies/pindangpatin.jpeg",
-            alt: "Pindang Patin",
+            src: "/images/foodies/martabakhar.jpeg",
+            alt: "Martabak Har",
             colSpan: "col-span-2",
             rowSpan: "row-span-6",
         },
@@ -27,8 +29,8 @@ export default function FoodGalery() {
             rowSpan: "row-span-3",
         },
         {
-            src: "/images/foodies/laksan1.jpeg",
-            alt: "Laksan",
+            src: "/images/foodies/martabakhar.jpeg",
+            alt: "Martabak Har",
             colSpan: "col-span-2",
             rowSpan: "row-span-6",
         },
@@ -61,8 +63,8 @@ export default function FoodGalery() {
         <section className="w-full bg-[#FFF6E1] h-fit z-10 relative mx-auto  ">
             <Image src={'/images/food-bg.png'} width={500} height={500} alt="makanan palembang" className="absolute bottom-0 right-0" />
             <div className="py-8">
-                <h1 className="text-4xl font-bold text-center text-gray-800 ">&apos;Eat Like a Local, Savor the Authenticity!&apos;</h1>
-                <p className="text-lg text-gray-600 mb-4 text-center lg:max-w-1/2 w-full mx-auto">Dive into the heart of Palembang&apos;s food culture with every bite.</p>
+                <h1 className="text-4xl font-bold text-center text-gray-800 ">{language==='id'?'Makanlah Seperti Orang Lokal, Nikmati Keasliannya!':'Eat Like a Local, Savor the Authenticity!'}</h1>
+                <p className="text-lg text-gray-600 mb-4 text-center lg:max-w-1/2 w-full mx-auto">{language==='en'?'Dive into the heart of Palembang food culture with every bite.':'Selami jantung budaya makanan Palembang dengan setiap gigitannya.'}</p>
                 {/* mobile gallery */}
                 <div className="lg:hidden grid grid-cols-12 grid-rows-6 gap-2 mt-8 max-w-5xl mx-auto h-52">
                     <div className="col-span-4 row-span-6 relative ">

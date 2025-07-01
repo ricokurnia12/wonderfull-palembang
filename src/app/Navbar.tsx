@@ -4,7 +4,7 @@ import LangTogle from "@/components/lang-togle";
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 z-50 w-full bg-zinc-900 text-white  dark:bg-gray-950/90">
+    <header className="fixed top-0 bg-[url('/navbarbg.png')] bg-cover  z-50 w-full text-white  dark:bg-gray-950/90">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
           <Image
@@ -16,34 +16,35 @@ export default function Navbar() {
           />
         </Link>
         <nav className="hidden space-x-4 md:flex">
-          <Link
-            href="#"
+           <Link
+            href="/"
             className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
             prefetch={false}
           >
             Home
           </Link>
           <Link
-            href="#"
+            href="/explore"
             className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
             prefetch={false}
           >
-            About
+            Explore
           </Link>
           <Link
-            href="#"
+            href="/events"
             className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
             prefetch={false}
           >
-            Services
+            Events
           </Link>
           <Link
-            href="#"
+            href="/hotels"
             className="text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-50"
             prefetch={false}
           >
-            Contact
+            Hotels
           </Link>
+        
         </nav>
         {/* <Button>Get Started</Button> */}
 

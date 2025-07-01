@@ -18,23 +18,23 @@ import {
 import Link from "next/link"
 const Footer = () => {
     return (
-        <footer className="bg-zinc-900 text-zinc-200 z-10 relative">
+        <footer className="bg-[url('/navbarbg.png')] bg-cover  text-zinc-200 z-10 relative">
             {/* Main Footer */}
-            <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 py-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                     {/* Column 1: About */}
                     <div>
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="flex items-center gap-3 mb-2">
                             <div className="h-10 w-10 rounded-full bg-red-600 flex items-center justify-center">
                                 <Building2 className="h-5 w-5 text-white" />
                             </div>
                             <h3 className="text-xl font-bold">Palembang City</h3>
                         </div>
-                        <p className="text-zinc-400 text-sm mb-6">
+                        <p className=" text-sm mb-6">
                             The website of Palembang City, South Sumatra, Indonesia. Discover the rich history, vibrant
                             culture, and modern attractions of one of Indonesia oldest cities.
                         </p>
-                        <div className="flex gap-4">
+                        {/* <div className="flex gap-4">
                             <Link
                                 href="#"
                                 className="h-9 w-9 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-red-600 transition-colors"
@@ -63,11 +63,11 @@ const Footer = () => {
                                 <Youtube className="h-4 w-4" />
                                 <span className="sr-only">YouTube</span>
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Column 2: Quick Links */}
-                    <div>
+                    {/* <div>
                         <h3 className="text-lg font-bold mb-6">Quick Links</h3>
                         <ul className="space-y-3">
                             <li>
@@ -97,10 +97,10 @@ const Footer = () => {
                             </li>
                         
                         </ul>
-                    </div>
+                    </div> */}
 
                     {/* Column 3: Government Links */}
-                    <div>
+                    {/* <div>
                         <h3 className="text-lg font-bold mb-6">Government Links</h3>
                         <ul className="space-y-3">
                             <li>
@@ -118,10 +118,10 @@ const Footer = () => {
                             
         
                         </ul>
-                    </div>
+                    </div> */}
 
                     {/* Column 4: Contact */}
-                    <div>
+                    {/* <div>
                         <h3 className="text-lg font-bold mb-6">Contact Information</h3>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
@@ -144,12 +144,12 @@ const Footer = () => {
                             </p>
                             <Button className="mt-3 w-full bg-red-600 hover:bg-red-700">Contact Now</Button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
             {/* Bottom Footer */}
-            <div className="border-t border-zinc-800">
+            {/* <div className="border-t border-zinc-800">
                 <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-zinc-500 text-sm mb-4 md:mb-0">
                         © {new Date().getFullYear()} Palembang City. All rights reserved.
@@ -166,7 +166,7 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Back to top button */}
             <div className="fixed bottom-6 right-6 z-50">

@@ -18,7 +18,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-// import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/LanguageContext";
 type Location = {
   id: number;
   name: string;
@@ -55,7 +55,7 @@ const keyFacts = [
 ];
 
 export default function VideoHero() {
-  // const { language } = useLanguage();
+  const { language } = useLanguage();
   const [currentLocation, setCurrentLocation] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef(null);
@@ -189,8 +189,10 @@ export default function VideoHero() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="text-4xl md:text-6xl font-bold"
             >
-              Unravel the Wonders of Palembang
-            </motion.h1>
+              {language === "en"
+                ? "Discover the Wonders of Palembang": "Mengungkap Keajaiban Palembang"}
+            
+            </motion.h1>  
 
             <motion.span
               initial={{ x: "100%", opacity: 0, scale: 0.5 }}
@@ -198,8 +200,10 @@ export default function VideoHero() {
               transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
               className="text-lg md:text-2xl mt-2 block"
             >
-              A city where history, culture, and modern life blend harmoniously
-              along the Musi River.
+              {language === "en"
+                ? "A city where history, culture, and modern life blend harmoniously along the Musi River"
+                : "Kota di mana sejarah, budaya, dan kehidupan modern berpadu harmonis di sepanjang Sungai Musi"}
+             
             </motion.span>
           </motion.div>
 
