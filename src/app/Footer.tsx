@@ -1,17 +1,5 @@
-import { Button } from "@/components/ui/button"
-
 import {
     Building2,
-
-    ChevronRight,
-
-    Mail,
-    Phone,
-    MapPinned,
-    Facebook,
-    Instagram,
-    Twitter,
-    Youtube,
     ArrowUp,
 } from "lucide-react"
 

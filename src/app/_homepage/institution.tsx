@@ -1,16 +1,10 @@
 'use client'
 import { useLanguage } from "@/context/LanguageContext"
-import { Button } from "@/components/ui/button"
 import {
-
-    ChevronRight,
-
     Shield,
     Building,
     GraduationCap,
-    Stethoscope,
     Plane,
-    AlertTriangle,
     ExternalLink,
 } from "lucide-react"
 
@@ -149,13 +143,9 @@ const Institution = () => {
                                 </div>
                             </div>
                         </div>
-
-                       
                     </div>
-
                 </div>
             </section>
-
         </section>
     )
 }
