@@ -144,12 +144,11 @@ export default function EventsList({ data, page, totalPages, initialFilters }: E
         <Image
           width={1200}
           height={400}
-          src="/images/events-banner.jpg"
+          src="/images/event-banner.png"
           alt="Events in Indonesia"
           className="absolute inset-0 w-full h-full object-cover"
         />
       </div>
-
       {/* Search Bar */}
       {/* <div className="mb-6">
         <div className="relative max-w-md">
