@@ -6,6 +6,8 @@ import {
     GraduationCap,
     Plane,
     ExternalLink,
+    Train,
+    PhoneCall
 } from "lucide-react"
 
 import Link from "next/link"
@@ -132,6 +134,50 @@ const Institution = () => {
                                         </p>
                                         <Link
                                             href="https://www.instagram.com/pariwisata.palembang/?hl=en"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center text-white text-sm font-medium group-hover:underline"
+                                        >
+                                            <span className="border-b border-white/40 group-hover:border-white">Visit Official Website</span>
+                                            <ExternalLink className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* 112 */}
+                        <div className="group">
+                            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:bg-white/20 hover:shadow-xl hover:shadow-red-900/20 h-full">
+                                <div className="flex items-start gap-5">
+                                    <div className="h-14 w-14 rounded-full bg-white flex items-center justify-center shrink-0">
+                                        <PhoneCall className="h-7 w-7 text-red-600" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white mb-3">{language==='en'?"Nomor darurat Pariwisata":"Urgent call"}</h3>
+                                        <p className="text-white/70 mb-5 text-sm leading-relaxed">
+                                        {language === 'en'?"Hubungi 112 untuk bantuan terkait kebakaran, kecelakaan, atau bencana, dan Hubungi 119 untuk kondisi darurat medis dan evakuasi kesehatan. Tersedia 24 jam dan bebas pulsa":"Dial 112 for fire, accident, or disaster-related assistance, and Dial 119 for medical emergencies and health evacuations. Available 24 hours and toll-free"}
+                                         
+                                        </p>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* lrt */}
+                         <div className="group">
+                            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:bg-white/20 hover:shadow-xl hover:shadow-red-900/20 h-full">
+                                <div className="flex items-start gap-5">
+                                    <div className="h-14 w-14 rounded-full bg-white flex items-center justify-center shrink-0">
+                                        <Train className="h-7 w-7 text-red-600" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white mb-3">LRT</h3>
+                                        <p className="text-white/70 mb-5 text-sm leading-relaxed">
+                                        {language === 'en'?"LRT Sumsel is a modern transport system in Palembang connecting the airport and city fast, comfortable, and eco-friendly.":"LRT Sumsel adalah transportasi modern Palembang yang menghubungkan bandara dan kota, cepat, nyaman, dan ramah lingkungan"}
+                                         
+                                        </p>
+                                        <Link
+                                            href="instagram.com/lrtsumselofficial"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center text-white text-sm font-medium group-hover:underline"

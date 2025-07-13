@@ -18,8 +18,8 @@ import 'swiper/css/autoplay'
 
 const events = [
     { id: 1, image: "/images/eventsample.jpg", alt: "Wonder Cafe Promotion" },
-    { id: 2, image: "/images/eventsample2.jpg", alt: "Chiangmai Fashion Week Summer 2025" },
-    { id: 3, image: "/images/eventsample3.jpg", alt: "World Wai Kru Muay Thai Ceremony" },
+    { id: 2, image: "/images/eventsample2.webp", alt: "Chiangmai Fashion Week Summer 2025" },
+    { id: 3, image: "/images/eventsample3.webp", alt: "World Wai Kru Muay Thai Ceremony" },
 
 ];
 

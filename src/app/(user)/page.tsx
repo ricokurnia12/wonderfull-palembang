@@ -17,8 +17,8 @@ export default function Home() {
         <div className="bg-flower absolute z-20 opacity-10 bottom-1/3 top-0 h-full right-300 w-full animate-[bounce-smooth_3s_ease-in-out_infinite] saturate-50" />
         <ExploreBy />
       </section>
-      <EventsHighlightStacked />
       <FoodGalery />
+      <EventsHighlightStacked />
       {/* <KeyFact /> */}
       <Institution />
       <Cta />

@@ -67,7 +67,7 @@ export default function VideoHero() {
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const textX = useTransform(scrollYProgress, [0, 0.2], [0, 300]); // ke kanan
   const textLeft = useTransform(scrollYProgress, [0, 0.2], [0, -300]); // ke kiri
-
+  // const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   const scale = useSpring(1.3, { stiffness: 20, damping: 10 });
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -98,28 +98,6 @@ export default function VideoHero() {
       src: "/video/bkb.mp4",
       direction: "left",
     },
-    // {
-    //     id: 2,
-    //     name: "Kanawa Island",
-    //     description: "Pristine waters and coral reefs",
-    //     position: { x: "70%", y: "40%" },
-    //     src: "/video/palepale.mp4",
-    // },
-    // {
-    //     id: 3,
-    //     name: "Bali",
-    //     description: "Island of the Gods",
-    //     position: { x: "center", y: "center" },
-    //     src: "/video/tesvideo.mp4",
-    // },
-    // {
-    //     id: 4,
-    //     name: "Jakarta",
-    //     description: "Indonesia's vibrant capital",
-    //     position: { x: "30%", y: "60%" },
-    //     src: "/video/palepale.mp4",
-    //     direction: 'left'
-    // },
   ];
 
   const handlePrev = () => {
@@ -228,7 +206,7 @@ export default function VideoHero() {
 
         {/* Location Labels */}
 
-        <div className="absolute inset-0 z-10">
+        <div className="absolute inset-0 z-10 hidden lg:block¸">
           {locations.map((location, index) => (
             <motion.div
               key={location.id}
@@ -296,7 +274,7 @@ export default function VideoHero() {
 
         {/* Navigation Controls */}
         <motion.div
-          className="absolute top-1/2 pt-20 left-0 right-0 z-20 flex justify-center items-center"
+          className="absolute top-1/2 pt-20 left-0 right-0 z-20  justify-center items-center hidden lg:flex "
           style={{ opacity: textOpacity, x: textLeft }}
         >
           <button
@@ -307,7 +285,7 @@ export default function VideoHero() {
             <ChevronLeft className="h-6 w-6" />
           </button>
 
-          <div className="flex space-x-4 px-6 py-3 ">
+          <div className="flex space-x-4 px-6 py-3 overflow-x-scroll ">
             {keyFacts.map((fact, index) => {
               const IconComponent = icons[fact.icon];
               return (

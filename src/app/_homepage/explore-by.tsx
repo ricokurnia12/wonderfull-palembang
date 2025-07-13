@@ -1,98 +1,133 @@
-import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
-import Link from "next/link"
-import { ChevronRight } from "lucide-react"
 
-export default function ExploreBy() {
-  return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Explore Destination </h1>
+import Image from "next/image";
 
-          <div className="grid md:grid-cols-6 gap-8 items-start">
-            <div className="relative col-span-4">
-              <Image
-                src="https://palpos.bacakoran.co/upload/1afd9c0833626042ce6d6906f18f06c5.jpg"
-                alt="Secret of Sriwijaya"
-                width={500}
-                height={800}
-                //   fill
-                className="mx-auto w-full rounded-2xl shadow-2xl "
-              />
-            </div>
+import { Metadata } from "next";
+import ExploreByCard from "./exploreByCard";
+import HeaderDest from "./header-destination";
 
-            <div className="space-y-6 col-span-2">
-              <h2 className="text-5xl font-bold text-[#9B1B30]">Discovering Palembang</h2>
-              <p className="text-gray-700">
-                An old city with traces of Sriwijaya&apos;s glory. From grand palaces to historic museums, discover the stories of the past that still live on today!
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-
-
-            <Card className="overflow-hidden p-0 pb-4 ">
-              <div className="relative h-52">
-                <Image
-                  src="/images/amperabridge.jpg"
-                  alt="Ampera Bridge"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardContent className="px-4">
-                <h3 className="text-xl font-medium mb-2">Ampera Bridge</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  In the heart of Palembang, the majestic Ampera Bridge stretches, a timeless icon, uniting Seberang Ulu and Seberang Ilir which are separated by the Musi River which divides the city.
-                </p>
-                <Link href="/explore" className="text-primary flex items-center text-sm">
-                  Learn more <ChevronRight className="h-4 w-4 ml-1" />
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden p-0 pb-4 ">
-              <div className="relative h-52">
-                <Image
-                  src="/images/museumSMB.jpeg"
-                  alt="Ampera Bridge"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardContent className="px-4">
-                <h3 className="text-xl font-medium mb-2">Museum SMB II</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Sultan Mahmud Badaruddin II Museum, a building that contains traces of the long civilization of the city of Pempek. Previously, this place was part of the Palace of the Palembang Darussalam Sultanate, where the sultans ruled and regulated city life.
-                </p>
-                <Link href="/explore" className="text-primary flex items-center text-sm">
-                  Learn more <ChevronRight className="h-4 w-4 ml-1" />
-                </Link>
-              </CardContent>
-            </Card>
-            <Card className="overflow-hidden p-0 pb-4 ">
-              <div className="relative h-52">
-                <Image
-                  src="/images/monpera.jpeg"
-                  alt="Ampera Bridge"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardContent className="px-4">
-                <h3 className="text-xl font-medium mb-2">MONPERA</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  The People&apos;s Struggle Monument (Monpera) stands firmly in the center of Palembang, precisely on Jalan Merdeka, opposite the Great Mosque.
-                </p>
-                <Link href="/explore" className="text-primary flex items-center text-sm">
-                  Learn more <ChevronRight className="h-4 w-4 ml-1" />
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
-    
-    </div>
-
-  )
+interface FeaturedPost {
+  ID: number;
+  title: string;
+  excerpt: string;
+  english_excerpt: string;
+  english_title: string;
+  coverImage: string;
+  slug: string;
 }
 
+// Generate metadata for SEO
+export const metadata: Metadata = {
+  title: "Explore Palembang Destinations | Discovering Sriwijaya Heritage",
+  description: "Discover Palembang's rich cultural heritage and historic destinations. Explore the ancient Sriwijaya kingdom's legacy through museums, palaces, and cultural sites.",
+  keywords: ["Palembang", "Sriwijaya", "Indonesia tourism", "cultural heritage", "historic destinations"],
+  openGraph: {
+    title: "Explore Palembang Destinations | Discovering Sriwijaya Heritage",
+    description: "Discover Palembang's rich cultural heritage and historic destinations. Explore the ancient Sriwijaya kingdom's legacy through museums, palaces, and cultural sites.",
+    // images: [
+    //   {
+    //     url: "https://palpos.bacakoran.co/upload/1afd9c0833626042ce6d6906f18f06c5.jpg",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "Palembang Sriwijaya Heritage",
+    //   },
+    // ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Explore Palembang Destinations | Discovering Sriwijaya Heritage",
+    description: "Discover Palembang's rich cultural heritage and historic destinations.",
+    images: ["https://palpos.bacakoran.co/upload/1afd9c0833626042ce6d6906f18f06c5.jpg"],
+  },
+};
+
+// Server-side data fetching function
+async function getFeaturedPosts(): Promise<FeaturedPost[]> {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/blogposts?featured=true`,
+      {
+        // next: { revalidate: 3600 }, // Revalidate every hour
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch featured posts: ${res.status}`);
+    }
+
+    const data = await res.json();
+    return data.data || [];
+  } catch (error) {
+    console.error("Failed to fetch featured posts:", error);
+    return [];
+  }
+}
+
+// Server Component
+export default async function ExploreBy() {
+  const featuredPosts = await getFeaturedPosts();
+
+ 
+  return (
+    <>
+      {/* Structured Data */}
+  
+
+      <div className="container mx-auto px-4 py-12">
+        {/* SEO-optimized heading structure */}
+        <header className="text-center mb-12">
+         <HeaderDest/>        </header>
+
+        {/* Hero Section */}
+        <section className="grid md:grid-cols-6 gap-8 items-start mb-12">
+          <div className="relative col-span-4">
+            <Image
+              src="https://palpos.bacakoran.co/upload/1afd9c0833626042ce6d6906f18f06c5.jpg"
+              alt="Historic Palembang showcasing Sriwijaya heritage and cultural landmarks"
+              width={800}
+              height={600}
+              className="mx-auto w-full rounded-2xl shadow-2xl"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
+            />
+          </div>
+
+          <div className="space-y-6 col-span-2">
+            <h2 className="text-5xl font-bold text-[#9B1B30]">
+              Discovering Palembang
+            </h2>
+            <p className="text-gray-700 text-lg leading-relaxed">
+              An old city with traces of Sriwijaya&apos;s glory. From grand
+              palaces to historic museums, discover the stories of the past that
+              still live on today!
+            </p>
+          </div>
+        </section>
+
+        {/* Featured Destinations */}
+        <section>
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+            Featured Destinations
+          </h2>
+          
+          {featuredPosts.length > 0 ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {featuredPosts.map((post) => (
+               <ExploreByCard key={post.ID} post={post} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">
+                Featured destinations are being updated. Please check back soon!
+              </p>
+            </div>
+          )}
+        </section>
+      </div>
+    </>
+  );
+}

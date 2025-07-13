@@ -15,23 +15,20 @@ const EventPageList = async ({ searchParams }: { searchParams: any }) => {
     )
   );
   const title = params.get("title");
-  const category = params.get("category");
-  const startDate = params.get("startDate");
-  const endDate = params.get("endDate");
+  const sortBy = params.get("sortBy");
+  const sortOrder = params.get("sortOrder");
+
   const page = params.get("page");
   let link = `${process.env.PUBLIC_API_URL}/eventsclient?`;
   const queryParams = [];
   if (title) {
     queryParams.push(`title=${encodeURIComponent(title)}`);
   }
-  if (category) {
-    queryParams.push(`category=${encodeURIComponent(category)}`);
+  if (sortBy) {
+    queryParams.push(`sortBy=${encodeURIComponent(sortBy)}`);
   }
-  if (startDate) {
-    queryParams.push(`startDate=${encodeURIComponent(startDate)}`);
-  }
-  if (endDate) {
-    queryParams.push(`endDate=${encodeURIComponent(endDate)}`);
+  if (sortOrder) {
+    queryParams.push(`sortOrder=${encodeURIComponent(sortOrder)}`);
   }
   if (page) {
     queryParams.push(`page=${encodeURI(page)}`);

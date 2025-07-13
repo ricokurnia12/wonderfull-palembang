@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -15,7 +16,7 @@ import {
   MoreHorizontal,
   Star,
   Calendar,
-  Clock,
+  // Clock,
 } from "lucide-react";
 import axios from "axios";
 
@@ -97,6 +98,7 @@ export default function BlogPostsPage() {
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const [page, setPage] = useState(1);
   const [limit] = useState(10);
   const [total, setTotal] = useState(0);
@@ -116,7 +118,7 @@ export default function BlogPostsPage() {
 
   useEffect(() => {
     fetchPosts();
-  }, [page, search, category]);
+  }, [page, search, category,isRefreshing]);
 
   const fetchPosts = async () => {
     setLoading(true);
@@ -125,6 +127,7 @@ export default function BlogPostsPage() {
       const params = new URLSearchParams({
         page: page.toString(),
         limit: limit.toString(),
+        sort: "featured_desc",
       });
 
       if (search) params.append("search", search);
@@ -201,6 +204,20 @@ export default function BlogPostsPage() {
       setDeleting(false);
     }
   };
+
+  const handleFeaturedToggle = async (postId: string,isFeatured:boolean) => {
+    try {
+      console.log(`Toggling featured status for post ${postId}: ${isFeatured}`);
+      
+      await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/blogposts/${postId}`,{featured:isFeatured})
+      alert(`Post ${isFeatured ? "added to" : "removed from"} featured successfully`);
+      setIsRefreshing(!isRefreshing); 
+    } catch (error:any) {
+      console.log("Error toggling featured status:", error);
+      alert(error.response.data.error || "Failed to toggle featured status");
+      
+    }
+  }
 
   const totalPages = Math.ceil(total / limit);
 
@@ -297,7 +314,7 @@ export default function BlogPostsPage() {
                       <TableHead>Title</TableHead>
                       <TableHead>Category</TableHead>
                       <TableHead>Date</TableHead>
-                      <TableHead>Read Time</TableHead>
+                    
                       <TableHead>Status</TableHead>
                       <TableHead className="text-right">Actions</TableHead>
                     </TableRow>
@@ -375,12 +392,7 @@ export default function BlogPostsPage() {
                               </span>
                             </div>
                           </TableCell>
-                          <TableCell>
-                            <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-                              <Clock className="h-3 w-3" />
-                              <span>{post.readTime || 0} min</span>
-                            </div>
-                          </TableCell>
+                          
                           <TableCell>
                             <div className="flex items-center space-x-2">
                               {post.featured && (
@@ -439,6 +451,15 @@ export default function BlogPostsPage() {
                                 >
                                   <Trash2 className="h-4 w-4 mr-2" />
                                   Delete
+                                </DropdownMenuItem>
+                                 <DropdownMenuItem
+                                  onClick={() => {
+                                    handleFeaturedToggle(post.ID.toString(), !post.featured);
+                                  }}
+                                  className="text-red-600"
+                                >
+                                  <Trash2 className="h-4 w-4 mr-2" />
+                                  {post.featured ? "Remove from Featured":"Add to Featured"} to Featured
                                 </DropdownMenuItem>
                               </DropdownMenuContent>
                             </DropdownMenu>
